@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --color-positive: #1d7e05;
+  --color-negative: #ff0000;
+  --color-fg: #ffffff;
+  --color-mg: #444;
+  --color-bg: #121212;
+  --color-line: #888;
+  --color-shade: rgba(0, 0, 0, 0.1);
+  --color-highlight: rgba(255, 255, 255, 0.05);
+}
+
+.bg-custom-bg {
+  background-color: var(--color-bg);
+}
+
+.bg-custom-mg {
+  background-color: var(--color-mg);
+}
+
+.bg-custom-fg {
+  background-color: var(--color-fg);
+}
+
+.text-custom-fg {
+  color: var(--color-fg);
+}
+
+.text-custom-mg {
+  color: var(--color-mg);
+}
+
+.text-custom-line {
+  color: var(--color-line);
+}
+
+.bg-custom-positive {
+  background-color: var(--color-positive);
+}
+
+.bg-custom-negative {
+  background-color: var(--color-negative);
+}
+
+.border-custom-mg {
+  border-color: var(--color-mg);
+}
+
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.max-w-screen-xs {
+  max-width: 468px;
+}
+
+.autoComplete_wrapper {
+  width: 100% !important;
+}
+
+#autoComplete {
+  width: 100% !important;
+  -webkit-appearance: none;
+  color: var(--color-mg) !important;
+  /* border-radius: 4px; */
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background-image: none;
+}
+
+/* Player */
+
+.playing {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@keyframes gg-bar {
+  10% {
+    box-shadow: inset 0 -4px 0;
+  }
+  30% {
+    box-shadow: inset 0 -10px 0;
+  }
+  60% {
+    box-shadow: inset 0 -6px 0;
+  }
+  80% {
+    box-shadow: inset 0 -8px 0;
+  }
+  to {
+    box-shadow: inset 0 -2px 0;
+  }
+}
+.gg-loadbar-sound,
+.gg-loadbar-sound::after,
+.gg-loadbar-sound::before {
+  display: block;
+  box-sizing: border-box;
+  width: 2px;
+  height: 12px;
+  box-shadow: inset 0 -12px 0;
+  animation: gg-bar 1.3s ease infinite alternate;
+}
+.gg-loadbar-sound {
+  position: relative;
+  transform: scale(var(--ggs, 1));
+}
+.gg-loadbar-sound::after,
+.gg-loadbar-sound::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+}
+.gg-loadbar-sound::before {
+  left: -4px;
+  animation-delay: -2.4s;
+}
+.gg-loadbar-sound::after {
+  right: -4px;
+  animation-delay: -3.7s;
+}
+
+.progress-sep {
+  width: 2px;
+}
+
+/* Override */
+
+.tracking-widest {
+  text-indent: 0.25em;
+}
+
+.Select-menu-outer {
+  top: auto;
+  bottom: 100%;
+}
+
+.song-link {
+  border-radius: 12px;
+}
+
+.bg-soundcloud {
+  background-color: #ff7700;
+  border-radius: 12px;
+  min-height: 80px;
+}
+
+.player-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 1em;
+  margin: -1em;
+}

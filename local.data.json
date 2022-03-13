@@ -1,0 +1,50 @@
+[
+    {
+        "url": "https://soundcloud.com/fleetwoodmacofficial/dreams",
+        "id": 8,
+        "guessList": [
+            {
+                "answer": "Queen - Bohemian Rhapsody (Remastered 2011)",
+                "isCorrect": false,
+                "isSkipped": false
+            },
+            {
+                "answer": "Swedish House Mafia - Swedish House Mafia - Don't You Worry Child (Radio Edit) [feat. John Martin]",
+                "isCorrect": false,
+                "isSkipped": false
+            },
+            {
+                "answer": "Bon Jovi - Livin' On A Prayer",
+                "isCorrect": false,
+                "isSkipped": false
+            },
+            {
+                "answer": "Childish Gambino - Redbone",
+                "isCorrect": false,
+                "isSkipped": false
+            },
+            {
+                "answer": "KatyPerry - Dark Horse (feat. Juicy J)",
+                "isCorrect": false,
+                "isSkipped": false
+            },
+            {
+                "answer": "Rihanna - Disturbia",
+                "isCorrect": false,
+                "isSkipped": false
+            }
+        ],
+        "hasFinished": true,
+        "hasStarted": true,
+        "artist": "Fleetwood Mac",
+        "title": "Dreams",
+        "img": "https://i1.sndcdn.com/artworks-l8SDfRSFU5Pb-0-large.jpg",
+        "duration": 30000,
+        "genre": "Pop",
+        "date": "1988-11-21T00:00:00Z",
+        "album": "Greatest Hits",
+        "correctAnswer": "Fleetwood Mac - Dreams",
+        "gotCorrect": false,
+        "score": 6
+    }
+]
