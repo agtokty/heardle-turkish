@@ -1,15 +1,13 @@
 
-const SECOND_POWER = 100;
+function PlayerProgress({ currentPositionInMilis, playerSlicePercentagesInSeconds, openedStep, maxStepLength, }) {
 
-function PlayerProgress({ currentSecInMilis, maxStepLength, playerSlicePercentages, openedStep }) {
+    const availablePercentage = (playerSlicePercentagesInSeconds[openedStep]);
 
-    const songLengthInMilis = maxStepLength * SECOND_POWER;
+    // const songLengthInMilis = maxStepLength * 1000;
+    // const percentage = (currentPositionInMilis / songLengthInMilis) * 100;
 
-    const availablePercentage = (playerSlicePercentages[openedStep]);
-
-    const percentage = (currentSecInMilis / songLengthInMilis) * 100;
-
-    //console.debug(`songLengthInMilis:${songLengthInMilis} availablePercentage:${availablePercentage} percentage:${percentage}`)
+    // shortened expression;
+    const percentage = (currentPositionInMilis / (maxStepLength * 10));
 
     return (
         <div className="border-t border-custom-line">
@@ -21,7 +19,7 @@ function PlayerProgress({ currentSecInMilis, maxStepLength, playerSlicePercentag
                     <div className="w-full h-full absolute">
                         <div className="bg-custom-line w-px h-full absolute right-0"></div>
                         {
-                            playerSlicePercentages.map((percentage, index) => {
+                            playerSlicePercentagesInSeconds.map((percentage, index) => {
                                 if (index > openedStep)
                                     return <div key={index} className="w-px h-full absolute bg-custom-mg" style={{ left: percentage + "%" }}></div>
                                 else

@@ -164,7 +164,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
               <iframe id="spotify" src={songConfig.soundSpotifyLink + "?utm_source=heardle-tr.app"}
                 title={"Spotify uzerinden " + songConfig.trackName + " dinle"}
                 className="song-link"
-                width="100%" height="380" frameBorder="0" allowFullScreen={false}
+                width="100%" height="280" frameBorder="0" allowFullScreen={false}
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
           }

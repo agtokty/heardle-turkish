@@ -1,12 +1,12 @@
 
 function getSecondPreview(seconds) {
     if (seconds < 10) {
-        return `00:0${seconds}`;
+        return `00:0${Math.floor(seconds)}`;
     } else if (seconds < 60) {
-        return `00:${seconds}`;
+        return `00:${Math.floor(seconds)}`;
     } else {
         let minute = Math.floor(seconds / 60);
-        seconds = seconds % 60;
+        seconds = Math.floor(seconds % 60);
 
         let strMinute = minute < 10 ? "0" + minute : minute;
         let secMinute = seconds < 10 ? "0" + seconds : seconds;
@@ -14,7 +14,7 @@ function getSecondPreview(seconds) {
     }
 }
 
-function MusicPlayerControls({ currentSecReal, songLength, isPlaying, onStoped, onPlayed, gameFinished }) {
+function MusicPlayerControls({ currentPositionInMilis, songLengthInSeconds, isPlaying, onStoped, onPlayed, gameFinished, songFullDurationInMilis }) {
 
     const onPlayClicked = () => {
         console.log("onPlayClicked")
@@ -38,7 +38,8 @@ function MusicPlayerControls({ currentSecReal, songLength, isPlaying, onStoped, 
                         <div className="flex justify-between items-center">
                             <div className="flex items-center">
                                 {
-                                    <div>{getSecondPreview(currentSecReal)}</div>
+                                    (songFullDurationInMilis > 0.1) &&
+                                    <div>{getSecondPreview(currentPositionInMilis / 1000)}</div>
                                 }
                             </div>
                             <div className="flex justify-center items-center p-1">
@@ -75,7 +76,11 @@ function MusicPlayerControls({ currentSecReal, songLength, isPlaying, onStoped, 
                             </div>
                             <div className="flex items-center">
                                 {gameFinished === false &&
-                                    <div>{getSecondPreview(songLength)}</div>
+                                    <div>{getSecondPreview(songLengthInSeconds)}</div>
+                                }
+                                {
+                                    (gameFinished === true && songFullDurationInMilis > 1) &&
+                                    <div>{getSecondPreview(songFullDurationInMilis / 1000)}</div>
                                 }
                             </div>
                         </div>

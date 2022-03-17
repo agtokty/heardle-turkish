@@ -6,7 +6,6 @@ import { useGameData } from "../player/GameContext";
 
 
 const DEFAULT_START_MILIS = 15;
-const SECOND_POWER = 100;
 
 let SC_WIDGET: any = null;
 
@@ -34,8 +33,9 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
 
     const [playerSlicePercentages, setplayerSlicePercentages] = useState<any[]>([]);
     const [musicReady, setMusicReady] = useState(false);
-    const [currentSecInMilis, setCurrentSecInMilis] = useState(DEFAULT_START_MILIS);// not second, second*10
+    const [currentPositionInMilis, setCurrentPositionInMilis] = useState(DEFAULT_START_MILIS);// not second, second*10
     const [isPlaying, setPlaying] = useState(false);
+    const [songFullDurationInMilis, setSongFullDurationInMilis] = useState(0);
 
     const { state: { openedStep, finished } } = useGameData();
 
@@ -76,11 +76,17 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
         if (finished) {
             console.log("1 useEffect openedStep=", openedStep)
             SC_WIDGET.bind(window.SC.Widget.Events.READY, () => {
+
+                SC_WIDGET.getDuration((songDurationInMilis: number) => {
+                    console.log("songDurationInMilis=", songDurationInMilis)
+                    setSongFullDurationInMilis(songDurationInMilis);
+                });
+
                 SC_WIDGET.bind(window.SC.Widget.Events.PLAY_PROGRESS, function () {
                     SC_WIDGET.getPosition(function (currentPosition: number) {
-                        let currentPositionInMilis = Math.floor(currentPosition / 10);
-                        setCurrentSecInMilis(currentPositionInMilis);
+                        setCurrentPositionInMilis(Math.floor(currentPosition));
                     });
+
                 });
                 setMusicReady(true);
             });
@@ -88,17 +94,23 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
             console.log("2 useEffect openedStep=", openedStep)
 
             SC_WIDGET.bind(window.SC.Widget.Events.READY, () => {
-                var stopTimeInMs = songConfig.breaks[openedStep] * 100;
+
+                SC_WIDGET.getDuration((songDurationInMilis: number) => {
+                    console.log("songDurationInMilis=", songDurationInMilis)
+                    setSongFullDurationInMilis(songDurationInMilis);
+                });
+
+                var stopTimeInMs = songConfig.breaks[openedStep] * 1000;
 
                 SC_WIDGET.bind(window.SC.Widget.Events.PLAY_PROGRESS, function () {
                     SC_WIDGET.getPosition(function (currentPosition: number) {
-                        let currentPositionInMilis = Math.floor(currentPosition / 10);
+                        let _currentPositionInMilis = Math.floor(currentPosition);
 
-                        setCurrentSecInMilis(currentPositionInMilis);
+                        setCurrentPositionInMilis(_currentPositionInMilis);
                         // if(isPlaying === true && finished === true){
                         //     return;
                         // }
-                        if (currentPositionInMilis >= stopTimeInMs) {
+                        if (_currentPositionInMilis >= stopTimeInMs) {
                             SC_WIDGET.pause();
                             SC_WIDGET.seekTo(0)
                             setPlaying(false);
@@ -113,25 +125,23 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
     }, [openedStep, finished])
 
 
-    const currentSecReal = Math.floor(currentSecInMilis / SECOND_POWER);
-
     return (
         <>
             {
                 finished === false &&
                 <PlayerProgress
-                    currentSecInMilis={currentSecInMilis}
+                    currentPositionInMilis={currentPositionInMilis}
                     maxStepLength={songConfig.breaks[openedStep]}
-                    playerSlicePercentages={playerSlicePercentages}
+                    playerSlicePercentagesInSeconds={playerSlicePercentages}
                     openedStep={openedStep} />
-
             }
             {
                 musicReady === true ?
                     (
                         <MusicPlayerControls
-                            currentSecReal={currentSecReal}
-                            songLength={songConfig.songLength}
+                            currentPositionInMilis={currentPositionInMilis}
+                            songLengthInSeconds={songConfig.songLength}
+                            songFullDurationInMilis={songFullDurationInMilis}
                             onStoped={onStoped}
                             onPlayed={onPlayed}
                             isPlaying={isPlaying}
