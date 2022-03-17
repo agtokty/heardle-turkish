@@ -52,7 +52,7 @@ function MusicPlayerControls({ currentPositionInMilis, songLengthInSeconds, isPl
                                                         onClick={onStopClicked} >
                                                         <div className="ml-1 relative z-10 playing" >
                                                             <div className="scale-150 transform relative">
-                                                                <i className="gg-loadbar-sound svelte-15swa4o musicIsPlaying"></i>
+                                                                <i className="gg-loadbar-sound musicIsPlaying"></i>
                                                             </div>
                                                         </div>
                                                     </button>

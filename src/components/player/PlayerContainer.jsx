@@ -168,7 +168,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                             <div className="flex justify-between pt-3">
                                 {
                                     openedStep < CURRENT_SONG_CONFIG.breaks.length - 1 &&
-                                    <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm svelte-1r54uzk"
+                                    <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onSkipClicked}>
                                         İlerlet
@@ -176,7 +176,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                                 }
                                 {
                                     openedStep === CURRENT_SONG_CONFIG.breaks.length - 1 &&
-                                    <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm svelte-1r54uzk"
+                                    <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onFinishClicked}>
                                         Bitir
@@ -184,7 +184,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                                 }
                                 {
                                     openedStep < CURRENT_SONG_CONFIG.breaks.length &&
-                                    <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive"
+                                    <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm rounded bg-custom-positive"
                                         type="submit"
                                         onClick={onSendClicked}>
                                         Tahmin Gönder

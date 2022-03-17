@@ -14,7 +14,7 @@ function Stats() {
     }
 
     return (
-        <div className="modal-background p-3 pointer-events-none svelte-1nyqrwd">
+        <div className="modal-background p-3 pointer-events-none">
             <div className="pointer-events-auto modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm " role="dialog" aria-modal="true">
                 <div className="bg-custom-bg border border-custom-mg p-6">
                     <div className="flex items-center justify-center mb-6">

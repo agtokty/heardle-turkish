@@ -189,19 +189,14 @@ function GameResult({ songConfig }: { songConfig: any }) {
           </div>
 
           <div className="flex flex-col justify-center items-center mt-3 pt-3">
-            {showCopied && <span className="mb-2">Kopyalandi</span>}
-            <button className="px-2 py-2 mb-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive"
+            <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-custom-positive"
               onClick={onCopyClicked}>
-              Sonucu Kopyala
+              {showCopied ? "Kopyalandi" : "Sonucu Kopyala"}
             </button>
-            <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive"
+            <button className="w-full px-2 py-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-custom-positive"
               onClick={onTwitterShareClicked}>
               Twitter'da Paylaş
             </button>
-            {/* <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive"
-              onClick={onFacebookShareClicked}>
-              Facebook
-            </button> */}
           </div>
         </div>
         <div>

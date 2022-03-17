@@ -95,7 +95,7 @@ function HowToPlay() {
                         </div>
                     </div>
                     <p className="text-xs mt-3 text-center text-custom-line">
-                        Buradaki şarkıları çalarak, kullanıcı deneyiminizi artırmak amaçlı
+                        Bu uygulamayı kullanarak, kullanıcı deneyiminizi artırmak amaçlı
                         <a href="https://policies.google.com/technologies/partner-sites"> Google</a>, <a href="https://developer.spotify.com/documentation/widgets/terms/"> Spotify</a> ve
                         <a href="https://soundcloud.com/pages/privacy"> Soundcloud</a> teknolojilerini kullanmayı kabul etmiş olursunuz.
                     </p>
