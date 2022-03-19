@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { getDailySong } from "./components/utils/dataService";
 
 
-const APP_VERSION = "0.21"
+const APP_VERSION = process.env.REACT_APP_VERSION || "0"
 console.debug("v" + APP_VERSION);
 
 const currentVersion = localStorage.getItem("version");
@@ -22,7 +22,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [CURRENT_SONG_CONFIG, SET_CURRENT_SONG_CONFIG] = useState();
 
- 
+
 
   useEffect(() => {
 
