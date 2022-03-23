@@ -27,11 +27,11 @@ function decodeTurkishCharacters(text) {
 function checkStrings(expected, userAnswer) {
     similarity(expected, userAnswer);
 
-    expected = expected || "";
-    userAnswer = userAnswer || "";
+    expected = (expected || "").replace(/[0-9]/g, '').replace(/\s/g, '');
+    userAnswer = (userAnswer || "").replace(/[0-9]/g, '').replace(/\s/g, '');
 
-    expected = decodeTurkishCharacters(expected.toLowerCase().replace(/\s/g, ''));
-    userAnswer = decodeTurkishCharacters(userAnswer.toLowerCase().replace(/\s/g, ''));
+    expected = decodeTurkishCharacters(expected);
+    userAnswer = decodeTurkishCharacters(userAnswer);
 
     return expected === userAnswer;
 }
