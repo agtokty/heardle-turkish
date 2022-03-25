@@ -10,17 +10,18 @@ function getDayQueryParam() {
     return null;
 }
 
-function getDayStr() {
+function getDayParts() {
     const now = new Date();
 
     const dayParam = getDayQueryParam();
     if (dayParam) {
         console.debug("dayParam found=", dayParam);
-        return dayParam;
+        return {
+            'day': dayParam.slice(6),
+            'month': dayParam.slice(4, 6),
+            'year': dayParam.slice(0, 4),
+        };;
     }
-
-    // let oldFormat = `${now.getDate()}-${now.getMonth()}-${now.getFullYear()}`;
-    // console.debug("getDayStr oldFormat=", oldFormat);
 
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
@@ -29,10 +30,24 @@ function getDayStr() {
     let day = now.getDate();
     day = day < 10 ? ("0" + day) : day;
 
-    let newFormat = `${year}${month}${day}`;
-    // console.debug("getDayStr newFormat=", newFormat);
+    return {
+        'day': day,
+        'month': month,
+        'year': year
+    };
+}
 
-    // return "20220312"
+function getDayStrAsPath() {
+    const { year, month, day } = getDayParts();
+
+    let newFormat = `${year}/${month}/${day}`;
+    return newFormat;
+}
+
+function getDayStr() {
+    const { year, month, day } = getDayParts();
+
+    let newFormat = `${year}${month}${day}`;
     return newFormat;
 }
 
@@ -78,4 +93,4 @@ function editDistance(s1, s2) {
 }
 
 
-export { getDayStr, similarity }
+export { getDayStr, getDayStrAsPath, similarity }

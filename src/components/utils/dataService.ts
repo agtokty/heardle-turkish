@@ -1,6 +1,6 @@
 
 import { getDatabase, ref, onValue } from "firebase/database";
-import { getDayStr } from ".";
+import { getDayStr, getDayStrAsPath } from ".";
 import app from "./firebase"
 
 interface Map {
@@ -19,19 +19,7 @@ const DEFAULT_SONG = {
     image: "https://ia801302.us.archive.org/19/items/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8-20523301125.jpg"
 };
 
-const SONG_DATABASE: Map = {
-    "11-2-2022": {
-        songLength: 30,
-        breaks: [3, 8, 15, 21, 25, 30],
-        trackName: "Müslüm Gürses Hangimiz Sevmedik",
-        others: [],
-        album: "Senden Vazgecmem",
-        soundCloudLink: "https://soundcloud.com/dnz_aksoy/muslum-gurses-hangimiz-sevmedik",
-        showSoundCloud: false,
-        soundSpotifyLink: "https://open.spotify.com/embed/track/1Mw4JiiSl5EuE7SYfc5Vks",
-        image: "https://ia801302.us.archive.org/19/items/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8-20523301125.jpg"
-    }
-}
+const SONG_DATABASE: Map = {}
 
 
 export const getDailySong = (): Promise<any> => {
@@ -44,8 +32,9 @@ export const getDailySong = (): Promise<any> => {
 
     return new Promise((resolve, reject) => {
 
+        let day = getDayStrAsPath()
         const database = getDatabase(app);
-        const songRef = ref(database, 'daily-songs/' + day);
+        const songRef = ref(database, 'songs/' + day);
 
         onValue(songRef, (snapshot) => {
             const data = snapshot.val();
