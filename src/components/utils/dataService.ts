@@ -1,6 +1,7 @@
 
 import { getDatabase, ref, onValue } from "firebase/database";
 import { getDayStr, getDayStrAsPath } from ".";
+import { SongConfig } from "../game/Models";
 import app from "./firebase"
 
 interface Map {
@@ -30,7 +31,7 @@ export const getDailySong = (): Promise<any> => {
         hardCodedSong = SONG_DATABASE[day];
     }
 
-    return new Promise((resolve, reject) => {
+    return new Promise<SongConfig>((resolve, reject) => {
 
         let day = getDayStrAsPath()
         const database = getDatabase(app);

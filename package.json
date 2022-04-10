@@ -1,6 +1,6 @@
 {
   "name": "turkish-heardle",
-  "version": "0.3",
+  "version": "0.4",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",

@@ -6,57 +6,22 @@ import GamePlayground from "./GamePlayground";
 import GameResult from "./GameResult";
 
 import { useGameData } from "./GameContext";
-import { similarity } from '../utils'
+
 import MusicPlayer from "../music/MusicPlayer";
+import { checkAnswer } from "./ResultHandler";
+import { OnChangeValue } from "react-select";
+import { SongConfig } from "../game/Models";
 
-function replaceAll(target, search, replacement) {
-    return target.replace(new RegExp(search, 'g'), replacement);
-};
 
-function decodeTurkishCharacters(text) {
-    text = replaceAll(text, "ğ", "g");
-    text = replaceAll(text, "ü", "u");
-    text = replaceAll(text, "ş", "s");
-    text = replaceAll(text, "ı", "i");
-    text = replaceAll(text, "ö", "o");
-    text = replaceAll(text, "ç", "c");
-    text = replaceAll(text, "â", "a");
-    return text;
+type AudioscrobblerResult = {
+    artist: string
+    name: string
 }
 
-function checkStrings(expected, userAnswer) {
-    similarity(expected, userAnswer);
-
-    expected = (expected || "").replace(/[0-9]/g, '').replace(/\s/g, '');
-    userAnswer = (userAnswer || "").replace(/[0-9]/g, '').replace(/\s/g, '');
-
-    expected = decodeTurkishCharacters(expected);
-    userAnswer = decodeTurkishCharacters(userAnswer);
-
-    return expected === userAnswer;
-}
-
-function checkAnswer(songConfig, userAnswer) {
-
-    let isOk = checkStrings(songConfig.trackName, userAnswer);
-
-    if (isOk === false && songConfig.others && songConfig.others.length) {
-        console.debug("checking alternatives userAnswer=", userAnswer)
-        for (let index = 0; index < songConfig.others.length; index++) {
-            isOk = checkStrings(songConfig.others[index], userAnswer);
-            if (isOk) {
-                break;
-            }
-        }
-    }
-
-    return isOk;
-}
-
-function PlayerContainer({ CURRENT_SONG_CONFIG }) {
+function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
 
     const [answer, setAnswer] = useState("");
-    const [selectedSong, setSelectedSong] = useState();
+    const [selectedSong, setSelectedSong] = useState("");
 
     const { dispatch, state: { openedStep, finished } } = useGameData();
 
@@ -69,7 +34,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
             return;
         }
 
-        let score = checkAnswer(CURRENT_SONG_CONFIG, answer);
+        let score = checkAnswer(songConfig, answer);
         console.log("checkAnswer ", score)
 
         if (score) {
@@ -79,14 +44,14 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
         }
 
         setAnswer("");
-        setSelectedSong(null)
+        setSelectedSong("")
     }
 
     const onFinishClicked = () => {
         dispatch(({ type: "FINISH" }));
     }
 
-    const loadOptions = (inputValue, callback) => {
+    const loadOptions = (inputValue: string, callback: (res: any[]) => void) => {
         if (!inputValue || inputValue.trim().length < 3) {
             callback([]);
             return;
@@ -98,10 +63,10 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                 let result = [];
                 if (response && response.results && response.results.trackmatches && response.results.trackmatches.track) {
                     result = response.results.trackmatches.track
-                        .filter(item => {
+                        .filter((item: any) => {
                             return (item && item.artist.indexOf("unknown") === -1 && item.name.indexOf("unknown") === -1)
                         })
-                        .map(item => {
+                        .map((item: AudioscrobblerResult) => {
                             let value = item.artist + " " + item.name;
                             value = value.replaceAll("-", "");
                             value = value.replaceAll("_", "");
@@ -119,7 +84,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
     };
 
 
-    const handleInputChange = (newValue) => {
+    const handleInputChange = (newValue: OnChangeValue<any, any>) => {
         if (newValue) {
             setSelectedSong(newValue);
             setAnswer(newValue.value);
@@ -130,11 +95,10 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
         <>
             {
                 finished ?
-                    (<GameResult songConfig={CURRENT_SONG_CONFIG} />) :
+                    (<GameResult songConfig={songConfig} />) :
                     (<GamePlayground />)
             }
-            <MusicPlayer
-                songConfig={CURRENT_SONG_CONFIG} />
+            <MusicPlayer songConfig={songConfig} />
             {
                 finished === false &&
                 <div className="max-w-screen-sm w-full mx-auto flex-col">
@@ -154,7 +118,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                                         loadOptions={loadOptions}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}
-                                        inputProps={{ 'aria-labelledby': 'react-select-2-placeholder' }}
+                                        // inputProps={{ 'aria-labelledby': 'react-select-2-placeholder' }}
                                         menuPortalTarget={document.body}
                                         styles={{
                                             menuPortal: base => ({ ...base, zIndex: 9999 }),
@@ -167,7 +131,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                             </div>
                             <div className="flex justify-between pt-3">
                                 {
-                                    openedStep < CURRENT_SONG_CONFIG.breaks.length - 1 &&
+                                    openedStep < songConfig.breaks.length - 1 &&
                                     <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onSkipClicked}>
@@ -175,7 +139,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                                     </button>
                                 }
                                 {
-                                    openedStep === CURRENT_SONG_CONFIG.breaks.length - 1 &&
+                                    openedStep === songConfig.breaks.length - 1 &&
                                     <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onFinishClicked}>
@@ -183,7 +147,7 @@ function PlayerContainer({ CURRENT_SONG_CONFIG }) {
                                     </button>
                                 }
                                 {
-                                    openedStep < CURRENT_SONG_CONFIG.breaks.length &&
+                                    openedStep < songConfig.breaks.length &&
                                     <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm rounded bg-custom-positive"
                                         type="submit"
                                         onClick={onSendClicked}>

@@ -5,6 +5,7 @@ import { ModalContextProvider } from "./components/modals/ModalContext";
 import { GameContextProvider } from "./components/player/GameContext";
 import { useEffect, useState } from "react";
 import { getDailySong } from "./components/utils/dataService";
+import { SongConfig } from "./components/game/Models";
 
 
 const APP_VERSION = process.env.REACT_APP_VERSION || "0"
@@ -16,19 +17,22 @@ if (currentVersion !== APP_VERSION) {
   localStorage.setItem("version", APP_VERSION);
 }
 
+const EMPTY_SONG_CONFIG: SongConfig = {
+  trackName: "",
+  breaks: [],
+  others: []
+}
+
 
 function App() {
 
   const [loading, setLoading] = useState(true);
-  const [CURRENT_SONG_CONFIG, SET_CURRENT_SONG_CONFIG] = useState();
-
-
+  const [currentSongConfig, setCurrentSongConfig] = useState<SongConfig>(EMPTY_SONG_CONFIG);
 
   useEffect(() => {
 
     getDailySong().then(songConfig => {
-      SET_CURRENT_SONG_CONFIG(songConfig);
-
+      setCurrentSongConfig(songConfig);
       setLoading(false)
     })
 
@@ -51,7 +55,7 @@ function App() {
               </div>
               .</>
             : (
-              <PlayerContainer CURRENT_SONG_CONFIG={CURRENT_SONG_CONFIG} />
+              <PlayerContainer songConfig={currentSongConfig} />
             )
         }
       </GameContextProvider>
