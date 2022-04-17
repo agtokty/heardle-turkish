@@ -10,8 +10,6 @@ const DEFAULT_START_MILIS = 15;
 let SC_WIDGET: any = null;
 
 function calculateSlicePercentages(songLength: number, breaks: number[]) {
-    console.log("calculateSlicePercentages");
-
     let playerSlices = [];
     for (let index = 0; index < breaks.length; index++) {
         const b = breaks[index];
@@ -55,7 +53,7 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
     }
 
     useEffect(() => {
-        console.log("MusicPlayer calculateSlicePercentages")
+        console.debug("MusicPlayer calculateSlicePercentages")
         const percentages = calculateSlicePercentages(songConfig.songLength, songConfig.breaks);
         setplayerSlicePercentages(percentages);
     }, [])
@@ -74,11 +72,11 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
         });
 
         if (finished) {
-            console.log("1 useEffect openedStep=", openedStep)
+            console.debug("1 useEffect openedStep=", openedStep)
             SC_WIDGET.bind(window.SC.Widget.Events.READY, () => {
 
                 SC_WIDGET.getDuration((songDurationInMilis: number) => {
-                    console.log("songDurationInMilis=", songDurationInMilis)
+                    console.debug("songDurationInMilis=", songDurationInMilis)
                     setSongFullDurationInMilis(songDurationInMilis);
                 });
 
@@ -91,12 +89,12 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
                 setMusicReady(true);
             });
         } else {
-            console.log("2 useEffect openedStep=", openedStep)
+            console.debug("2 useEffect openedStep=", openedStep)
 
             SC_WIDGET.bind(window.SC.Widget.Events.READY, () => {
 
                 SC_WIDGET.getDuration((songDurationInMilis: number) => {
-                    console.log("songDurationInMilis=", songDurationInMilis)
+                    console.debug("songDurationInMilis=", songDurationInMilis)
                     setSongFullDurationInMilis(songDurationInMilis);
                 });
 
@@ -114,7 +112,7 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
                             SC_WIDGET.pause();
                             SC_WIDGET.seekTo(0)
                             setPlaying(false);
-                            console.log("STOPPED !!!")
+                            console.debug("STOPPED !!!")
                         }
                     });
                 });

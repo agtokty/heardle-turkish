@@ -45,7 +45,7 @@ export const getDailySong = (): Promise<any> => {
                 resolve(hardCodedSong)
             }
         }, (err) => {
-            console.log(err);
+            console.error(err);
             resolve(hardCodedSong)
         }, {
             onlyOnce: true

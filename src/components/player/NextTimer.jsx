@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 
-
 function NextTimer() {
-
-
     const [countDown, setCountDown] = useState();
     const [countDownTitle, setCountDownTitle] = useState();
 
-
     useEffect(() => {
-
         let current = new Date();
         let countDownDate = current.setHours(23, 59, 59, 999);
         // let countDownDate = current.setHours(18, 18, 59, 999);
@@ -18,15 +13,14 @@ function NextTimer() {
         let interval = setInterval(function () {
 
             let now = new Date().getTime();
-            let distance = countDownDate - now;
+            let timeLeft = countDownDate - now;
 
-            if (distance >= 0) {
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (timeLeft >= 0) {
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
                 const result = hours + "s " + minutes + "d " + seconds + "s ";
-
                 setCountDown(result);
 
                 if (lastMinute !== minutes) {
@@ -36,11 +30,11 @@ function NextTimer() {
                 }
             }
 
-            if (distance < 0) {
+            if (timeLeft < 0) {
                 clearInterval(interval);
                 setTimeout(() => {
                     window.location.reload(true);
-                }, 2000)
+                }, 2000);
             }
 
         }, 1000);
@@ -57,9 +51,7 @@ function NextTimer() {
                 <div className="tracking-widest text-lg" title={countDownTitle}>{countDown}</div>
             </div>
         </>
-    )
-
+    );
 }
-
 
 export default NextTimer;

@@ -35,7 +35,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
         }
 
         let score = checkAnswer(songConfig, answer);
-        console.log("checkAnswer ", score)
+        console.debug("checkAnswer ", score)
 
         if (score) {
             dispatch(({ type: "SUBMIT-CORRRECT", payload: { step: openedStep, answer: answer } }));

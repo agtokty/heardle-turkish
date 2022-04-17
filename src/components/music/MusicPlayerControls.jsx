@@ -17,14 +17,14 @@ function getSecondPreview(seconds) {
 function MusicPlayerControls({ currentPositionInMilis, songLengthInSeconds, isPlaying, onStoped, onPlayed, gameFinished, songFullDurationInMilis }) {
 
     const onPlayClicked = () => {
-        console.log("onPlayClicked")
+        console.debug("onPlayClicked")
         if (onPlayed) {
             onPlayed()
         }
     }
 
     const onStopClicked = () => {
-        console.log("onStopClicked")
+        console.debug("onStopClicked")
         if (onStoped) {
             onStoped()
         }

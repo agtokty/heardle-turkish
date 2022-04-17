@@ -4,19 +4,7 @@ import copy from 'copy-to-clipboard';
 import SoundCloudLogo from '../icons/SoundCloudLogo.svg';
 import NextTimer from "./NextTimer";
 import { useState } from "react";
-
-const URL = "https://heardle-tr.app"
-
-const SENTENCES = [
-  "🏆 İşte aradığımız yetenek! 🏆",
-  "Harikasın, bu kadar kısa sürede bildiğin için tebrikler 🥳",
-  "Oooo, hizlisin ya da çok iyi bildiğin yerden çıktı sanırım? 😁",
-  "Harikasın, bu kadar kısa sürede bildiğin için tebrikler 🥳",
-  "Supersin! belki bir sonraki sefere çok daha iyi bildiğin bi şarkı gelir ?",
-  "Kusura bakma daha fazla ipucu veremezdim 😜"
-];
-
-const SENTENCE_FAILED = "Sanırım hiç ilgi alanın olmayan bir türe denk geldin... Yarın görüşürüz 😃";
+import { GAME_RESULT_FAILED_MESSAGE, GAME_RESULT_MESSAGES, HEARDLE_TR_WEB_URL } from "../game/Constants";
 
 const buildScore = (guessList: any[]): number => {
   let max = 100;
@@ -73,12 +61,12 @@ const getResultIcons = (guessList: any[]) => {
 
 const buildShareText = (guessList: any[]) => {
   let score = buildScore(guessList);
-  console.log(score)
+  console.debug(score)
 
   let icons = getResultIcons(guessList);
 
-  // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${URL}`;
-  return ` ${icons} \n #HeardleTr #Heardle \n \n ${URL}`;
+  // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
+  return `${icons} \n #HeardleTr #Heardle \n \n ${HEARDLE_TR_WEB_URL}`;
 }
 
 function GameResult({ songConfig }: { songConfig: any }) {
@@ -103,7 +91,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
 
   const onTwitterShareClicked = () => {
     const text = buildShareText(guessList);
-    const url = `https://twitter.com/intent/tweet?original_referer=${URL}&text=${encodeURIComponent(text)}`;
+    const url = `https://twitter.com/intent/tweet?original_referer=${HEARDLE_TR_WEB_URL}&text=${encodeURIComponent(text)}`;
 
     const winProxy = window.open(url, '_blank');
     if (winProxy) {
@@ -173,13 +161,13 @@ function GameResult({ songConfig }: { songConfig: any }) {
           {
             guessScore > -1 && guessScore < 6 &&
             <>
-              <p className="text-lg text-custom-line">{SENTENCES[guessScore]}</p>
+              <p className="text-lg text-custom-line">{GAME_RESULT_MESSAGES[guessScore]}</p>
               {/* <p className="py-1">You got today's Heardle within 1  second.</p> */}
             </>
           }
           {
             guessScore < 0 &&
-            <p className="text-lg text-custom-line">{SENTENCE_FAILED}</p>
+            <p className="text-lg text-custom-line">{GAME_RESULT_FAILED_MESSAGE}</p>
           }
 
           <div className="flex justify-center my-2">

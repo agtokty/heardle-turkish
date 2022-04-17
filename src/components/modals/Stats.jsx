@@ -5,7 +5,6 @@ function Stats() {
     const { dispatch, state: { currentModal } } = useModalData();
 
     const onClose = () => {
-        console.log("Stats closed")
         dispatch({ type: 'Reset' })
     }
 

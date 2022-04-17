@@ -44,33 +44,13 @@ function GamePlayground() {
                                     )
                                 }
                                 {
-                                    guess.isSkipped === false && guess.isCorrect === false && (
-                                        <div className="w-5 h-5"></div>
-                                    )
-                                }
-                                {
-                                    guess.isSkipped === false && guess.isCorrect === true && (
+                                    guess.isSkipped === false(
                                         <div className="w-5 h-5"></div>
                                     )
                                 }
                             </div>
                         })
                     }
-                    {/* <div className="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
-                        <div className="w-5 h-5"></div>
-                    </div>
-                    <div className="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
-                        <div className="w-5 h-5"></div>
-                    </div>
-                    <div className="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
-                        <div className="w-5 h-5"></div>
-                    </div>
-                    <div className="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
-                        <div className="w-5 h-5"></div>
-                    </div>
-                    <div className="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
-                        <div className="w-5 h-5"></div>
-                    </div> */}
                 </div>
             </div>
         </div>
