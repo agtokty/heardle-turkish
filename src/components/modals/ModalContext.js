@@ -26,7 +26,12 @@ function modalReducer(state, action) {
 
 
 function ModalContextProvider({ children }) {
-    const [state, dispatch] = React.useReducer(modalReducer, { currentModal: "HowToPlay" })
+    let currentModal = "HowToPlay";
+    if (localStorage.getItem("played") === "true") {
+        currentModal = ""
+    }
+
+    const [state, dispatch] = React.useReducer(modalReducer, { currentModal: currentModal })
     // NOTE: you *might* need to memoize this value
     // Learn more in http://kcd.im/optimize-context
     const value = { state, dispatch }
