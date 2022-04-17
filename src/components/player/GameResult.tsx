@@ -4,7 +4,7 @@ import copy from 'copy-to-clipboard';
 import SoundCloudLogo from '../icons/SoundCloudLogo.svg';
 import NextTimer from "./NextTimer";
 import { useState } from "react";
-import { GAME_RESULT_FAILED_MESSAGE, GAME_RESULT_MESSAGES, HEARDLE_TR_WEB_URL } from "../game/Constants";
+import { GAME_RESULT_FAILED_MESSAGE, GAME_RESULT_MESSAGES, HEARDLE_SPOTIFY_LIST_URL, HEARDLE_TR_WEB_URL } from "../game/Constants";
 
 const buildScore = (guessList: any[]): number => {
   let max = 100;
@@ -177,14 +177,18 @@ function GameResult({ songConfig }: { songConfig: any }) {
           </div>
 
           <div className="flex flex-col justify-center items-center mt-3 pt-3">
-            <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-custom-positive"
+            <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-slate-500 text-black"
               onClick={onCopyClicked}>
               {showCopied ? "Kopyalandi" : "Sonucu Kopyala"}
             </button>
-            <button className="w-full px-2 py-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-custom-positive"
+            <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-cyan-400 text-black"
               onClick={onTwitterShareClicked}>
               Twitter'da Paylaş
             </button>
+            <a className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-green-500 text-black"
+              href={HEARDLE_SPOTIFY_LIST_URL} target="_blank" rel="noreferrer">
+              Daha önce çıkan tüm şarkılar - Spotify
+            </a>
           </div>
         </div>
         <div>
