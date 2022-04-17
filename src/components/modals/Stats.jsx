@@ -14,8 +14,8 @@ function Stats() {
 
     return (
         <div className="modal-background p-3 pointer-events-none">
-            <div className="pointer-events-auto modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm " role="dialog" aria-modal="true">
-                <div className="bg-custom-bg border border-custom-mg p-6">
+            <div className="pointer-events-auto modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm" role="dialog" aria-modal="true">
+                <div className="bg-custom-bg border border-custom-mg p-6 rounded">
                     <div className="flex items-center justify-center mb-6">
                         <div className="flex-1 pl-7">
                             <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">Istatistikler</h2>
