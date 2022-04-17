@@ -8,7 +8,7 @@ import GameResult from "./GameResult";
 import { useGameData } from "./GameContext";
 
 import MusicPlayer from "../music/MusicPlayer";
-import { checkAnswer } from "./ResultHandler";
+import { checkAnswer } from "../game/Utils";
 import { OnChangeValue } from "react-select";
 import { SongConfig } from "../game/Models";
 

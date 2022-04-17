@@ -10,3 +10,5 @@ export const GAME_RESULT_MESSAGES = [
 ];
 
 export const GAME_RESULT_FAILED_MESSAGE = "Sanırım hiç ilgi alanın olmayan bir türe denk geldin... Yarın görüşürüz 😃";
+
+export const STRING_COMPARE_LOCALE = "tr"

@@ -119,10 +119,9 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
 
                 setMusicReady(true);
 
-                setTimeout(function () {
-                    window.scrollTo(0, 1);
-                    // alert("bir hata olustu")
-                }, 0);
+                // setTimeout(function () {
+                //     window.scrollTo(0, 1);
+                // }, 0);
             });
         }
     }, [openedStep, finished])

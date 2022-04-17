@@ -1,5 +1,6 @@
 
-import { SongConfig } from '../game/Models';
+import { STRING_COMPARE_LOCALE } from './Constants';
+import { SongConfig } from './Models';
 import { similarity } from '../utils'
 
 const replaceAll = (target: string, search: string, replacement: string) => {
@@ -30,8 +31,8 @@ const checkStrings = (expected: string, userAnswer: string) => {
         return true;
     }
 
-    let expectedLocaleTemp = (expected || "").toLocaleLowerCase('tr').replace(/[0-9]/g, '').replace(/\s/g, '');
-    let userAnswerLocaleTemp = (userAnswer || "").toLocaleLowerCase('tr').replace(/[0-9]/g, '').replace(/\s/g, '');
+    let expectedLocaleTemp = (expected || "").toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
+    let userAnswerLocaleTemp = (userAnswer || "").toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
     expectedLocaleTemp = decodeTurkishCharacters(expectedLocaleTemp);
     userAnswerLocaleTemp = decodeTurkishCharacters(userAnswerLocaleTemp);
 
