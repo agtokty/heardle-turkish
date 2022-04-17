@@ -39,7 +39,7 @@ function App() {
   }, [])
 
   return (
-    <div className="bg-custom-bg text-custom-fg overflow-auto flex flex-col h-screen">
+    <div className="bg-custom-bg text-custom-fg overflow-auto flex flex-col mobile-h">
       <ModalContextProvider>
         <Header />
         <AllModals />
