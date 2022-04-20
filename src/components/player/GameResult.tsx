@@ -66,7 +66,7 @@ const buildShareText = (guessList: any[]) => {
   let icons = getResultIcons(guessList);
 
   // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
-  return `${icons} \n #HeardleTr #Heardle \n \n ${HEARDLE_TR_WEB_URL}`;
+  return `${icons} \n #HeardleTr @HeardleTR \n \n ${HEARDLE_TR_WEB_URL}`;
 }
 
 function GameResult({ songConfig }: { songConfig: any }) {
