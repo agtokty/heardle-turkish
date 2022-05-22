@@ -19,15 +19,15 @@ function decodeTurkishCharacters(text: string) {
 }
 
 const checkStrings = (expected: string, userAnswer: string) => {
-    similarity(expected, userAnswer);
+    const similarityScore = similarity(expected, userAnswer);
 
     let expectedTemp = (expected || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
     let userAnswerTemp = (userAnswer || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
 
     expectedTemp = decodeTurkishCharacters(expectedTemp);
-    expectedTemp = decodeTurkishCharacters(userAnswerTemp);
+    userAnswerTemp = decodeTurkishCharacters(userAnswerTemp);
 
-    if (expected === userAnswer) {
+    if (expected === userAnswer || expectedTemp === userAnswerTemp) {
         return true;
     }
 
