@@ -99,30 +99,9 @@ function GameResult({ songConfig }: { songConfig: any }) {
     }
   }
 
-  // const onFacebookShareClicked = () => {
-  //   const url = 'https://work.workplace.com/sharer.php?display=popup&u=' + window.location.href;
-  //   const options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
-  //   const winProxy = window.open(url, 'sharer', '_blank');
-  //   if (winProxy) {
-  //     winProxy.focus();
-  //   }
-  // }
-
   return (
     <div className="w-full flex flex-col flex-grow relative">
       <div className="max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto">
-        {/* <div className="flex items-center justify-center mt-3">
-          <div className="bg-gray-800 p-5 rounded-lg w-50 group max-w-xs" >
-            <img src={songConfig.image} className="w-full rounded shadow" alt={"Albüm cover of " + songConfig.album} />
-            <h3 className="text-gray-200 font-bold mt-5 text-sm" title="Sanatçı">
-              {songConfig.artist}
-            </h3>
-            <h3 className="text-gray-200 font-normal text-sm" title="Şarkı">
-              {songConfig.song}
-            </h3>
-            <p className="text-gray-400 mt-2 text-xs" title="Albüm">{songConfig.album}</p>
-          </div>
-        </div> */}
         <div className="p-3 pb-0 flex-col items-evenly">
           {
             songConfig.showSoundCloud &&
@@ -162,7 +141,6 @@ function GameResult({ songConfig }: { songConfig: any }) {
             guessScore > -1 && guessScore < 6 &&
             <>
               <p className="text-lg text-custom-line">{GAME_RESULT_MESSAGES[guessScore]}</p>
-              {/* <p className="py-1">You got today's Heardle within 1  second.</p> */}
             </>
           }
           {
