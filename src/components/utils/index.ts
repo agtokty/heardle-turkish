@@ -36,9 +36,12 @@ function getDayParts() {
 
 function getDayStrAsPath() {
     const { year, month, day } = getDayParts();
+    return  `${year}/${month}/${day}`;
+}
 
-    let newFormat = `${year}/${month}/${day}`;
-    return newFormat;
+function getDayFormattedText() {
+    const { year, month, day } = getDayParts();
+    return `${day}/${month}/${year}`;
 }
 
 function getDayStr() {
@@ -90,4 +93,4 @@ function editDistance(s1: string, s2: string) {
 }
 
 
-export { getDayStr, getDayStrAsPath, similarity }
+export { getDayStr, getDayStrAsPath, getDayFormattedText, similarity }
