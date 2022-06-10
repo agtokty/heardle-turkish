@@ -5,6 +5,7 @@ import SoundCloudLogo from '../icons/SoundCloudLogo.svg';
 import NextTimer from "./NextTimer";
 import { useState } from "react";
 import { GAME_RESULT_FAILED_MESSAGE, GAME_RESULT_MESSAGES, HEARDLE_SPOTIFY_LIST_URL, HEARDLE_TR_WEB_URL } from "../game/Constants";
+import { getDayStrAsPath } from "../utils";
 
 const buildScore = (guessList: any[]): number => {
   let max = 100;
@@ -64,9 +65,10 @@ const buildShareText = (guessList: any[]) => {
   console.debug(score)
 
   let icons = getResultIcons(guessList);
+  let todayStr = getDayStrAsPath();
 
   // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
-  return `${icons} \n #HeardleTr @HeardleTR \n \n ${HEARDLE_TR_WEB_URL}`;
+  return `${icons} \n #HeardleTr ${todayStr} \n \n ${HEARDLE_TR_WEB_URL}`;
 }
 
 function GameResult({ songConfig }: { songConfig: any }) {
