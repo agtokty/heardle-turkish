@@ -26,9 +26,9 @@ const buildScore = (guessList: any[]): number => {
 }
 
 const buildBoxIcons = (guessList: any[]) => {
-  let icons = guessList.map((item, i) => {
+  let icons = guessList.map(function(item, i){
     if (item.isSkipped) {
-      return "⬛"
+      return "⬛️"
     }
     if (item.isCorrect) {
       return "🟩"
@@ -36,11 +36,29 @@ const buildBoxIcons = (guessList: any[]) => {
     if (item.isSkipped === false && item.isCorrect === false && item.answer) {
       return "🟥"
     }
-    return "⬜️"
+    return "⬛️"
   }).join("");
 
   return icons;
 }
+
+const buildResultIcons = (guessList: any[]) => {
+  let icons = guessList.map(function(item, i){
+    if (item.isSkipped) {
+      return <p className="w-4 h-1 mx-0.5 bg-custom-mg"></p>
+    }
+    if (item.isCorrect) {
+      return <p className="w-4 h-1 mx-0.5 bg-custom-positive"></p>
+    }
+    if (item.isSkipped === false && item.isCorrect === false && item.answer) {
+      return <p className="w-4 h-1 mx-0.5 bg-custom-negative"></p>
+    }
+    return <p className="w-4 h-1 mx-0.5 bg-custom-fg"></p>
+  });
+
+  return icons;
+}
+
 
 const getSpeakerIcon = (score: number) => {
   if (score === 100) {
@@ -57,6 +75,12 @@ const getSpeakerIcon = (score: number) => {
 const getResultIcons = (guessList: any[]) => {
   let score = buildScore(guessList);
   console.log("score:", score)
+  return buildResultIcons(guessList);
+}
+
+const getBoxIcons = (guessList: any[]) => {
+  let score = buildScore(guessList);
+  console.log("score:", score)
   return getSpeakerIcon(score) + buildBoxIcons(guessList);
 }
 
@@ -64,7 +88,7 @@ const buildShareText = (guessList: any[]) => {
   let score = buildScore(guessList);
   console.debug(score)
 
-  let icons = getResultIcons(guessList);
+  let icons = getBoxIcons(guessList);
   let todayStr = getDayFormattedText();
 
   // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
@@ -109,11 +133,11 @@ function GameResult({ songConfig }: { songConfig: any }) {
             songConfig.showSoundCloud &&
             <a href={songConfig.soundCloudLink} title={"Ascolta " + songConfig.trackName + " su SoundCloud"} target="_blank" rel="noreferrer"
               className="no-underline song-link">
-              <div className="p-2 flex items-center rounded-sm bg-soundcloud">
-                <img src={songConfig.image} className="h-14 w-14 " alt="Fleetwood Mac - Dreams" />
+              <div className="flex items-center rounded-sm bg-soundcloud">
+                <img src={songConfig.image} className="h-24 w-24" />
                 <div className="flex-1 mx-3 text-white">
-                  <p className="">{songConfig.trackName}</p>
-                  <p className="text-sm ">{songConfig.album}</p>
+                  <p className="">{songConfig.song}</p>
+                  <p className="text-sm">{songConfig.artist}</p>
                 </div>
                 <div className="text-center flex justify-center">
                   <img src={SoundCloudLogo} alt={"Ascolta " + songConfig.trackName + " su SoundCloud"} />
@@ -127,18 +151,24 @@ function GameResult({ songConfig }: { songConfig: any }) {
               </div>
             </a>
           }
-          {
+          {/* {
             songConfig.soundCloudLink &&
             <div className="mt-2">
-              <iframe id="soundcloud" src={songConfig.soundCloudLink}
+              <iframe id="spotify" src={"https://w.soundcloud.com/player/?url=" + songConfig.soundCloudLink}
                 title={"Ascolta " + songConfig.trackName + " su Spotify"}
                 className="song-link"
                 width="100%" height="80" frameBorder="0" allowFullScreen={false}
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
-          }
+          } */}
         </div>
+        
         <div className="text-center px-3">
+          <div className="flex justify-center my-2"> 
+          {
+            getResultIcons(guessList)
+          }
+          </div> 
           {
             guessScore > -1 && guessScore < 6 &&
             <>
@@ -149,12 +179,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
             guessScore < 0 &&
             <p className="text-lg text-custom-line">{GAME_RESULT_FAILED_MESSAGE}</p>
           }
-
-          <div className="flex justify-center my-2">
-            {
-              getResultIcons(guessList)
-            }
-          </div>
+        
 
           <div className="flex flex-col justify-center items-center mt-3 pt-3">
             <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-slate-500 text-black"
