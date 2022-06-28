@@ -11,12 +11,12 @@ interface Map {
 const DEFAULT_SONG = {
     songLength: 30,
     breaks: [3, 8, 15, 21, 25, 30],
-    trackName: "Müslüm Gürses Hangimiz Sevmedik",
+    trackName: "Chicchi di riso",
     others: [],
-    album: "Senden Vazgecmem",
-    soundCloudLink: "https://soundcloud.com/dnz_aksoy/muslum-gurses-hangimiz-sevmedik",
+    album: "Banzai Lato arancione",
+    soundCloudLink: "https://soundcloud.com/frahquintale/chicchi-di-riso",
     showSoundCloud: false,
-    soundSpotifyLink: "https://open.spotify.com/embed/track/1Mw4JiiSl5EuE7SYfc5Vks",
+    soundSpotifyLink: "https://open.spotify.com/track/05ZaaO3XTZQ5rwBNGetYMV?si=f0b6f9361b384d96",
     image: "https://ia801302.us.archive.org/19/items/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8-20523301125.jpg"
 };
 
