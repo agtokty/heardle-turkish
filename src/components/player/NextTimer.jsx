@@ -7,7 +7,7 @@ function NextTimer() {
     useEffect(() => {
         let current = new Date();
         let countDownDate = current.setHours(23, 59, 59, 999);
-        // let countDownDate = current.setHours(18, 18, 59, 999);
+        //let countDownDate = current.setHours(18, 18, 59, 999);
         let lastMinute = 0;
 
         let interval = setInterval(function () {
@@ -20,11 +20,11 @@ function NextTimer() {
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                const result = hours + "s " + minutes + "d " + seconds + "s ";
+                const result = hours + ":" + minutes + ":" + seconds;
                 setCountDown(result);
 
                 if (lastMinute !== minutes) {
-                    const resultDetailed = hours + " saat " + minutes + " dakika ";
+                    const resultDetailed = hours + " ore " + minutes + " minuti ";
                     setCountDownTitle(resultDetailed);
                     lastMinute = minutes;
                 }
@@ -47,7 +47,7 @@ function NextTimer() {
     return (
         <>
             <div className="flex flex-col justify-center items-center mb-6 mx-3">
-                <div className="text-center text-custom-line text-sm">Sonraki Heardle:</div>
+                <div className="text-center text-custom-line text-sm">Prossimo Heardle: </div>
                 <div className="tracking-widest text-lg" title={countDownTitle}>{countDown}</div>
             </div>
         </>

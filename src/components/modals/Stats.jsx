@@ -18,7 +18,7 @@ function Stats() {
                 <div className="bg-custom-bg border border-custom-mg p-6 rounded">
                     <div className="flex items-center justify-center mb-6">
                         <div className="flex-1 pl-7">
-                            <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">Istatistikler</h2>
+                            <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">Statistiche</h2>
                         </div>
                         <div className="justify-self-end flex">
                             <button autofocus="" className="border-none text-custom-mg" type="button"

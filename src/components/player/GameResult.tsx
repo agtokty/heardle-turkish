@@ -4,7 +4,7 @@ import copy from 'copy-to-clipboard';
 import SoundCloudLogo from '../icons/SoundCloudLogo.svg';
 import NextTimer from "./NextTimer";
 import { useState } from "react";
-import { GAME_RESULT_FAILED_MESSAGE, GAME_RESULT_MESSAGES, HEARDLE_SPOTIFY_LIST_URL, HEARDLE_TR_WEB_URL } from "../game/Constants";
+import { GAME_RESULT_FAILED_MESSAGE, GAME_RESULT_MESSAGES, HEARDLE_SPOTIFY_LIST_URL, HEARDLE_IT_WEB_URL } from "../game/Constants";
 import { getDayFormattedText } from "../utils";
 
 const buildScore = (guessList: any[]): number => {
@@ -68,7 +68,7 @@ const buildShareText = (guessList: any[]) => {
   let todayStr = getDayFormattedText();
 
   // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
-  return `${icons} \n #HeardleTr ${todayStr} \n \n ${HEARDLE_TR_WEB_URL}`;
+  return `${icons} \n #HeardleIt ${todayStr} \n \n ${HEARDLE_IT_WEB_URL}`;
 }
 
 function GameResult({ songConfig }: { songConfig: any }) {
@@ -93,7 +93,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
 
   const onTwitterShareClicked = () => {
     const text = buildShareText(guessList);
-    const url = `https://twitter.com/intent/tweet?original_referer=${HEARDLE_TR_WEB_URL}&text=${encodeURIComponent(text)}`;
+    const url = `https://twitter.com/intent/tweet?original_referer=${HEARDLE_IT_WEB_URL}&text=${encodeURIComponent(text)}`;
 
     const winProxy = window.open(url, '_blank');
     if (winProxy) {
@@ -107,7 +107,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
         <div className="p-3 pb-0 flex-col items-evenly">
           {
             songConfig.showSoundCloud &&
-            <a href={songConfig.soundCloudLink} title={"SoundCloud uzerinden " + songConfig.trackName + " dinle"} target="_blank" rel="noreferrer"
+            <a href={songConfig.soundCloudLink} title={"Ascolta " + songConfig.trackName + " su SoundCloud"} target="_blank" rel="noreferrer"
               className="no-underline song-link">
               <div className="p-2 flex items-center rounded-sm bg-soundcloud">
                 <img src={songConfig.image} className="h-14 w-14 " alt="Fleetwood Mac - Dreams" />
@@ -116,7 +116,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
                   <p className="text-sm ">{songConfig.album}</p>
                 </div>
                 <div className="text-center flex justify-center">
-                  <img src={SoundCloudLogo} alt={"Soundcloud üzerinden " + songConfig.trackName + " dinle"} />
+                  <img src={SoundCloudLogo} alt={"Ascolta " + songConfig.trackName + " su SoundCloud"} />
                 </div>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -128,10 +128,10 @@ function GameResult({ songConfig }: { songConfig: any }) {
             </a>
           }
           {
-            songConfig.soundSpotifyLink &&
+            songConfig.soundCloudLink &&
             <div className="mt-2">
-              <iframe id="spotify" src={songConfig.soundSpotifyLink + "?utm_source=heardle-tr.app"}
-                title={"Spotify uzerinden " + songConfig.trackName + " dinle"}
+              <iframe id="soundcloud" src={songConfig.soundCloudLink}
+                title={"Ascolta " + songConfig.trackName + " su Spotify"}
                 className="song-link"
                 width="100%" height="80" frameBorder="0" allowFullScreen={false}
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
@@ -159,15 +159,15 @@ function GameResult({ songConfig }: { songConfig: any }) {
           <div className="flex flex-col justify-center items-center mt-3 pt-3">
             <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-slate-500 text-black"
               onClick={onCopyClicked}>
-              {showCopied ? "Kopyalandi" : "Sonucu Kopyala"}
+              {showCopied ? "Copiato" : "Condividi"}
             </button>
-            <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-cyan-400 text-black"
+            {/* <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-cyan-400 text-black"
               onClick={onTwitterShareClicked}>
               Twitter'da Paylaş
-            </button>
+            </button> */}
             <a className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-green-500 text-black"
               href={HEARDLE_SPOTIFY_LIST_URL} target="_blank" rel="noreferrer">
-              Daha önce çıkan tüm şarkılar - Spotify
+              Spotify
             </a>
           </div>
         </div>

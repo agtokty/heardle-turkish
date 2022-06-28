@@ -51,7 +51,7 @@ function App() {
             <>
               <div className="max-w-screen-sm w-full mx-auto flex-col" >
                 <div className="text-center m-3 mt-6">
-                  Yükleniyor...
+                  Caricamento...
                 </div>
               </div>
               .</>

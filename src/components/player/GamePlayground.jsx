@@ -33,7 +33,7 @@ function GamePlayground() {
                                         {SKIP_ICON}
                                     </div>
                                     <div className="flex flex-1 justify-between items-center">
-                                        <div className="text-custom-mg tracking-widest font-semibold">İLERLETİLDİ</div>
+                                        <div className="text-custom-mg tracking-widest font-semibold">SALTATO</div>
                                     </div>
                                 </>);
                             } else if (guess.isSkipped === false && guess.isCorrect === false && guess.answer != "") {

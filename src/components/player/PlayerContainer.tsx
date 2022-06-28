@@ -56,8 +56,8 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
             callback([]);
             return;
         }
-
-        fetch('https://ws.audioscrobbler.com/2.0/?method=track.search&api_key=fafacade98a9cbfbf05e65fa63daf105&format=json&track=' + inputValue)
+//fafacade98a9cbfbf05e65fa63daf105
+        fetch('https://ws.audioscrobbler.com/2.0/?method=track.search&api_key=48fec4d16077b7d1437f1472e9de1fad&format=json&track=' + inputValue)
             .then(response => response.json())
             .then((response) => {
                 let result = [];
@@ -114,7 +114,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             DropdownIndicator: () => null,
                                             IndicatorSeparator: () => null
                                         }}
-                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Arama yapmak icin en az 3 karakter girmelisiniz" : "Sonuc bulunamadi"}
+                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Devi inserire almeno 3 caratteri per cercare" : "Nessun Risultato"}
                                         placeholder={"Inserisci il titolo della canzone"}
                                         loadOptions={loadOptions}
                                         value={selectedSong}
@@ -136,7 +136,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                     <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onSkipClicked}>
-                                        İlerlet
+                                        Salta
                                     </button>
                                 }
                                 {
@@ -144,7 +144,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                     <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onFinishClicked}>
-                                        Bitir
+                                        Stop
                                     </button>
                                 }
                                 {
@@ -152,7 +152,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                     <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm rounded bg-custom-positive"
                                         type="submit"
                                         onClick={onSendClicked}>
-                                        Tahmin Gönder
+                                        Conferma
                                     </button>
                                 }
                             </div>

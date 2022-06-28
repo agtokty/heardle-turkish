@@ -19,7 +19,7 @@ function HowToPlay() {
                 <div className="bg-custom-bg border border-custom-mg p-6 rounded">
                     <div className="flex items-center justify-center mb-6">
                         <div className="flex-1 pl-7">
-                            <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">nasil oynanir</h2>
+                            <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">Come giocare</h2>
                         </div>
                         <div className="justify-self-end flex">
                             <button autoFocus="" className="border-none text-custom-mg" type="button" aria-label="Kapat" title="Kapat"
@@ -44,7 +44,7 @@ function HowToPlay() {
                             </div>
                             <div>
                                 <p>
-                                    Şarkı girişini dinleyerek sanatçı ve şarkıyı tahmin edin.
+                                    Indovina l'artista e la canzone ascoltando la canzone.
                                 </p>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ function HowToPlay() {
                             </div>
                             <div>
                                 <p>
-                                    Tahminlerinizi arama kutusuna yazip cikan sonuclardan birini sectikten sonra gonder butonuna basin.
+                                    Dopo aver digitato le canzone nella casella di ricerca e aver scelto uno dei risultati, premi il pulsante di invio.
                                 </p>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ function HowToPlay() {
                                 </svg>
                             </div>
                             <div>
-                                <p>Yanlış veya atlanan tahminler şarkının bir sonraki kısmını açar.</p>
+                                <p>Le previsioni sbagliate o saltate sbloccano la parte successiva del brano.</p>
                             </div>
                         </div>
                         <div className="flex items-center mb-6">
@@ -83,21 +83,21 @@ function HowToPlay() {
                                 </svg>
                             </div>
                             <div>
-                                <p>Mümkün olduğunca az denemede doğru tahmin edin ve puanınızı paylaşın.</p>
+                                <p>Indovina correttamente nel minor numero di tentativi possibili e condividi il tuo punteggio.</p>
                             </div>
                         </div>
                         <div className="justify-center flex py-2 mt-2">
                             <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm bg-custom-positive"
-                                type="button" aria-label="başla" title="Başla"
+                                type="button" aria-label="başla" title="Inzia"
                                 onClick={() => onStart()}>
-                                başla
+                                Inizia
                             </button>
                         </div>
                     </div>
                     <p className="text-xs mt-3 text-center text-custom-line">
-                        Bu uygulamayı kullanarak, kullanıcı deneyiminizi artırmak amaçlı
-                        <a href="https://policies.google.com/technologies/partner-sites"> Google</a>, <a href="https://developer.spotify.com/documentation/widgets/terms/"> Spotify</a> ve
-                        <a href="https://soundcloud.com/pages/privacy"> Soundcloud</a> teknolojilerini kullanmayı kabul etmiş olursunuz.
+                        Utilizza questa applicazione, per migliorare la tua esperienza utente
+                        <a href="https://policies.google.com/technologies/partner-sites"> Google</a>, <a href="https://developer.spotify.com/documentation/widgets/terms/"> Spotify</a> e
+                        <a href="https://soundcloud.com/pages/privacy"> Soundcloud</a>
                     </p>
                 </div>
             </div>

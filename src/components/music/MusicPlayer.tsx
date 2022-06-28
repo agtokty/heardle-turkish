@@ -153,7 +153,7 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
                     (
                         <div className="border-t border-custom-line p-3">
                             <div className="text-center max-w-screen-sm w-full mx-auto flex-col">
-                                player yukleniyor...
+                                caricamento...
                             </div>
                         </div>
                     )
