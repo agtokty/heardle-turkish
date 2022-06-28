@@ -7,16 +7,6 @@ const replaceAll = (target: string, search: string, replacement: string) => {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
-function decodeTurkishCharacters(text: string) {
-    text = replaceAll(text, "ğ", "g");
-    text = replaceAll(text, "ü", "u");
-    text = replaceAll(text, "ş", "s");
-    text = replaceAll(text, "ı", "i");
-    text = replaceAll(text, "ö", "o");
-    text = replaceAll(text, "ç", "c");
-    text = replaceAll(text, "â", "a");
-    return text;
-}
 
 const checkStrings = (expected: string, userAnswer: string) => {
     const similarityScore = similarity(expected, userAnswer);
@@ -24,8 +14,6 @@ const checkStrings = (expected: string, userAnswer: string) => {
     let expectedTemp = (expected || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
     let userAnswerTemp = (userAnswer || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
 
-    expectedTemp = decodeTurkishCharacters(expectedTemp);
-    userAnswerTemp = decodeTurkishCharacters(userAnswerTemp);
 
     if (expected === userAnswer || expectedTemp === userAnswerTemp) {
         return true;
@@ -33,8 +21,6 @@ const checkStrings = (expected: string, userAnswer: string) => {
 
     let expectedLocaleTemp = (expected || "").toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
     let userAnswerLocaleTemp = (userAnswer || "").toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
-    expectedLocaleTemp = decodeTurkishCharacters(expectedLocaleTemp);
-    userAnswerLocaleTemp = decodeTurkishCharacters(userAnswerLocaleTemp);
 
     return expectedLocaleTemp === userAnswerLocaleTemp;
 }

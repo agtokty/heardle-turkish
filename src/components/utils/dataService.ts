@@ -2,7 +2,8 @@
 import { getDatabase, ref, onValue } from "firebase/database";
 import { getDayStr, getDayStrAsPath } from ".";
 import { SongConfig } from "../game/Models";
-import app from "./firebase";
+//import app from "./firebase";
+import "./firebase";
 
 interface Map {
     [key: string]: any
@@ -34,13 +35,17 @@ export const getDailySong = (): Promise<any> => {
     return new Promise<SongConfig>((resolve, reject) => {
 
         let day = getDayStrAsPath()
-        const database = getDatabase(app);
+
+        const database = getDatabase();
         const songRef = ref(database, 'songs/' + day);
+
 
         onValue(songRef, (snapshot) => {
             const data = snapshot.val();
+            console.log(data)
             if (data) {
                 resolve(data);
+                console.log("Dentro if")
             } else {
                 resolve(hardCodedSong)
             }

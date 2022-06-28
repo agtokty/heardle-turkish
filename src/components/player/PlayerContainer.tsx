@@ -115,7 +115,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             IndicatorSeparator: () => null
                                         }}
                                         noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Arama yapmak icin en az 3 karakter girmelisiniz" : "Sonuc bulunamadi"}
-                                        placeholder={"Tahmin ettiğiniz şarkıyı/sanatçıyı aratıp seçin."}
+                                        placeholder={"Inserisci il titolo della canzone"}
                                         loadOptions={loadOptions}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}

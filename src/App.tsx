@@ -35,6 +35,7 @@ function App() {
       setCurrentSongConfig(songConfig);
       setLoading(false)
     })
+    
 
   }, [])
 
