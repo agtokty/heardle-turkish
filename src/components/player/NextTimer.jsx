@@ -20,7 +20,7 @@ function NextTimer() {
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                const result = hours + ":" + minutes + ":" + seconds;
+                const result = hours.length < 2 ? "0"+hours : hours + ":" + minutes + ":" + seconds;
                 setCountDown(result);
 
                 if (lastMinute !== minutes) {

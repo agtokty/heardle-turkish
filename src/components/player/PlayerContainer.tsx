@@ -144,7 +144,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                     <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onFinishClicked}>
-                                        Stop
+                                        Non la so
                                     </button>
                                 }
                                 {
