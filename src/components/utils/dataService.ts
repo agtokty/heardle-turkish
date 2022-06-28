@@ -14,11 +14,11 @@ const DEFAULT_SONG = {
     breaks: [3, 8, 15, 21, 25, 30],
     trackName: "Chicchi di riso",
     others: [],
-    album: "Banzai Lato arancione",
+    album: "Banzai (Lato arancio)",
     soundCloudLink: "https://soundcloud.com/frahquintale/chicchi-di-riso",
-    showSoundCloud: false,
+    showSoundCloud: true,
     soundSpotifyLink: "https://open.spotify.com/track/05ZaaO3XTZQ5rwBNGetYMV?si=f0b6f9361b384d96",
-    image: "https://ia801302.us.archive.org/19/items/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8/mbid-bb07d3ca-e079-412f-a0d1-34f7361a25c8-20523301125.jpg"
+    image: "https://i1.sndcdn.com/artworks-2jjAeyOoVrfS-0-t500x500.png"
 };
 
 const SONG_DATABASE: Map = {}
