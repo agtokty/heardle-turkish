@@ -16,11 +16,15 @@ function NextTimer() {
             let timeLeft = countDownDate - now;
 
             if (timeLeft >= 0) {
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                const result = hours.length < 2 ? "0"+hours : hours + ":" + minutes + ":" + seconds;
+                hours = hours < 10 ? ("0"+hours) : hours;
+                minutes = minutes < 10 ? ("0"+minutes) : minutes;
+                seconds = seconds < 10 ? ("0"+seconds) : seconds;
+
+                const result = hours + ":" + minutes + ":" + seconds;
                 setCountDown(result);
 
                 if (lastMinute !== minutes) {
