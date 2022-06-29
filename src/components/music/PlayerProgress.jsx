@@ -10,7 +10,7 @@ function PlayerProgress({ currentPositionInMilis, playerSlicePercentagesInSecond
     const percentage = (currentPositionInMilis / (maxStepLength * 10));
 
     return (
-        <div className="border-t border-custom-line">
+        <div className="border-t border-gray-500">
             <div className="max-w-screen-sm w-full mx-auto px-3 flex-col">
                 <div className="h-3 w-full relative overflow-hidden ">
                     <div className="h-full absolute bg-custom-mg overflow-hidden" style={{ width: availablePercentage + "%" }}>
@@ -20,10 +20,16 @@ function PlayerProgress({ currentPositionInMilis, playerSlicePercentagesInSecond
                         <div className="bg-custom-line w-px h-full absolute right-0"></div>
                         {
                             playerSlicePercentagesInSeconds.map((percentage, index) => {
-                                if (index > openedStep)
-                                    return <div key={index} className="w-px h-full absolute bg-custom-mg" style={{ left: percentage + "%" }}></div>
-                                else
+                                console.log(index);
+                                console.log(openedStep);
+                                if(index === openedStep)
                                     return <div key={index} className="w-px h-full absolute bg-custom-fg" style={{ left: percentage + "%" }}></div>
+                                else
+                                    return <div key={index} className="w-px h-full absolute bg-custom-mg" style={{ left: percentage + "%" }}></div>
+                                // if (index > openedStep)
+                                //     return <div key={index} className="w-px h-full absolute bg-custom-mg" style={{ left: percentage + "%" }}></div>
+                                // else
+                                //     return <div key={index} className="w-px h-full absolute bg-custom-fg" style={{ left: percentage + "%" }}></div>
                             })
                         }
                         <div className="bg-custom-mg w-px h-full absolute right-0"></div>

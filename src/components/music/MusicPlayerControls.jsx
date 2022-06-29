@@ -32,7 +32,7 @@ function MusicPlayerControls({ currentPositionInMilis, songLengthInSeconds, isPl
 
     return (
         <>
-            <div className="border-t border-custom-line">
+            <div className="border-t border-gray-500">
                 <div className="max-w-screen-sm w-full mx-auto flex-col">
                     <div className="px-3 ">
                         <div className="flex justify-between items-center">

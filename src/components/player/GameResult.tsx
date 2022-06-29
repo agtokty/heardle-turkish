@@ -36,7 +36,7 @@ const buildBoxIcons = (guessList: any[]) => {
     if (item.isSkipped === false && item.isCorrect === false && item.answer) {
       return "🟥"
     }
-    return "⬛️"
+    return "⬜"
   }).join("");
 
   return icons;
