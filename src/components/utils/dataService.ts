@@ -10,8 +10,8 @@ interface Map {
 }
 
 const DEFAULT_SONG = {
-    songLength: 30,
-    breaks: [3, 8, 15, 21, 25, 30],
+    songLength: 16,
+    breaks: [1, 2, 4, 7, 11, 16],
     trackName: "Chicchi di riso",
     others: [],
     album: "Banzai (Lato arancio)",

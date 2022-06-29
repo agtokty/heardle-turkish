@@ -5,4 +5,3 @@ Constants.ts:
 
 
 - change API search
-- change UI language
