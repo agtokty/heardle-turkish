@@ -92,7 +92,7 @@ const buildShareText = (guessList: any[]) => {
   let todayStr = getDayFormattedText();
 
   // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
-  return `${icons} \n #HeardleIt ${todayStr} \n \n ${HEARDLE_IT_WEB_URL}`;
+  return `${icons} \n #HeardleItalia ${todayStr} \n \n ${HEARDLE_IT_WEB_URL}`;
 }
 
 function GameResult({ songConfig }: { songConfig: any }) {

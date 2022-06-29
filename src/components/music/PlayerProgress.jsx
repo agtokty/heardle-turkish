@@ -24,12 +24,10 @@ function PlayerProgress({ currentPositionInMilis, playerSlicePercentagesInSecond
                                 console.log(openedStep);
                                 if(index === openedStep)
                                     return <div key={index} className="w-px h-full absolute bg-custom-fg" style={{ left: percentage + "%" }}></div>
-                                else
+                                else if( index > openedStep)
                                     return <div key={index} className="w-px h-full absolute bg-custom-mg" style={{ left: percentage + "%" }}></div>
-                                // if (index > openedStep)
-                                //     return <div key={index} className="w-px h-full absolute bg-custom-mg" style={{ left: percentage + "%" }}></div>
-                                // else
-                                //     return <div key={index} className="w-px h-full absolute bg-custom-fg" style={{ left: percentage + "%" }}></div>
+                                else
+                                    return <div key={index} className="w-px h-full absolute bg-custom-bg" style={{ left: percentage + "%" }}></div>
                             })
                         }
                         <div className="bg-custom-mg w-px h-full absolute right-0"></div>
