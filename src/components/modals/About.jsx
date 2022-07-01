@@ -28,7 +28,7 @@ function About() {
                   </div>
                </div>
                <div className="text">
-                  <p className="mb-3"><a href="https://www.heardleita.netlify.app/" target="_blank" rel="noreferrer" title="Heardle">Heardle</a>, la versione italiana di Heardle.</p>
+                  <p className="mb-3"><a href="https://www.heardleita.netlify.app/" target="_blank" rel="noreferrer" title="Heardle">Heardle Italia</a>, indovina i più grandi successi Italiani.</p>
                   <p className="mb-3">Le canzoni vengono scelte casualmente ogni giorno.</p>
                   <p className="mb-3">Amore per gli artisti e tutti i detentori del copyright le cui canzoni vengono riprodotte in questa app.</p>
                   {/* <p class="mb-3">
@@ -39,18 +39,19 @@ function About() {
                      </a>
                   </p> */}
                   <p className="text-sm mb-1 text-custom-line">Piattaforme utilizzate:</p>
-                  <ul className="text-sm text-custom-line">
-                     <li><a href="https://firebase.google.com/" target="_blank" rel="https://firebase.google.com/">firebase</a></li>
-                     <li><a href="https://developers.soundcloud.com/docs/api/html5-widget" target="_blank" rel="https://soundcloud.com/">soundcloud</a></li>
-                     <li><a href="https://reactjs.org/" target="_blank" rel="https://it.reactjs.org/">react</a></li>
-                     <li><a href="https://tailwindcss.com" target="_blank" rel="noreferrer">tailwind</a></li>
-                  </ul>
+                  <p className="text-sm text-custom-line">
+                     <a href="https://firebase.google.com/" target="_blank" rel="https://firebase.google.com/">Firebase, </a>
+                     <a href="https://developers.soundcloud.com/docs/api/html5-widget" target="_blank" rel="https://soundcloud.com/">Soundcloud, </a>
+                     <a href="https://developer.spotify.com/" target="_blank" rel="https://developer.spotify.com/">Spotify, </a>
+                     <a href="https://reactjs.org/" target="_blank" rel="https://it.reactjs.org/">React e </a>
+                     <a href="https://tailwindcss.com" target="_blank" rel="noreferrer">Tailwind</a>
+                  </p>
                   <p className="pt-3 mb-3 text-xs text-custom-line">
                      Sviluppatori: 
-                     <ul>
-                        <li><a href="https://github.com/P0WEX" target="_blank" rel="noreferrer" title="P0WEX">P0WEX</a></li>
-                        <li><a href="https://github.com/s-dimaria" target="_blank" rel="noreferrer" title="s-dimaria">s-dimaria</a></li>
-                     </ul>
+                     <p>
+                        <a href="https://github.com/P0WEX" target="_blank" rel="noreferrer" title="P0WEX">P0WEX e </a>
+                        <a href="https://github.com/s-dimaria" target="_blank" rel="noreferrer" title="s-dimaria">s-dimaria</a>
+                     </p>
                   </p>
                </div>
             </div>

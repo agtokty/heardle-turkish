@@ -51,7 +51,7 @@ function NextTimer() {
     return (
         <>
             <div className="flex flex-col justify-center items-center mb-6 mx-3">
-                <div className="text-center text-custom-line text-sm">Prossimo Heardle: </div>
+                <div className="text-center text-custom-line text-sm">Prossimo Heardle in: </div>
                 <div className="tracking-widest text-lg font-semibold" title={countDownTitle}>{countDown}</div>
             </div>
         </>
