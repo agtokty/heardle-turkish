@@ -51,12 +51,61 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
         dispatch(({ type: "FINISH" }));
     }
 
+    const options = [
+        { label: 'Blanco - Paraocchi', value: "Blanco Paraocchi"},
+        { label: 'Blanco - Prova', value: "Blanco Prova"},
+        { label: 'Blanco - Prova', value: "Blanco Prova"},
+        { label: 'Frah Quintale - Chicchi di riso', value: 'Frah Quintale Chicchi di riso' },
+        { label: 'Ghali - Cara Italia', value: 'Ghali Cara Italia' },
+        { label: 'Octopus', value: 'Octopus' },
+        { label: 'Crab', value: 'Crab' },
+        { label: 'Lobster', value: 'Lobster' },
+      ];
+      
+      
+    //const sortedOptions = [...options].sort((a,b) => a.label.localeCompare(b.label))
+
+    const loadOptions2 = (inputValue: string, callback: (res: any[]) => void) => {
+
+        let sortedOptions = [...options].sort((a,b) => a.label.localeCompare(b.label))
+        if (!inputValue || inputValue.trim().length < 3) {
+            callback([]);
+            return;
+        }
+        else {
+        [...sortedOptions].forEach(value => {
+            if(value.value.toLowerCase()===inputValue.toLowerCase()) {
+                var index = sortedOptions.indexOf(value); 
+                sortedOptions.forEach(value => {
+                    if(sortedOptions[index]!=value)
+                    delete sortedOptions[sortedOptions.indexOf(value)]
+                })
+                callback(sortedOptions)
+                return
+            }
+            else if(value.value.toLowerCase().includes(inputValue.toLowerCase())) {
+                sortedOptions.forEach(value =>{
+                    if(!value.value.toLowerCase().includes(inputValue.toLowerCase())) {
+                        delete sortedOptions[sortedOptions.indexOf(value)]
+                    }
+                })
+                callback(sortedOptions)
+            }
+            return
+        })
+        callback([])
+        return
+       
+    }
+}
+      
+
     const loadOptions = (inputValue: string, callback: (res: any[]) => void) => {
         if (!inputValue || inputValue.trim().length < 3) {
             callback([]);
             return;
         }
-//http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=spain&api_key=YOUR_API_KEY&format=json
+            //http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=spain&api_key=YOUR_API_KEY&format=json
         fetch('https://ws.audioscrobbler.com/2.0/?method=track.search&api_key=48fec4d16077b7d1437f1472e9de1fad&format=json&limit=5&track=' + inputValue)
             .then(response => response.json())
             .then((response) => {
@@ -87,7 +136,9 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
 
     const handleInputChange = (newValue: OnChangeValue<any, any>) => {
         if (newValue) {
+            console.log(newValue)
             setSelectedSong(newValue);
+            console.log("value:", newValue.value)
             setAnswer(newValue.value);
         }
     };
@@ -114,9 +165,9 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             DropdownIndicator: () => null,
                                             IndicatorSeparator: () => null
                                         }}
-                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Devi inserire almeno 3 caratteri per cercare" : "Nessun Risultato"}
+                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Devi inserire almeno 3 caratteri per cercare" : "Nessuna Corrispondenza"}
                                         placeholder={"Inserisci il titolo della canzone"}
-                                        loadOptions={loadOptions}
+                                        loadOptions={loadOptions2}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}
                                         // inputProps={{ 'aria-labelledby': 'react-select-2-placeholder' }}
@@ -127,7 +178,8 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             noOptionsMessage: base => ({ ...base, color: "red" }),
                                             loadingMessage: base => ({ ...base, color: "black" }),
                                         }}
-                                        onChange={handleInputChange} />
+                                        onChange={handleInputChange} 
+                                        maxMenuHeight={150}/>
                                 </div>
                             </div>
                             <div className="flex justify-between pt-3">
