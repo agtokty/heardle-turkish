@@ -1,7 +1,0 @@
-
-Constants.ts:
-- change url spotify playlist of previusly music
-- change url web app 
-
-
-- change API search
