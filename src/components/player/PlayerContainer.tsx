@@ -114,8 +114,8 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             DropdownIndicator: () => null,
                                             IndicatorSeparator: () => null
                                         }}
-                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Devi inserire almeno 3 caratteri per cercare" : "Nessun Risultato"}
-                                        placeholder={"Inserisci il titolo della canzone"}
+                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Inserisci almeno 3 caratteri per cercare " : "Nessun Risultato"}
+                                        placeholder={"Inserisci l'artista e il titolo della canzone"}
                                         loadOptions={loadOptions}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}

@@ -95,8 +95,8 @@ function HowToPlay() {
                         </div>
                     </div>
                     <p className="text-xs mt-3 text-center text-custom-line">
-                        Utilizza questa applicazione, per migliorare la tua esperienza utente
-                        <a href="https://policies.google.com/technologies/partner-sites"> Google</a>, <a href="https://developer.spotify.com/documentation/widgets/terms/"> Spotify</a> e
+                        Per migliorare la tua esperienza utente questa applicazione usa: 
+                        <a href="https://policies.google.com/technologies/partner-sites"> Google</a>, <a href="https://developer.spotify.com/policy/"> Spotify</a> e
                         <a href="https://soundcloud.com/pages/privacy"> Soundcloud</a>
                     </p>
                 </div>
