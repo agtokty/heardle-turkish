@@ -11,6 +11,7 @@ import MusicPlayer from "../music/MusicPlayer";
 import { checkAnswer } from "../game/Utils";
 import { OnChangeValue } from "react-select";
 import { SongConfig } from "../game/Models";
+import {getListTracks} from "../utils/spotifyService";
 
 
 type AudioscrobblerResult = {
@@ -18,7 +19,9 @@ type AudioscrobblerResult = {
     name: string
 }
 
-function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
+
+
+function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, accessToken: string}) {
 
     const [answer, setAnswer] = useState("");
     const [selectedSong, setSelectedSong] = useState("");
@@ -62,8 +65,22 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
         { label: 'Lobster', value: 'Lobster' },
       ];
       
-      
+
     //const sortedOptions = [...options].sort((a,b) => a.label.localeCompare(b.label))
+
+
+    const loadListTracks = (inputValue: string, callback: (res: any[]) => void) => {
+
+        let sortedOptions = [...options].sort((a,b) => a.label.localeCompare(b.label))
+        if (!inputValue || inputValue.trim().length < 3) {
+            callback([]);
+            return;
+        }
+        
+        const listTracks = getListTracks(accessToken);
+        console.log(listTracks)
+
+    }
 
     const loadOptions2 = (inputValue: string, callback: (res: any[]) => void) => {
 
@@ -80,7 +97,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                     if(sortedOptions[index]!=value)
                     delete sortedOptions[sortedOptions.indexOf(value)]
                 })
-                callback(sortedOptions)
+             callback(sortedOptions)   
                 return
             }
             else if(value.value.toLowerCase().includes(inputValue.toLowerCase())) {
@@ -167,7 +184,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                         }}
                                         noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Devi inserire almeno 3 caratteri per cercare" : "Nessuna Corrispondenza"}
                                         placeholder={"Inserisci il titolo della canzone"}
-                                        loadOptions={loadOptions2}
+                                        loadOptions={loadListTracks}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}
                                         // inputProps={{ 'aria-labelledby': 'react-select-2-placeholder' }}

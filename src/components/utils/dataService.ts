@@ -2,7 +2,6 @@
 import { getDatabase, ref, onValue } from "firebase/database";
 import { getDayStr, getDayStrAsPath } from ".";
 import { SongConfig } from "../game/Models";
-//import app from "./firebase";
 import "./firebase";
 
 interface Map {
