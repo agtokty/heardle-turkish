@@ -97,25 +97,25 @@ function Stats() {
                     <div className="flex justify-between text-center w-full py-3">
                         <div className="flex-1">
                             <div className="text-xl font-semibold">0</div>
-                            <div className="text-custom-line text-sm ">Oynama</div>
+                            <div className="text-custom-line text-sm ">Partite</div>
                         </div>
                         <div className="flex-1">
                             <div className="text-xl font-semibold">0</div>
-                            <div className="text-custom-line text-sm ">Kazanma</div>
+                            <div className="text-custom-line text-sm ">Vittorie</div>
                         </div>
                         <div className="flex-1">
                             <div className="text-xl font-semibold">0%</div>
-                            <div className="text-custom-line text-sm">Kazanma Orani</div>
+                            <div className="text-custom-line text-sm">Percentuale di vincita</div>
                         </div>
                     </div>
                     <div className="flex justify-between text-center w-full py-3 pt-0">
                         <div className="flex-1">
                             <div className="text-xl font-semibold">0</div>
-                            <div className="text-custom-line text-sm">Guncel Puan</div>
+                            <div className="text-custom-line text-sm">Punteggio Attuale</div>
                         </div>
                         <div className="flex-1">
                             <div className="text-xl font-semibold">0</div>
-                            <div className="text-custom-line text-sm">En Yuksek Puan</div>
+                            <div className="text-custom-line text-sm">Miglior Punteggio</div>
                         </div>
                     </div>
                 </div>

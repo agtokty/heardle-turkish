@@ -15,7 +15,7 @@ const buildScore = (guessList: any[]): number => {
     return 0;
   }
 
-  // kaybedilecek puanlar: 12, 10, 8, 6, 4
+  // punit persi: 12, 10, 8, 6, 4
   for (let i = 0; i < guessList.length; i++) {
     if (guessList[i].isSkipped) {
       max = max - ((guessList.length - i) * 2);
@@ -182,17 +182,20 @@ function GameResult({ songConfig }: { songConfig: any }) {
         
 
           <div className="flex flex-col justify-center items-center mt-3 pt-3">
-            <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-slate-500 text-black"
+            <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm bg-custom-positive"
               onClick={onCopyClicked}>
-              {showCopied ? "Copiato" : "Condividi"}
+              {showCopied ? "Copiato" : "Condividi il risultato"}
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="16" fill="currentColor" viewBox="0 0 16 16"> <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/> </svg>
             </button>
             {/* <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-cyan-400 text-black"
               onClick={onTwitterShareClicked}>
               Twitter'da Paylaş
             </button> */}
-            <a className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-green-500 text-black"
+            </div>
+            <div className="flex flex-col justify-center items-center mt-3 pt-3">
+            <a className=" px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-green-500 text-black"
               href={HEARDLE_SPOTIFY_LIST_URL} target="_blank" rel="noreferrer">
-              Spotify
+              Playlist di Spotify
             </a>
           </div>
         </div>
