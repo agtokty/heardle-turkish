@@ -33,6 +33,7 @@ function Header() {
                                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
                                 </svg>
                             </button>
+                            {/* Cuore */}
                             {/* <button
                                 className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm">
                                 <svg

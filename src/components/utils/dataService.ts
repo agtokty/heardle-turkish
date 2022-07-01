@@ -42,10 +42,8 @@ export const getDailySong = (): Promise<any> => {
 
         onValue(songRef, (snapshot) => {
             const data = snapshot.val();
-            console.log(data)
             if (data) {
                 resolve(data);
-                console.log("Dentro if")
             } else {
                 resolve(hardCodedSong)
             }

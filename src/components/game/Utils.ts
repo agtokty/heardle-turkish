@@ -3,11 +3,6 @@ import { STRING_COMPARE_LOCALE } from './Constants';
 import { SongConfig } from './Models';
 import { similarity } from '../utils'
 
-const replaceAll = (target: string, search: string, replacement: string) => {
-    return target.replace(new RegExp(search, 'g'), replacement);
-};
-
-
 const checkStrings = (expected: string, userAnswer: string) => {
     const similarityScore = similarity(expected, userAnswer);
 
