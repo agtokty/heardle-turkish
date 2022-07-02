@@ -1,0 +1,1672 @@
+{
+  "tracks": {
+    "href": "https://api.spotify.com/v1/search?query=Parao&type=track&market=IT&locale=it-IT%2Cit%3Bq%3D0.8%2Cen-US%3Bq%3D0.5%2Cen%3Bq%3D0.3&offset=0&limit=20",
+    "items": [
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+              },
+              "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+              "id": "1MRiIeZbc0cRuxOafDUCtH",
+              "name": "BLANCO",
+              "type": "artist",
+              "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7zFt7hLRPxemmlzVzg5uec"
+          },
+          "href": "https://api.spotify.com/v1/albums/7zFt7hLRPxemmlzVzg5uec",
+          "id": "7zFt7hLRPxemmlzVzg5uec",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2735880f9b11a2e6289f9db78d5",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e025880f9b11a2e6289f9db78d5",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048515880f9b11a2e6289f9db78d5",
+              "width": 64
+            }
+          ],
+          "name": "Blu Celeste",
+          "release_date": "2021-09-09",
+          "release_date_precision": "day",
+          "total_tracks": 12,
+          "type": "album",
+          "uri": "spotify:album:7zFt7hLRPxemmlzVzg5uec"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 156083,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "ITUM72100148"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/40zkeKA3HRN8Nzo6kbNOCp"
+        },
+        "href": "https://api.spotify.com/v1/tracks/40zkeKA3HRN8Nzo6kbNOCp",
+        "id": "40zkeKA3HRN8Nzo6kbNOCp",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Paraocchi",
+        "popularity": 67,
+        "preview_url": null,
+        "track_number": 6,
+        "type": "track",
+        "uri": "spotify:track:40zkeKA3HRN8Nzo6kbNOCp"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+              },
+              "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+              "id": "1MRiIeZbc0cRuxOafDUCtH",
+              "name": "BLANCO",
+              "type": "artist",
+              "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2JFiCRthCdXKwqZBbVulT7"
+          },
+          "href": "https://api.spotify.com/v1/albums/2JFiCRthCdXKwqZBbVulT7",
+          "id": "2JFiCRthCdXKwqZBbVulT7",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27357d81ce0fdb4bbe437cd41be",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0257d81ce0fdb4bbe437cd41be",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485157d81ce0fdb4bbe437cd41be",
+              "width": 64
+            }
+          ],
+          "name": "Paraocchi",
+          "release_date": "2021-02-25",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:2JFiCRthCdXKwqZBbVulT7"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 156083,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "ITUM72100148"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/3c1hhyuDTsP3hqRztpg2S5"
+        },
+        "href": "https://api.spotify.com/v1/tracks/3c1hhyuDTsP3hqRztpg2S5",
+        "id": "3c1hhyuDTsP3hqRztpg2S5",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Paraocchi",
+        "popularity": 61,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:3c1hhyuDTsP3hqRztpg2S5"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/22dFwJoRBV51ue5TGnC7Dt"
+              },
+              "href": "https://api.spotify.com/v1/artists/22dFwJoRBV51ue5TGnC7Dt",
+              "id": "22dFwJoRBV51ue5TGnC7Dt",
+              "name": "Beny Jr",
+              "type": "artist",
+              "uri": "spotify:artist:22dFwJoRBV51ue5TGnC7Dt"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/3LNh33Ndz0aHHwjS24pOcm"
+          },
+          "href": "https://api.spotify.com/v1/albums/3LNh33Ndz0aHHwjS24pOcm",
+          "id": "3LNh33Ndz0aHHwjS24pOcm",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27348242cee7c94eb25d30daa44",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0248242cee7c94eb25d30daa44",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485148242cee7c94eb25d30daa44",
+              "width": 64
+            }
+          ],
+          "name": "Parao",
+          "release_date": "2021-03-19",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:3LNh33Ndz0aHHwjS24pOcm"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/22dFwJoRBV51ue5TGnC7Dt"
+            },
+            "href": "https://api.spotify.com/v1/artists/22dFwJoRBV51ue5TGnC7Dt",
+            "id": "22dFwJoRBV51ue5TGnC7Dt",
+            "name": "Beny Jr",
+            "type": "artist",
+            "uri": "spotify:artist:22dFwJoRBV51ue5TGnC7Dt"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 155897,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "ES71G2114338"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/415usVkuXfjwpCoZYD0LqZ"
+        },
+        "href": "https://api.spotify.com/v1/tracks/415usVkuXfjwpCoZYD0LqZ",
+        "id": "415usVkuXfjwpCoZYD0LqZ",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Parao",
+        "popularity": 60,
+        "preview_url": "https://p.scdn.co/mp3-preview/aa39bb291de9efbae708372c9eed15692280ab81?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:415usVkuXfjwpCoZYD0LqZ"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5hdhHgpxyniooUiQVaPxQ0"
+              },
+              "href": "https://api.spotify.com/v1/artists/5hdhHgpxyniooUiQVaPxQ0",
+              "id": "5hdhHgpxyniooUiQVaPxQ0",
+              "name": "Nio Garcia",
+              "type": "artist",
+              "uri": "spotify:artist:5hdhHgpxyniooUiQVaPxQ0"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4axKuDPr6WKcDCyh8vueTY"
+              },
+              "href": "https://api.spotify.com/v1/artists/4axKuDPr6WKcDCyh8vueTY",
+              "id": "4axKuDPr6WKcDCyh8vueTY",
+              "name": "Luar La L",
+              "type": "artist",
+              "uri": "spotify:artist:4axKuDPr6WKcDCyh8vueTY"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2P9lxQ2xbisFSyu2bsReHf"
+          },
+          "href": "https://api.spotify.com/v1/albums/2P9lxQ2xbisFSyu2bsReHf",
+          "id": "2P9lxQ2xbisFSyu2bsReHf",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273ff93ac970f33a58c46d77f6a",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02ff93ac970f33a58c46d77f6a",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851ff93ac970f33a58c46d77f6a",
+              "width": 64
+            }
+          ],
+          "name": "Parao",
+          "release_date": "2021-11-01",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:2P9lxQ2xbisFSyu2bsReHf"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5hdhHgpxyniooUiQVaPxQ0"
+            },
+            "href": "https://api.spotify.com/v1/artists/5hdhHgpxyniooUiQVaPxQ0",
+            "id": "5hdhHgpxyniooUiQVaPxQ0",
+            "name": "Nio Garcia",
+            "type": "artist",
+            "uri": "spotify:artist:5hdhHgpxyniooUiQVaPxQ0"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4axKuDPr6WKcDCyh8vueTY"
+            },
+            "href": "https://api.spotify.com/v1/artists/4axKuDPr6WKcDCyh8vueTY",
+            "id": "4axKuDPr6WKcDCyh8vueTY",
+            "name": "Luar La L",
+            "type": "artist",
+            "uri": "spotify:artist:4axKuDPr6WKcDCyh8vueTY"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 220887,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "QMDA62187826"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/73uMMgJQUkEtn22y5vjr5W"
+        },
+        "href": "https://api.spotify.com/v1/tracks/73uMMgJQUkEtn22y5vjr5W",
+        "id": "73uMMgJQUkEtn22y5vjr5W",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Parao",
+        "popularity": 55,
+        "preview_url": "https://p.scdn.co/mp3-preview/80cf458f835488b83a05ba436635551a9dba1b28?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:73uMMgJQUkEtn22y5vjr5W"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7JcU2Vb3p2KOZTbUuuR1Ac"
+              },
+              "href": "https://api.spotify.com/v1/artists/7JcU2Vb3p2KOZTbUuuR1Ac",
+              "id": "7JcU2Vb3p2KOZTbUuuR1Ac",
+              "name": "Revel",
+              "type": "artist",
+              "uri": "spotify:artist:7JcU2Vb3p2KOZTbUuuR1Ac"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7eg6m4TeLMCjBUWNWmNKrv"
+          },
+          "href": "https://api.spotify.com/v1/albums/7eg6m4TeLMCjBUWNWmNKrv",
+          "id": "7eg6m4TeLMCjBUWNWmNKrv",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2733aee59256eba95462f87aad3",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e023aee59256eba95462f87aad3",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048513aee59256eba95462f87aad3",
+              "width": 64
+            }
+          ],
+          "name": "Paraocchi",
+          "release_date": "2022-03-18",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:7eg6m4TeLMCjBUWNWmNKrv"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7JcU2Vb3p2KOZTbUuuR1Ac"
+            },
+            "href": "https://api.spotify.com/v1/artists/7JcU2Vb3p2KOZTbUuuR1Ac",
+            "id": "7JcU2Vb3p2KOZTbUuuR1Ac",
+            "name": "Revel",
+            "type": "artist",
+            "uri": "spotify:artist:7JcU2Vb3p2KOZTbUuuR1Ac"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 147113,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "QZDA62261060"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/3BlzIBzFIEz9v18tBrXsVi"
+        },
+        "href": "https://api.spotify.com/v1/tracks/3BlzIBzFIEz9v18tBrXsVi",
+        "id": "3BlzIBzFIEz9v18tBrXsVi",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Paraocchi",
+        "popularity": 22,
+        "preview_url": "https://p.scdn.co/mp3-preview/c004421f109d2e180ae0c84fd5e981aa4e8e39c6?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:3BlzIBzFIEz9v18tBrXsVi"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+              },
+              "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+              "id": "1MRiIeZbc0cRuxOafDUCtH",
+              "name": "BLANCO",
+              "type": "artist",
+              "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7zFt7hLRPxemmlzVzg5uec"
+          },
+          "href": "https://api.spotify.com/v1/albums/7zFt7hLRPxemmlzVzg5uec",
+          "id": "7zFt7hLRPxemmlzVzg5uec",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2735880f9b11a2e6289f9db78d5",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e025880f9b11a2e6289f9db78d5",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048515880f9b11a2e6289f9db78d5",
+              "width": 64
+            }
+          ],
+          "name": "Blu Celeste",
+          "release_date": "2021-09-09",
+          "release_date_precision": "day",
+          "total_tracks": 12,
+          "type": "album",
+          "uri": "spotify:album:7zFt7hLRPxemmlzVzg5uec"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 168000,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "ITUM72100910"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/16EJNayKtC09M0Fi7Py47s"
+        },
+        "href": "https://api.spotify.com/v1/tracks/16EJNayKtC09M0Fi7Py47s",
+        "id": "16EJNayKtC09M0Fi7Py47s",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Finché Non Mi Seppelliscono",
+        "popularity": 76,
+        "preview_url": null,
+        "track_number": 8,
+        "type": "track",
+        "uri": "spotify:track:16EJNayKtC09M0Fi7Py47s"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2HvyR5FsU37QMqVzIbGwl7"
+              },
+              "href": "https://api.spotify.com/v1/artists/2HvyR5FsU37QMqVzIbGwl7",
+              "id": "2HvyR5FsU37QMqVzIbGwl7",
+              "name": "Mercedes Sosa",
+              "type": "artist",
+              "uri": "spotify:artist:2HvyR5FsU37QMqVzIbGwl7"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/3pnyaihZuauVqbp3SiRy3r"
+          },
+          "href": "https://api.spotify.com/v1/albums/3pnyaihZuauVqbp3SiRy3r",
+          "id": "3pnyaihZuauVqbp3SiRy3r",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273e027c545d0450ab6d75589c3",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02e027c545d0450ab6d75589c3",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851e027c545d0450ab6d75589c3",
+              "width": 64
+            }
+          ],
+          "name": "Cantora 2",
+          "release_date": "2009",
+          "release_date_precision": "year",
+          "total_tracks": 19,
+          "type": "album",
+          "uri": "spotify:album:3pnyaihZuauVqbp3SiRy3r"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2HvyR5FsU37QMqVzIbGwl7"
+            },
+            "href": "https://api.spotify.com/v1/artists/2HvyR5FsU37QMqVzIbGwl7",
+            "id": "2HvyR5FsU37QMqVzIbGwl7",
+            "name": "Mercedes Sosa",
+            "type": "artist",
+            "uri": "spotify:artist:2HvyR5FsU37QMqVzIbGwl7"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/25THA9HUHoxpCT4LBp7UsZ"
+            },
+            "href": "https://api.spotify.com/v1/artists/25THA9HUHoxpCT4LBp7UsZ",
+            "id": "25THA9HUHoxpCT4LBp7UsZ",
+            "name": "Vicentico",
+            "type": "artist",
+            "uri": "spotify:artist:25THA9HUHoxpCT4LBp7UsZ"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 270093,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "ARF100900174"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1NvW2TiZvxhhxJLU8tz4fD"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1NvW2TiZvxhhxJLU8tz4fD",
+        "id": "1NvW2TiZvxhhxJLU8tz4fD",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Parao (with Vicentico)",
+        "popularity": 37,
+        "preview_url": "https://p.scdn.co/mp3-preview/ac76bb5d0cb50cbd73b0de448732d02667c9a360?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 4,
+        "type": "track",
+        "uri": "spotify:track:1NvW2TiZvxhhxJLU8tz4fD"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+              },
+              "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+              "id": "1MRiIeZbc0cRuxOafDUCtH",
+              "name": "BLANCO",
+              "type": "artist",
+              "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/23TFHmajVfBtlRx5MXqgoz"
+              },
+              "href": "https://api.spotify.com/v1/artists/23TFHmajVfBtlRx5MXqgoz",
+              "id": "23TFHmajVfBtlRx5MXqgoz",
+              "name": "Sfera Ebbasta",
+              "type": "artist",
+              "uri": "spotify:artist:23TFHmajVfBtlRx5MXqgoz"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/59L5yJfDpvDFynmhe2QbYS"
+          },
+          "href": "https://api.spotify.com/v1/albums/59L5yJfDpvDFynmhe2QbYS",
+          "id": "59L5yJfDpvDFynmhe2QbYS",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27335d5abb6caff233c270d2d0c",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0235d5abb6caff233c270d2d0c",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485135d5abb6caff233c270d2d0c",
+              "width": 64
+            }
+          ],
+          "name": "MI FAI IMPAZZIRE",
+          "release_date": "2021-06-17",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:59L5yJfDpvDFynmhe2QbYS"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/23TFHmajVfBtlRx5MXqgoz"
+            },
+            "href": "https://api.spotify.com/v1/artists/23TFHmajVfBtlRx5MXqgoz",
+            "id": "23TFHmajVfBtlRx5MXqgoz",
+            "name": "Sfera Ebbasta",
+            "type": "artist",
+            "uri": "spotify:artist:23TFHmajVfBtlRx5MXqgoz"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 220235,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "ITUM72100652"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1x3Qb8np6S1UvpSLthwEJN"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1x3Qb8np6S1UvpSLthwEJN",
+        "id": "1x3Qb8np6S1UvpSLthwEJN",
+        "is_local": false,
+        "is_playable": true,
+        "name": "MI FAI IMPAZZIRE",
+        "popularity": 75,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:1x3Qb8np6S1UvpSLthwEJN"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7AgS2ycsLUG0NPTY1AAboT"
+              },
+              "href": "https://api.spotify.com/v1/artists/7AgS2ycsLUG0NPTY1AAboT",
+              "id": "7AgS2ycsLUG0NPTY1AAboT",
+              "name": "Mark Mendy",
+              "type": "artist",
+              "uri": "spotify:artist:7AgS2ycsLUG0NPTY1AAboT"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6WamMeXO2jN9tUYxSBUclQ"
+              },
+              "href": "https://api.spotify.com/v1/artists/6WamMeXO2jN9tUYxSBUclQ",
+              "id": "6WamMeXO2jN9tUYxSBUclQ",
+              "name": "Paradigm",
+              "type": "artist",
+              "uri": "spotify:artist:6WamMeXO2jN9tUYxSBUclQ"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2rBpiaXs2GC7mPr6ckxfi3"
+          },
+          "href": "https://api.spotify.com/v1/albums/2rBpiaXs2GC7mPr6ckxfi3",
+          "id": "2rBpiaXs2GC7mPr6ckxfi3",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273f00cdd0495e6cb9b60309616",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02f00cdd0495e6cb9b60309616",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851f00cdd0495e6cb9b60309616",
+              "width": 64
+            }
+          ],
+          "name": "Weekend (Party, Sleep, Repeat)",
+          "release_date": "2022-05-19",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:2rBpiaXs2GC7mPr6ckxfi3"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7AgS2ycsLUG0NPTY1AAboT"
+            },
+            "href": "https://api.spotify.com/v1/artists/7AgS2ycsLUG0NPTY1AAboT",
+            "id": "7AgS2ycsLUG0NPTY1AAboT",
+            "name": "Mark Mendy",
+            "type": "artist",
+            "uri": "spotify:artist:7AgS2ycsLUG0NPTY1AAboT"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6WamMeXO2jN9tUYxSBUclQ"
+            },
+            "href": "https://api.spotify.com/v1/artists/6WamMeXO2jN9tUYxSBUclQ",
+            "id": "6WamMeXO2jN9tUYxSBUclQ",
+            "name": "Paradigm",
+            "type": "artist",
+            "uri": "spotify:artist:6WamMeXO2jN9tUYxSBUclQ"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 138556,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "NLT2H2200303"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/5066WzFaeJhqmQmKjBmrr6"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5066WzFaeJhqmQmKjBmrr6",
+        "id": "5066WzFaeJhqmQmKjBmrr6",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Weekend (Party, Sleep, Repeat)",
+        "popularity": 70,
+        "preview_url": "https://p.scdn.co/mp3-preview/bb7ed2f5da1527910d25cfe7c8cf8b7d0d0721ae?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:5066WzFaeJhqmQmKjBmrr6"
+      },
+      {
+        "album": {
+          "album_type": "compilation",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+              },
+              "href": "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+              "id": "0LyfQWJT6nXafLPZqxe9Of",
+              "name": "Artisti Vari",
+              "type": "artist",
+              "uri": "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/3idWIc2oCpErhlVtF7CtEq"
+          },
+          "href": "https://api.spotify.com/v1/albums/3idWIc2oCpErhlVtF7CtEq",
+          "id": "3idWIc2oCpErhlVtF7CtEq",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2739622cc2171a5c8a12668c572",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e029622cc2171a5c8a12668c572",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048519622cc2171a5c8a12668c572",
+              "width": 64
+            }
+          ],
+          "name": "Tik Tock Estate 2021",
+          "release_date": "2021-07-09",
+          "release_date_precision": "day",
+          "total_tracks": 28,
+          "type": "album",
+          "uri": "spotify:album:3idWIc2oCpErhlVtF7CtEq"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 156083,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "ITUM72100148"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2NzyzDCbxsswqa8ExEwjMK"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2NzyzDCbxsswqa8ExEwjMK",
+        "id": "2NzyzDCbxsswqa8ExEwjMK",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Paraocchi",
+        "popularity": 10,
+        "preview_url": null,
+        "track_number": 12,
+        "type": "track",
+        "uri": "spotify:track:2NzyzDCbxsswqa8ExEwjMK"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+              },
+              "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+              "id": "1MRiIeZbc0cRuxOafDUCtH",
+              "name": "BLANCO",
+              "type": "artist",
+              "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6gnq480U8mvkVRMqKinsX6"
+          },
+          "href": "https://api.spotify.com/v1/albums/6gnq480U8mvkVRMqKinsX6",
+          "id": "6gnq480U8mvkVRMqKinsX6",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273272e7878d8ab4c80723af900",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02272e7878d8ab4c80723af900",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851272e7878d8ab4c80723af900",
+              "width": 64
+            }
+          ],
+          "name": "Notti In Bianco",
+          "release_date": "2020-07-23",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:6gnq480U8mvkVRMqKinsX6"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 176400,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "ITUM72000788"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/38UoVEHcZ85EGBo6k79643"
+        },
+        "href": "https://api.spotify.com/v1/tracks/38UoVEHcZ85EGBo6k79643",
+        "id": "38UoVEHcZ85EGBo6k79643",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Notti In Bianco",
+        "popularity": 66,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:38UoVEHcZ85EGBo6k79643"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5dFsc5Xa04k5yGgkr9Uzfm"
+              },
+              "href": "https://api.spotify.com/v1/artists/5dFsc5Xa04k5yGgkr9Uzfm",
+              "id": "5dFsc5Xa04k5yGgkr9Uzfm",
+              "name": "Paranoic",
+              "type": "artist",
+              "uri": "spotify:artist:5dFsc5Xa04k5yGgkr9Uzfm"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2FnjEL8SlmLe3YBFmPkV9N"
+              },
+              "href": "https://api.spotify.com/v1/artists/2FnjEL8SlmLe3YBFmPkV9N",
+              "id": "2FnjEL8SlmLe3YBFmPkV9N",
+              "name": "Glaceo",
+              "type": "artist",
+              "uri": "spotify:artist:2FnjEL8SlmLe3YBFmPkV9N"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6ck79fawdX05g2Y4wi55uc"
+          },
+          "href": "https://api.spotify.com/v1/albums/6ck79fawdX05g2Y4wi55uc",
+          "id": "6ck79fawdX05g2Y4wi55uc",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273ff9ba65f8bd3c725d6c3976d",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02ff9ba65f8bd3c725d6c3976d",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851ff9ba65f8bd3c725d6c3976d",
+              "width": 64
+            }
+          ],
+          "name": "Timido",
+          "release_date": "2021-07-20",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:6ck79fawdX05g2Y4wi55uc"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5dFsc5Xa04k5yGgkr9Uzfm"
+            },
+            "href": "https://api.spotify.com/v1/artists/5dFsc5Xa04k5yGgkr9Uzfm",
+            "id": "5dFsc5Xa04k5yGgkr9Uzfm",
+            "name": "Paranoic",
+            "type": "artist",
+            "uri": "spotify:artist:5dFsc5Xa04k5yGgkr9Uzfm"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2FnjEL8SlmLe3YBFmPkV9N"
+            },
+            "href": "https://api.spotify.com/v1/artists/2FnjEL8SlmLe3YBFmPkV9N",
+            "id": "2FnjEL8SlmLe3YBFmPkV9N",
+            "name": "Glaceo",
+            "type": "artist",
+            "uri": "spotify:artist:2FnjEL8SlmLe3YBFmPkV9N"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 167601,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "QZK6N2150336"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4my5DN7JiWfabVsZEb9AWl"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4my5DN7JiWfabVsZEb9AWl",
+        "id": "4my5DN7JiWfabVsZEb9AWl",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Timido",
+        "popularity": 52,
+        "preview_url": "https://p.scdn.co/mp3-preview/bd248789046d181354be909f06722a40e615cd5c?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:4my5DN7JiWfabVsZEb9AWl"
+      },
+      {
+        "album": {
+          "album_type": "compilation",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+              },
+              "href": "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+              "id": "0LyfQWJT6nXafLPZqxe9Of",
+              "name": "Artisti Vari",
+              "type": "artist",
+              "uri": "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2lCzvKClg4KvDMMZl3SZNq"
+          },
+          "href": "https://api.spotify.com/v1/albums/2lCzvKClg4KvDMMZl3SZNq",
+          "id": "2lCzvKClg4KvDMMZl3SZNq",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273b3ac5fa70245de45d22e50e1",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02b3ac5fa70245de45d22e50e1",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851b3ac5fa70245de45d22e50e1",
+              "width": 64
+            }
+          ],
+          "name": "HOT PARTY SPRING 2021",
+          "release_date": "2021-04-02",
+          "release_date_precision": "day",
+          "total_tracks": 22,
+          "type": "album",
+          "uri": "spotify:album:2lCzvKClg4KvDMMZl3SZNq"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 156083,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "ITUM72100148"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4G7CHzlHa5H44LNqID5KP0"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4G7CHzlHa5H44LNqID5KP0",
+        "id": "4G7CHzlHa5H44LNqID5KP0",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Paraocchi",
+        "popularity": 8,
+        "preview_url": null,
+        "track_number": 21,
+        "type": "track",
+        "uri": "spotify:track:4G7CHzlHa5H44LNqID5KP0"
+      },
+      {
+        "album": {
+          "album_type": "compilation",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+              },
+              "href": "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+              "id": "0LyfQWJT6nXafLPZqxe9Of",
+              "name": "Artisti Vari",
+              "type": "artist",
+              "uri": "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/70mmj1dywKdD7yoJ75MwOf"
+          },
+          "href": "https://api.spotify.com/v1/albums/70mmj1dywKdD7yoJ75MwOf",
+          "id": "70mmj1dywKdD7yoJ75MwOf",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27378c92b215b320203f97e39a1",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0278c92b215b320203f97e39a1",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485178c92b215b320203f97e39a1",
+              "width": 64
+            }
+          ],
+          "name": "Tik Tock Summer Hits",
+          "release_date": "2021-07-09",
+          "release_date_precision": "day",
+          "total_tracks": 20,
+          "type": "album",
+          "uri": "spotify:album:70mmj1dywKdD7yoJ75MwOf"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 156083,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "ITUM72100148"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/7hOKvQ5EK4NekF6a2zqnXl"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7hOKvQ5EK4NekF6a2zqnXl",
+        "id": "7hOKvQ5EK4NekF6a2zqnXl",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Paraocchi",
+        "popularity": 5,
+        "preview_url": null,
+        "track_number": 19,
+        "type": "track",
+        "uri": "spotify:track:7hOKvQ5EK4NekF6a2zqnXl"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0y4czH6DnvpftiSoy7V3HY"
+              },
+              "href": "https://api.spotify.com/v1/artists/0y4czH6DnvpftiSoy7V3HY",
+              "id": "0y4czH6DnvpftiSoy7V3HY",
+              "name": "Anthony Keyrouz",
+              "type": "artist",
+              "uri": "spotify:artist:0y4czH6DnvpftiSoy7V3HY"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6WamMeXO2jN9tUYxSBUclQ"
+              },
+              "href": "https://api.spotify.com/v1/artists/6WamMeXO2jN9tUYxSBUclQ",
+              "id": "6WamMeXO2jN9tUYxSBUclQ",
+              "name": "Paradigm",
+              "type": "artist",
+              "uri": "spotify:artist:6WamMeXO2jN9tUYxSBUclQ"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6TiAOruZ9SPA5FLsD7ACsN"
+          },
+          "href": "https://api.spotify.com/v1/albums/6TiAOruZ9SPA5FLsD7ACsN",
+          "id": "6TiAOruZ9SPA5FLsD7ACsN",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27351d9e1f679c6e2c5f52f2315",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0251d9e1f679c6e2c5f52f2315",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485151d9e1f679c6e2c5f52f2315",
+              "width": 64
+            }
+          ],
+          "name": "Wake Me Up In Paris",
+          "release_date": "2020-10-02",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:6TiAOruZ9SPA5FLsD7ACsN"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0y4czH6DnvpftiSoy7V3HY"
+            },
+            "href": "https://api.spotify.com/v1/artists/0y4czH6DnvpftiSoy7V3HY",
+            "id": "0y4czH6DnvpftiSoy7V3HY",
+            "name": "Anthony Keyrouz",
+            "type": "artist",
+            "uri": "spotify:artist:0y4czH6DnvpftiSoy7V3HY"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6WamMeXO2jN9tUYxSBUclQ"
+            },
+            "href": "https://api.spotify.com/v1/artists/6WamMeXO2jN9tUYxSBUclQ",
+            "id": "6WamMeXO2jN9tUYxSBUclQ",
+            "name": "Paradigm",
+            "type": "artist",
+            "uri": "spotify:artist:6WamMeXO2jN9tUYxSBUclQ"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 136946,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "NLT2H2000260"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4dq7XLDmFHNwc1yqL339qT"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4dq7XLDmFHNwc1yqL339qT",
+        "id": "4dq7XLDmFHNwc1yqL339qT",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Wake Me Up In Paris",
+        "popularity": 74,
+        "preview_url": "https://p.scdn.co/mp3-preview/95297f5a3cb9a86db8f9cdd1662a8fbb7dec2e17?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:4dq7XLDmFHNwc1yqL339qT"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7AgS2ycsLUG0NPTY1AAboT"
+              },
+              "href": "https://api.spotify.com/v1/artists/7AgS2ycsLUG0NPTY1AAboT",
+              "id": "7AgS2ycsLUG0NPTY1AAboT",
+              "name": "Mark Mendy",
+              "type": "artist",
+              "uri": "spotify:artist:7AgS2ycsLUG0NPTY1AAboT"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6WamMeXO2jN9tUYxSBUclQ"
+              },
+              "href": "https://api.spotify.com/v1/artists/6WamMeXO2jN9tUYxSBUclQ",
+              "id": "6WamMeXO2jN9tUYxSBUclQ",
+              "name": "Paradigm",
+              "type": "artist",
+              "uri": "spotify:artist:6WamMeXO2jN9tUYxSBUclQ"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/4MlV40gb24XbirVRszMCWi"
+          },
+          "href": "https://api.spotify.com/v1/albums/4MlV40gb24XbirVRszMCWi",
+          "id": "4MlV40gb24XbirVRszMCWi",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273720fbb02fae206322c04960c",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02720fbb02fae206322c04960c",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851720fbb02fae206322c04960c",
+              "width": 64
+            }
+          ],
+          "name": "Emotions",
+          "release_date": "2021-07-30",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:4MlV40gb24XbirVRszMCWi"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7AgS2ycsLUG0NPTY1AAboT"
+            },
+            "href": "https://api.spotify.com/v1/artists/7AgS2ycsLUG0NPTY1AAboT",
+            "id": "7AgS2ycsLUG0NPTY1AAboT",
+            "name": "Mark Mendy",
+            "type": "artist",
+            "uri": "spotify:artist:7AgS2ycsLUG0NPTY1AAboT"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6WamMeXO2jN9tUYxSBUclQ"
+            },
+            "href": "https://api.spotify.com/v1/artists/6WamMeXO2jN9tUYxSBUclQ",
+            "id": "6WamMeXO2jN9tUYxSBUclQ",
+            "name": "Paradigm",
+            "type": "artist",
+            "uri": "spotify:artist:6WamMeXO2jN9tUYxSBUclQ"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 172380,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "NLT2H2100364"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/7e7Z1IBn71QUFLFkdyBXJf"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7e7Z1IBn71QUFLFkdyBXJf",
+        "id": "7e7Z1IBn71QUFLFkdyBXJf",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Emotions",
+        "popularity": 66,
+        "preview_url": "https://p.scdn.co/mp3-preview/cf9d0b5ddb732d7f4ed0da791b8c8ec9048a01f5?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:7e7Z1IBn71QUFLFkdyBXJf"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6kTC5BqQPV6dlNxRny2sId"
+              },
+              "href": "https://api.spotify.com/v1/artists/6kTC5BqQPV6dlNxRny2sId",
+              "id": "6kTC5BqQPV6dlNxRny2sId",
+              "name": "Parao strategy",
+              "type": "artist",
+              "uri": "spotify:artist:6kTC5BqQPV6dlNxRny2sId"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/38CTBoBTYguHkGH0LmYtZI"
+          },
+          "href": "https://api.spotify.com/v1/albums/38CTBoBTYguHkGH0LmYtZI",
+          "id": "38CTBoBTYguHkGH0LmYtZI",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273ba164def7fda8754cf4c9d59",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02ba164def7fda8754cf4c9d59",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851ba164def7fda8754cf4c9d59",
+              "width": 64
+            }
+          ],
+          "name": "as-from-another-world",
+          "release_date": "2022-02-28",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:38CTBoBTYguHkGH0LmYtZI"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6kTC5BqQPV6dlNxRny2sId"
+            },
+            "href": "https://api.spotify.com/v1/artists/6kTC5BqQPV6dlNxRny2sId",
+            "id": "6kTC5BqQPV6dlNxRny2sId",
+            "name": "Parao strategy",
+            "type": "artist",
+            "uri": "spotify:artist:6kTC5BqQPV6dlNxRny2sId"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 167033,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "KRMIM2205706"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4BGzagXQhKF8DZfsVrWUDW"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4BGzagXQhKF8DZfsVrWUDW",
+        "id": "4BGzagXQhKF8DZfsVrWUDW",
+        "is_local": false,
+        "is_playable": true,
+        "name": "as-from-another-world",
+        "popularity": 21,
+        "preview_url": "https://p.scdn.co/mp3-preview/67248792c21e8f5c0623e9036ea2a3866ca82756?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:4BGzagXQhKF8DZfsVrWUDW"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+              },
+              "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+              "id": "1MRiIeZbc0cRuxOafDUCtH",
+              "name": "BLANCO",
+              "type": "artist",
+              "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7zFt7hLRPxemmlzVzg5uec"
+          },
+          "href": "https://api.spotify.com/v1/albums/7zFt7hLRPxemmlzVzg5uec",
+          "id": "7zFt7hLRPxemmlzVzg5uec",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2735880f9b11a2e6289f9db78d5",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e025880f9b11a2e6289f9db78d5",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048515880f9b11a2e6289f9db78d5",
+              "width": 64
+            }
+          ],
+          "name": "Blu Celeste",
+          "release_date": "2021-09-09",
+          "release_date_precision": "day",
+          "total_tracks": 12,
+          "type": "album",
+          "uri": "spotify:album:7zFt7hLRPxemmlzVzg5uec"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1MRiIeZbc0cRuxOafDUCtH"
+            },
+            "href": "https://api.spotify.com/v1/artists/1MRiIeZbc0cRuxOafDUCtH",
+            "id": "1MRiIeZbc0cRuxOafDUCtH",
+            "name": "BLANCO",
+            "type": "artist",
+            "uri": "spotify:artist:1MRiIeZbc0cRuxOafDUCtH"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 188125,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "ITUM72001098"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/18E4wq8is4m6wL8HxrEaQ9"
+        },
+        "href": "https://api.spotify.com/v1/tracks/18E4wq8is4m6wL8HxrEaQ9",
+        "id": "18E4wq8is4m6wL8HxrEaQ9",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Ladro Di Fiori",
+        "popularity": 63,
+        "preview_url": null,
+        "track_number": 11,
+        "type": "track",
+        "uri": "spotify:track:18E4wq8is4m6wL8HxrEaQ9"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4"
+              },
+              "href": "https://api.spotify.com/v1/artists/23fqKkggKUBHNkbKtXEls4",
+              "id": "23fqKkggKUBHNkbKtXEls4",
+              "name": "Kygo",
+              "type": "artist",
+              "uri": "spotify:artist:23fqKkggKUBHNkbKtXEls4"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0uMIzWh1uEpHEBell4rlF8"
+          },
+          "href": "https://api.spotify.com/v1/albums/0uMIzWh1uEpHEBell4rlF8",
+          "id": "0uMIzWh1uEpHEBell4rlF8",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27335590cb9280d5a1f5221ae1a",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0235590cb9280d5a1f5221ae1a",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485135590cb9280d5a1f5221ae1a",
+              "width": 64
+            }
+          ],
+          "name": "Cloud Nine",
+          "release_date": "2016-05-13",
+          "release_date_precision": "day",
+          "total_tracks": 15,
+          "type": "album",
+          "uri": "spotify:album:0uMIzWh1uEpHEBell4rlF8"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4"
+            },
+            "href": "https://api.spotify.com/v1/artists/23fqKkggKUBHNkbKtXEls4",
+            "id": "23fqKkggKUBHNkbKtXEls4",
+            "name": "Kygo",
+            "type": "artist",
+            "uri": "spotify:artist:23fqKkggKUBHNkbKtXEls4"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/48sLioddyaXkuhyHXSkpsB"
+            },
+            "href": "https://api.spotify.com/v1/artists/48sLioddyaXkuhyHXSkpsB",
+            "id": "48sLioddyaXkuhyHXSkpsB",
+            "name": "Parson James",
+            "type": "artist",
+            "uri": "spotify:artist:48sLioddyaXkuhyHXSkpsB"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 223186,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "SEBGA1500071"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/5masKPHeAOVNgxdLebIcK7"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5masKPHeAOVNgxdLebIcK7",
+        "id": "5masKPHeAOVNgxdLebIcK7",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Stole the Show",
+        "popularity": 75,
+        "preview_url": "https://p.scdn.co/mp3-preview/8e70fa5a4939e56fa38887dbbc3f4f307c12edeb?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:5masKPHeAOVNgxdLebIcK7"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2RhvWxTM8yaCw07sy5vIZV"
+              },
+              "href": "https://api.spotify.com/v1/artists/2RhvWxTM8yaCw07sy5vIZV",
+              "id": "2RhvWxTM8yaCw07sy5vIZV",
+              "name": "Francisco Gómez \"El Nuevo Rey De La Música Popular\"",
+              "type": "artist",
+              "uri": "spotify:artist:2RhvWxTM8yaCw07sy5vIZV"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6UXZSBmeoO8wNy0w1X0Bo5"
+          },
+          "href": "https://api.spotify.com/v1/albums/6UXZSBmeoO8wNy0w1X0Bo5",
+          "id": "6UXZSBmeoO8wNy0w1X0Bo5",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273af8ec980da43da8c28926633",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02af8ec980da43da8c28926633",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851af8ec980da43da8c28926633",
+              "width": 64
+            }
+          ],
+          "name": "El Parao",
+          "release_date": "2021-02-18",
+          "release_date_precision": "day",
+          "total_tracks": 12,
+          "type": "album",
+          "uri": "spotify:album:6UXZSBmeoO8wNy0w1X0Bo5"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2RhvWxTM8yaCw07sy5vIZV"
+            },
+            "href": "https://api.spotify.com/v1/artists/2RhvWxTM8yaCw07sy5vIZV",
+            "id": "2RhvWxTM8yaCw07sy5vIZV",
+            "name": "Francisco Gómez \"El Nuevo Rey De La Música Popular\"",
+            "type": "artist",
+            "uri": "spotify:artist:2RhvWxTM8yaCw07sy5vIZV"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 194709,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "QZN882114550"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/3JyFXDDymwLnSyA5Gw8f5j"
+        },
+        "href": "https://api.spotify.com/v1/tracks/3JyFXDDymwLnSyA5Gw8f5j",
+        "id": "3JyFXDDymwLnSyA5Gw8f5j",
+        "is_local": false,
+        "is_playable": true,
+        "name": "De Obrero a Patrón",
+        "popularity": 21,
+        "preview_url": "https://p.scdn.co/mp3-preview/bd651c2175e1f96683ed44f3e6b5ddee6572f5cb?cid=cfafff534b09449592428997e78acf38",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:3JyFXDDymwLnSyA5Gw8f5j"
+      }
+    ],
+    "limit": 20,
+    "next": "https://api.spotify.com/v1/search?query=Parao&type=track&market=IT&locale=it-IT%2Cit%3Bq%3D0.8%2Cen-US%3Bq%3D0.5%2Cen%3Bq%3D0.3&offset=20&limit=20",
+    "offset": 0,
+    "previous": null,
+    "total": 669
+  }
+}
