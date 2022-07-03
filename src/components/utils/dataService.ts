@@ -12,7 +12,7 @@ const DEFAULT_SONG = {
     songLength: 16,
     breaks: [1, 2, 4, 7, 11, 16],
     trackName: "Chicchi di riso",
-    others: [],
+    others: ["Frah Quintale Chicchi di riso"],
     album: "Banzai (Lato arancio)",
     soundCloudLink: "https://soundcloud.com/frahquintale/chicchi-di-riso",
     showSoundCloud: true,
