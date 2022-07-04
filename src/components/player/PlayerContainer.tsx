@@ -11,7 +11,7 @@ import MusicPlayer from "../music/MusicPlayer";
 import { checkAnswer } from "../game/Utils";
 import { OnChangeValue } from "react-select";
 import { SongConfig } from "../game/Models";
-import {getListTracks, getSearch} from "../utils/spotifyService";
+import {getListTracks} from "../utils/spotifyService";
 
 
 type AudioscrobblerResult = {
@@ -77,11 +77,11 @@ function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, a
             return;
         }
         
-        //const listTracks = getListTracks(accessToken);
+        //getListTracks(accessToken);
         //const search = getSearch(accessToken, inputValue, callback);
         //console.log(listTracks)
-        getSearch(accessToken,inputValue, callback);
-       
+        getListTracks(accessToken, inputValue, callback);
+        
 
     }
 
