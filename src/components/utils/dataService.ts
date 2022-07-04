@@ -14,6 +14,8 @@ const DEFAULT_SONG = {
     trackName: "Chicchi di riso",
     others: ["Frah Quintale Chicchi di riso"],
     album: "Banzai (Lato arancio)",
+    song: "Chicci di riso",
+    artist: "Frah Quintale",
     soundCloudLink: "https://soundcloud.com/frahquintale/chicchi-di-riso",
     showSoundCloud: true,
     soundSpotifyLink: "https://open.spotify.com/track/05ZaaO3XTZQ5rwBNGetYMV?si=f0b6f9361b384d96",

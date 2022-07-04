@@ -20,8 +20,8 @@ function PlayerProgress({ currentPositionInMilis, playerSlicePercentagesInSecond
                         <div className="bg-custom-line w-px h-full absolute right-0"></div>
                         {
                             playerSlicePercentagesInSeconds.map((percentage, index) => {
-                                console.log(index);
-                                console.log(openedStep);
+                                // console.log(index);
+                                // console.log(openedStep);
                                 if(index === openedStep)
                                     return <div key={index} className="w-px h-full absolute bg-custom-fg" style={{ left: percentage + "%" }}></div>
                                 else if( index > openedStep)

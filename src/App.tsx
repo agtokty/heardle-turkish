@@ -8,7 +8,6 @@ import { getDailySong } from "./components/utils/dataService";
 import { getAccessToken } from "./components/utils/spotifyService";
 import { SongConfig } from "./components/game/Models";
 
-
 const APP_VERSION = process.env.REACT_APP_VERSION || "0"
 console.debug("v" + APP_VERSION);
 
@@ -31,9 +30,8 @@ function App() {
   const [currentSongConfig, setCurrentSongConfig] = useState<SongConfig>(EMPTY_SONG_CONFIG);
 
   const [accessToken, setAccessToken] = useState("");
-
+  
   useEffect(() => {
-
     getAccessToken().then((value: any) => {
       setAccessToken(value);
     });

@@ -11,7 +11,7 @@ import MusicPlayer from "../music/MusicPlayer";
 import { checkAnswer } from "../game/Utils";
 import { OnChangeValue } from "react-select";
 import { SongConfig } from "../game/Models";
-import {getListTracks} from "../utils/spotifyService";
+import { getList } from "../utils/spotifyService";
 
 
 type AudioscrobblerResult = {
@@ -52,108 +52,20 @@ function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, a
 
     const onFinishClicked = () => {
         dispatch(({ type: "FINISH" }));
-    }
-
-    const options = [
-        { label: 'Blanco - Paraocchi', value: "Blanco Paraocchi"},
-        { label: 'Blanco - Prova', value: "Blanco Prova"},
-        { label: 'Blanco - Prova', value: "Blanco Prova"},
-        { label: 'Frah Quintale - Chicchi di riso', value: 'Frah Quintale Chicchi di riso' },
-        { label: 'Ghali - Cara Italia', value: 'Ghali Cara Italia' },
-        { label: 'Octopus', value: 'Octopus' },
-        { label: 'Crab', value: 'Crab' },
-        { label: 'Lobster', value: 'Lobster' },
-      ];
-      
-
-    //const sortedOptions = [...options].sort((a,b) => a.label.localeCompare(b.label))
+    }      
 
 
     const loadListTracks = (inputValue: string, callback: (res: any[]) => void) => {
 
-        let sortedOptions = [...options].sort((a,b) => a.label.localeCompare(b.label))
         if (!inputValue || inputValue.trim().length < 3) {
             callback([]);
             return;
         }
         
-        //getListTracks(accessToken);
-        //const search = getSearch(accessToken, inputValue, callback);
-        //console.log(listTracks)
-        getListTracks(accessToken, inputValue, callback);
+        getList(accessToken, inputValue, callback);
         
-
     }
-
-    const loadOptions2 = (inputValue: string, callback: (res: any[]) => void) => {
-
-        let sortedOptions = [...options].sort((a,b) => a.label.localeCompare(b.label))
-        if (!inputValue || inputValue.trim().length < 3) {
-            callback([]);
-            return;
-        }
-        else {
-        [...sortedOptions].forEach(value => {
-            if(value.value.toLowerCase()===inputValue.toLowerCase()) {
-                var index = sortedOptions.indexOf(value); 
-                sortedOptions.forEach(value => {
-                    if(sortedOptions[index]!=value)
-                    delete sortedOptions[sortedOptions.indexOf(value)]
-                })
-             callback(sortedOptions)   
-                return
-            }
-            else if(value.value.toLowerCase().includes(inputValue.toLowerCase())) {
-                sortedOptions.forEach(value =>{
-                    if(!value.value.toLowerCase().includes(inputValue.toLowerCase())) {
-                        delete sortedOptions[sortedOptions.indexOf(value)]
-                    }
-                })
-                callback(sortedOptions)
-            }
-            return
-        })
-        callback([])
-        return
-       
-    }
-}
-      
-
-    const loadOptions = (inputValue: string, callback: (res: any[]) => void) => {
-        if (!inputValue || inputValue.trim().length < 3) {
-            callback([]);
-            return;
-        }
-            //http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=spain&api_key=YOUR_API_KEY&format=json
-        fetch('https://ws.audioscrobbler.com/2.0/?method=track.search&api_key=48fec4d16077b7d1437f1472e9de1fad&format=json&limit=5&track=' + inputValue)
-            .then(response => response.json())
-            .then((response) => {
-                let result = [];
-                if (response && response.results && response.results.trackmatches && response.results.trackmatches.track) {
-                    result = response.results.trackmatches.track
-                        .filter((item: any) => {
-                            return (item && item.artist.indexOf("unknown") === -1 && item.name.indexOf("unknown") === -1)
-                        })
-                        .map((item: AudioscrobblerResult) => {
-                            let value = item.artist + " " + item.name;
-                            value = value.replaceAll("-", "");
-                            value = value.replaceAll("_", "");
-                            value = value.replaceAll(".", "");
-                            value = value.replaceAll("?", "");
-                            value = value.replaceAll("!", "");
-                            return { label: value, value: value }
-                        });
-                }
-                callback(result)
-                return result;
-            })
-            .catch((err) => {
-                console.error(err)
-            });
-    };
-
-
+    
     const handleInputChange = (newValue: OnChangeValue<any, any>) => {
         if (newValue) {
             console.log(newValue)
