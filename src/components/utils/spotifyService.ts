@@ -7,15 +7,10 @@ type artist = {
   name: string
 }
 
-type track = {
+type SpotifyResult = {
   artists: artist[]
   name: string
 }
-
-type SpotifyResult = {
-  track: track
-}
-
 export const getAccessToken = (): Promise<any> => { 
 
     return new Promise<string>((resolve, reject) => {
@@ -63,59 +58,65 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
     myHeaders.append("Authorization", "Bearer " + token);
     myHeaders.append("Content-Type", "application/json");
 
+    fetch("https://api.spotify.com/v1/search?type=track&market=IT&q=" + inputValue, {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+  })
+      .then(response => response.json())
+      .then(response => {
+          console.log("Searching...")
+          let tracks = []
+          //console.log(response.tracks.items[0].name)
+          //console.log(response.tracks.items[0].artists[0].name)
 
-    fetch("https://api.spotify.com/v1/playlists/2JpsZD5kqsVleaNDEGSmND/tracks?type=track&market=IT&fields=items(track(name,artists(name)))", {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    })
-    .then(response => response.json())
-    .then(response => {
-        console.log("Searching...")
-        // console.log(response);
-        let items= [];
-        //console.log(response.tracks.items[0].name)
-        //console.log(response.tracks.items[1].artists[0].name)
+          if (response && response.tracks.items ) {
+            tracks = response.tracks.items
+                .filter((track: any) => {
+                    return (track && track.artists[0].name.indexOf("unknown") === -1 && track.name.indexOf("unknown") === -1)
+                })
+                .map((track: SpotifyResult) => {
+                    let value = track.artists[0].name + " " + track.name;
+                    let label = track.artists[0].name + " - " + track.name;
+                    value = value.replaceAll("-", "");
+                    value = value.replaceAll("_", "");
+                    value = value.replaceAll(".", "");
+                    value = value.replaceAll("?", "");
+                    value = value.replaceAll("!", "");
+                    return { label: label, value: value }
+                });
+        }
 
-        items = response.items
-        .filter((track: any) => {
-          return (track && track.track.artists[0].name.indexOf("unknown") === -1 && track.track.name.indexOf("unknown") === -1)
-        }).map((track: SpotifyResult) => {
-          let label = track.track.artists[0].name + " - " + track.track.name;
-          let value = track.track.artists[0].name + " " + track.track.name;
-          value = value.replaceAll("-", "");
-          value = value.replaceAll("_", "");
-          value = value.replaceAll(".", "");
-          value = value.replaceAll("?", "");
-          value = value.replaceAll("!", "");
-          return { label: label, value: value }
-        })
-        
-          let sortedTracks = [...items].sort((a,b) => a.label.localeCompare(b.label));
-          
-          [...sortedTracks].forEach(value => {
-              // restituisce un solo valore nella lista
-              if(value.value.toLowerCase()===inputValue.toLowerCase()) {
-                  var index = sortedTracks.indexOf(value); 
-                  sortedTracks.forEach(value => {
-                      if(sortedTracks[index]!=value)
-                        delete sortedTracks[sortedTracks.indexOf(value)]
-                  })  
-                  callback(sortedTracks)   
-              }
-              // restituisce nella lista i valori che includono inputValue
-              else if(value.value.toLowerCase().includes(inputValue.toLowerCase())) {
-                sortedTracks.forEach(value =>{
-                      if(!value.value.toLowerCase().includes(inputValue.toLowerCase())) {
-                          delete sortedTracks[sortedTracks.indexOf(value)]
-                      }
-                  })
-                  callback(sortedTracks)
-              }
-              return
-          })
-    
-            return sortedTracks;
+        /** PARTE IN CUI SI RIORDINA LA LISTA TRACKS
+         * E AGGIORNATA ATTRAVERSO L' inputValue
+         */
+        let sortedTracks = [...tracks].sort((a,b) => a.label.localeCompare(b.label))
+        //callback(sortedTracks)
+        console.log(sortedTracks);
+
+        [...sortedTracks].forEach(value => {
+          // restituisce un solo valore nella lista
+          if(value.value.toLowerCase()===inputValue.toLowerCase()) {
+              var index = sortedTracks.indexOf(value); 
+              sortedTracks.forEach(value => {
+                  if(sortedTracks[index]!=value)
+                    delete sortedTracks[sortedTracks.indexOf(value)]
+              })
+              callback(sortedTracks)   
+          }
+          // restituisce nella lista i valori che includono inputValue
+          else if(value.value.toLowerCase().includes(inputValue.toLowerCase())) {
+            sortedTracks.forEach(value =>{
+                  if(!value.value.toLowerCase().includes(inputValue.toLowerCase())) {
+                      delete sortedTracks[sortedTracks.indexOf(value)]
+                  }
+              })
+              callback(sortedTracks)
+          }
+          return
+      })
+
+        return sortedTracks;
     })
     .catch((err) => {
         console.error(err)

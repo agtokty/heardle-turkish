@@ -14,13 +14,6 @@ import { SongConfig } from "../game/Models";
 import { getList } from "../utils/spotifyService";
 
 
-type AudioscrobblerResult = {
-    artist: string
-    name: string
-}
-
-
-
 function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, accessToken: string}) {
 
     const [answer, setAnswer] = useState("");
@@ -97,7 +90,7 @@ function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, a
                                             DropdownIndicator: () => null,
                                             IndicatorSeparator: () => null
                                         }}
-                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Devi inserire almeno 3 caratteri per cercare" : "Nessuna Corrispondenza"}
+                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Inserisci almeno 3 caratteri per cercare" : "Nessuna Corrispondenza"}
                                         placeholder={"Inserisci il titolo della canzone"}
                                         loadOptions={loadListTracks}
                                         value={selectedSong}
