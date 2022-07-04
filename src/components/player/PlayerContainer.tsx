@@ -11,6 +11,7 @@ import MusicPlayer from "../music/MusicPlayer";
 import { checkAnswer } from "../game/Utils";
 import { OnChangeValue } from "react-select";
 import { SongConfig } from "../game/Models";
+import { getList } from "../utils/spotifyService";
 
 
 type AudioscrobblerResult = {
@@ -18,7 +19,9 @@ type AudioscrobblerResult = {
     name: string
 }
 
-function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
+
+
+function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, accessToken: string}) {
 
     const [answer, setAnswer] = useState("");
     const [selectedSong, setSelectedSong] = useState("");
@@ -49,45 +52,25 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
 
     const onFinishClicked = () => {
         dispatch(({ type: "FINISH" }));
-    }
+    }      
 
-    const loadOptions = (inputValue: string, callback: (res: any[]) => void) => {
+
+    const loadListTracks = (inputValue: string, callback: (res: any[]) => void) => {
+
         if (!inputValue || inputValue.trim().length < 3) {
             callback([]);
             return;
         }
         
-        fetch('https://ws.audioscrobbler.com/2.0/?method=track.search&api_key=48fec4d16077b7d1437f1472e9de1fad&format=json&limit=5&track=' + inputValue)
-            .then(response => response.json())
-            .then((response) => {
-                let result = [];
-                if (response && response.results && response.results.trackmatches && response.results.trackmatches.track) {
-                    result = response.results.trackmatches.track
-                        .filter((item: any) => {
-                            return (item && item.artist.indexOf("unknown") === -1 && item.name.indexOf("unknown") === -1)
-                        })
-                        .map((item: AudioscrobblerResult) => {
-                            let value = item.artist + " " + item.name;
-                            value = value.replaceAll("-", "");
-                            value = value.replaceAll("_", "");
-                            value = value.replaceAll(".", "");
-                            value = value.replaceAll("?", "");
-                            value = value.replaceAll("!", "");
-                            return { label: value, value: value }
-                        });
-                }
-                callback(result)
-                return result;
-            })
-            .catch((err) => {
-                console.error(err)
-            });
-    };
-
-
+        getList(accessToken, inputValue, callback);
+        
+    }
+    
     const handleInputChange = (newValue: OnChangeValue<any, any>) => {
         if (newValue) {
+            console.log(newValue)
             setSelectedSong(newValue);
+            console.log("value:", newValue.value)
             setAnswer(newValue.value);
         }
     };
@@ -114,9 +97,9 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             DropdownIndicator: () => null,
                                             IndicatorSeparator: () => null
                                         }}
-                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Inserisci almeno 3 caratteri per cercare " : "Nessun Risultato"}
-                                        placeholder={"Inserisci l'artista e il titolo della canzone"}
-                                        loadOptions={loadOptions}
+                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Devi inserire almeno 3 caratteri per cercare" : "Nessuna Corrispondenza"}
+                                        placeholder={"Inserisci il titolo della canzone"}
+                                        loadOptions={loadListTracks}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}
                                         // inputProps={{ 'aria-labelledby': 'react-select-2-placeholder' }}
@@ -127,7 +110,8 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             noOptionsMessage: base => ({ ...base, color: "red" }),
                                             loadingMessage: base => ({ ...base, color: "black" }),
                                         }}
-                                        onChange={handleInputChange} />
+                                        onChange={handleInputChange} 
+                                        maxMenuHeight={150}/>
                                 </div>
                             </div>
                             <div className="flex justify-between pt-3">

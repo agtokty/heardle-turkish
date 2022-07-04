@@ -2,7 +2,6 @@
 import { getDatabase, ref, onValue } from "firebase/database";
 import { getDayStr, getDayStrAsPath } from ".";
 import { SongConfig } from "../game/Models";
-//import app from "./firebase";
 import "./firebase";
 
 interface Map {
@@ -13,8 +12,10 @@ const DEFAULT_SONG = {
     songLength: 16,
     breaks: [1, 2, 4, 7, 11, 16],
     trackName: "Chicchi di riso",
-    others: [],
+    others: ["Frah Quintale Chicchi di riso"],
     album: "Banzai (Lato arancio)",
+    song: "Chicci di riso",
+    artist: "Frah Quintale",
     soundCloudLink: "https://soundcloud.com/frahquintale/chicchi-di-riso",
     showSoundCloud: true,
     soundSpotifyLink: "https://open.spotify.com/track/05ZaaO3XTZQ5rwBNGetYMV?si=f0b6f9361b384d96",

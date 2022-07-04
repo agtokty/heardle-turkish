@@ -5,8 +5,8 @@ import { ModalContextProvider } from "./components/modals/ModalContext";
 import { GameContextProvider } from "./components/player/GameContext";
 import { useEffect, useState } from "react";
 import { getDailySong } from "./components/utils/dataService";
+import { getAccessToken } from "./components/utils/spotifyService";
 import { SongConfig } from "./components/game/Models";
-
 
 const APP_VERSION = process.env.REACT_APP_VERSION || "0"
 console.debug("v" + APP_VERSION);
@@ -29,7 +29,12 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [currentSongConfig, setCurrentSongConfig] = useState<SongConfig>(EMPTY_SONG_CONFIG);
 
+  const [accessToken, setAccessToken] = useState("");
+  
   useEffect(() => {
+    getAccessToken().then((value: any) => {
+      setAccessToken(value);
+    });
 
     getDailySong().then(songConfig => {
       setCurrentSongConfig(songConfig);
@@ -56,7 +61,8 @@ function App() {
               </div>
               .</>
             : (
-              <PlayerContainer songConfig={currentSongConfig} />
+              <PlayerContainer songConfig={currentSongConfig} 
+              accessToken = {accessToken}/>
             )
         }
       </GameContextProvider>
