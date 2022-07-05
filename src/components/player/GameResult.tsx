@@ -192,12 +192,12 @@ function GameResult({ songConfig }: { songConfig: any }) {
               Twitter'da Paylaş
             </button> */}
             </div>
-            <div className="flex flex-col justify-center items-center mt-3 pt-3">
+            {/* <div className="flex flex-col justify-center items-center mt-3 pt-3">
             <a className=" px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-green-500 text-black"
               href={HEARDLE_SPOTIFY_LIST_URL} target="_blank" rel="noreferrer">
               Playlist di Spotify
             </a>
-          </div>
+          </div> */}
         </div>
         <div>
           <NextTimer />
