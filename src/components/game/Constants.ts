@@ -1,4 +1,4 @@
-export const HEARDLE_IT_WEB_URL = "https://heardleita.netlify.app/";
+export const HEARDLE_IT_WEB_URL = "https://davidebrie.github.io/heardle-ita/";
 export const HEARDLE_SPOTIFY_LIST_URL = "https://open.spotify.com/playlist/2JpsZD5kqsVleaNDEGSmND?si=906b4ac927714be6";
 
 export const GAME_RESULT_MESSAGES = [
@@ -10,6 +10,6 @@ export const GAME_RESULT_MESSAGES = [
     "Non hai indovinato... Domani andrà sicuramente meglio 😜"
 ];
 
-export const GAME_RESULT_FAILED_MESSAGE = "Penso che ti sia imbattuto in un genere che non ti interessa... a domani 😃";
+export const GAME_RESULT_FAILED_MESSAGE = "Non hai indovinato la canzone di oggi :(";
 
 export const STRING_COMPARE_LOCALE = "it";
