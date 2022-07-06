@@ -1,5 +1,6 @@
 import { resolveCaa } from "dns";
 import { useState } from "react";
+import { artists } from "../utils/constants";
 
 const CLIENT_BASE64 = "Y2ZhZmZmNTM0YjA5NDQ5NTkyNDI4OTk3ZTc4YWNmMzg6M2ZkOWI1ZjNlMmU1NGQyNWFlZGU3ODYyMjczMWNmYjc="
 
@@ -8,9 +9,12 @@ type artist = {
 }
 
 type SpotifyResult = {
+  duration_ms: number
   artists: artist[]
   name: string
 }
+
+
 export const getAccessToken = (): Promise<any> => { 
 
     return new Promise<string>((resolve, reject) => {
@@ -52,6 +56,7 @@ export const getAccessToken = (): Promise<any> => {
 }
 
 
+
 // MODIFICARE
 export const getList = (token: string, inputValue: string, callback: (res: any[]) => void) => {
     var myHeaders = new Headers();
@@ -66,32 +71,47 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
       .then(response => response.json())
       .then(response => {
           console.log("Searching...")
-          let tracks = []
-          //console.log(response.tracks.items[0].name)
-          //console.log(response.tracks.items[0].artists[0].name)
+          let mapTracks = new Map<string,string>()
+          let tracks: any[] = []
 
           if (response && response.tracks.items ) {
-            tracks = response.tracks.items
+            response.tracks.items
                 .filter((track: any) => {
                     return (track && track.artists[0].name.indexOf("unknown") === -1 && track.name.indexOf("unknown") === -1)
                 })
                 .map((track: SpotifyResult) => {
-                    let value = track.artists[0].name + " " + track.name;
+                  //if(artists.includes(track.artists[0].name.toLowerCase())) {
+                    //console.log("TROVATO")
+
+                    let id = track.duration_ms.toString() + track.artists[0].name.substring(0,3);
+                    // let value = track.artists[0].name + " " + track.name;
+                  
                     let label = track.artists[0].name + " - " + track.name;
-                    value = value.replaceAll("-", "");
-                    value = value.replaceAll("_", "");
-                    value = value.replaceAll(".", "");
-                    value = value.replaceAll("?", "");
-                    value = value.replaceAll("!", "");
-                    return { label: label, value: value }
+                    // value = value.replaceAll("-", "");
+                    // value = value.replaceAll("_", "");
+                    // value = value.replaceAll(".", "");
+                    // value = value.replaceAll("?", "");
+                    // value = value.replaceAll("!", "");
+                    mapTracks.set(id,label);
+                  //}
                 });
         }
+
+
 
         /** PARTE IN CUI SI RIORDINA LA LISTA TRACKS
          * E AGGIORNATA ATTRAVERSO L' inputValue
          */
+        console.log(mapTracks)
+        if(tracks.length == 0)
+        { 
+            mapTracks.forEach((value) =>{
+            let i=0;
+            tracks.push({label:value, value:value.replaceAll(" -","")})
+          })
+        }
+        
         let sortedTracks = [...tracks].sort((a,b) => a.label.localeCompare(b.label))
-        //callback(sortedTracks)
         console.log(sortedTracks);
 
         [...sortedTracks].forEach(value => {

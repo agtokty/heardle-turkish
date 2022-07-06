@@ -1,0 +1,1 @@
+export const artists = ["frah quintale", "marracash", "blanco"]

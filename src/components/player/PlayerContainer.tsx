@@ -48,7 +48,7 @@ function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, a
     }      
 
 
-    const loadListTracks = (inputValue: string, callback: (res: any[]) => void) => {
+    const loadList = (inputValue: string, callback: (res: any[]) => void) => {
 
         if (!inputValue || inputValue.trim().length < 3) {
             callback([]);
@@ -92,7 +92,7 @@ function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, a
                                         }}
                                         noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Inserisci almeno 3 caratteri per cercare" : "Nessuna Corrispondenza"}
                                         placeholder={"Inserisci il titolo della canzone"}
-                                        loadOptions={loadListTracks}
+                                        loadOptions={loadList}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}
                                         // inputProps={{ 'aria-labelledby': 'react-select-2-placeholder' }}
