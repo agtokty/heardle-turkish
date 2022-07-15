@@ -70,7 +70,7 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
   })
       .then(response => response.json())
       .then(response => {
-          console.log("Searching...")
+          console.warn("Searching...")
           let mapTracks = new Map<string,string>()
           let tracks: any[] = []
 
@@ -80,20 +80,21 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
                     return (track && track.artists[0].name.indexOf("unknown") === -1 && track.name.indexOf("unknown") === -1)
                 })
                 .map((track: SpotifyResult) => {
-                  //if(artists.includes(track.artists[0].name.toLowerCase())) {
-                    //console.log("TROVATO")
+                  // console.info(track.artists[0].name.toLowerCase())
+                  if(artists.includes(track.artists[0].name.toLowerCase())) {
 
                     let id = track.duration_ms.toString() + track.artists[0].name.substring(0,3);
                     // let value = track.artists[0].name + " " + track.name;
                   
                     let label = track.artists[0].name + " - " + track.name;
-                    // value = value.replaceAll("-", "");
+                    label = label.replaceAll("å", "a");
+                    label = label.replaceAll("è", "e");
                     // value = value.replaceAll("_", "");
                     // value = value.replaceAll(".", "");
                     // value = value.replaceAll("?", "");
                     // value = value.replaceAll("!", "");
                     mapTracks.set(id,label);
-                  //}
+                  }
                 });
         }
 
@@ -102,7 +103,6 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
         /** PARTE IN CUI SI RIORDINA LA LISTA TRACKS
          * E AGGIORNATA ATTRAVERSO L' inputValue
          */
-        console.log(mapTracks)
         if(tracks.length == 0)
         { 
             mapTracks.forEach((value) =>{
@@ -111,8 +111,8 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
           })
         }
         
-        let sortedTracks = [...tracks].sort((a,b) => a.label.localeCompare(b.label))
-        console.log(sortedTracks);
+        let sortedTracks = [...tracks].sort((a,b) => a.label.localeCompare(b.label));
+
 
         [...sortedTracks].forEach(value => {
           // restituisce un solo valore nella lista
