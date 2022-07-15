@@ -162,6 +162,12 @@ function GameResult({ songConfig }: { songConfig: any }) {
             </div>
           } */}
         </div>
+
+
+        <div className="flex-col items-center justify-center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9120231853178287" crossOrigin="anonymous"></script>
+        </div>
+        
         
         <div className="text-center px-3">
           <div className="flex justify-center my-2"> 
