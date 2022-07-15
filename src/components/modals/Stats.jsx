@@ -1,4 +1,5 @@
 import { useModalData } from "./ModalContext";
+import buildScore from "../player/GameResult";
 
 function Stats() {
 
@@ -83,7 +84,7 @@ function Stats() {
                         <div className="flex flex-col items-stretch ">
                             <div className="h-32 relative w-9 flex justify-center items-end">
                                 <div className="absolute bg-custom-mg w-6">
-                                    <div className="h-full absolute text-center w-full py-1 text-xs"> </div>
+                                    <div className="h-full absolute text-center w-full py-1 text-custom-line"></div>
                                 </div>
                             </div>
                             <div className="text-center border-right text-xs pt-1 text-custom-line">

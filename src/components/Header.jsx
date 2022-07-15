@@ -9,9 +9,9 @@ function Header() {
         dispatch({ type: 'About' })
     }
 
-    // const openStats = () => {
-    //     dispatch({ type: 'Stats' })
-    // }
+    const openStats = () => {
+        dispatch({ type: 'Stats' })
+    }
 
     const openHowToPlay = () => {
         dispatch({ type: 'HowToPlay' })
@@ -47,17 +47,17 @@ function Header() {
                         </div>
                         <h1 className="font-serif text-3xl font-bold flex-grow text-center flex-2" alt="Heardle Italia">Heardle Italia</h1>
                         <div className="flex flex-1 justify-end">
-                            {/* <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm"
+                            <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm"
                                 onClick={openStats}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M12 20v-6M6 20V10M18 20V4"></path>
                                 </svg>
-                            </button> */}
+                            </button>
                             <button
                                 className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm"
-                                onClick={openHowToPlay} type="button" aria-label="Nasıl oynanır" title="Nasıl oynanır">
+                                onClick={openHowToPlay} type="button" aria-label="Come giocare" title="Come giocare">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -15,7 +15,7 @@ const buildScore = (guessList: any[]): number => {
     return 0;
   }
 
-  // punit persi: 12, 10, 8, 6, 4
+  // punti persi: 12, 10, 8, 6, 4
   for (let i = 0; i < guessList.length; i++) {
     if (guessList[i].isSkipped) {
       max = max - ((guessList.length - i) * 2);
@@ -91,7 +91,6 @@ const buildShareText = (guessList: any[]) => {
   let icons = getBoxIcons(guessList);
   let todayStr = getDayFormattedText();
 
-  // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
   return `${icons} \n #HeardleItalia ${todayStr} \n \n ${HEARDLE_IT_WEB_URL}`;
 }
 
@@ -163,6 +162,21 @@ function GameResult({ songConfig }: { songConfig: any }) {
           } */}
         </div>        
         
+        {/* <div className="flex-col items-center justify-center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9120231853178287" crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+            data-ad-client="ca-pub-9120231853178287"
+            data-ad-slot="9018256575"
+            data-ad-format="auto"
+            data-full-width-responsive="true">
+        
+            </ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div> */}
+
+
         <div className="text-center px-3">
           <div className="flex justify-center my-2"> 
           {
