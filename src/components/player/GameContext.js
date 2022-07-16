@@ -1,67 +1,108 @@
-import * as React from 'react'
-import { getDayStr } from '../utils'
+import * as React from 'react';
+import { getDayStr } from '../utils';
 
 const GameContext = React.createContext();
 
 let DEFAULT_TODAY_GUEST_LIST = [{
     isCorrect: false,
     isSkipped: false,
-    answer: ""
+    answer: "",
+    count: 0,
 },
 {
     isCorrect: false,
     isSkipped: false,
-    answer: ""
+    answer: "",
+    count: 0,
 },
 {
     isCorrect: false,
     isSkipped: false,
-    answer: ""
+    answer: "",
+    count: 0,
 },
 {
     isCorrect: false,
     isSkipped: false,
-    answer: ""
+    answer: "",
+    count: 0,
 },
 {
     isCorrect: false,
     isSkipped: false,
-    answer: ""
+    answer: "",
+    count: 0,
 },
 {
     isCorrect: false,
     isSkipped: false,
-    answer: ""
+    answer: "",
+    count: 0,
 }];
 
 const MAX_GUESS_INDEX = 5;
 
 
 function saveState(state) {
-    let now = new Date();
 
-    let stateKey = state.day || getDayStr();
-    state.ls = now.getTime();
-
-    // TODO - encrypt
-    localStorage.setItem(stateKey, JSON.stringify(state));
+    localStorage.setItem("Game", JSON.stringify(state));
+    
 }
 
 function loadState() {
-    let stateKey = getDayStr();
 
-    let state = localStorage.getItem(stateKey);
+    let day = getDayStr();
+
+    let state = localStorage.getItem("Game");
     if (state) {
+        
         // decrypt, validate
-        return JSON.parse(state);
+        // Check date for update state
+        if(JSON.parse(state).date.localeCompare(day) === 0) {
+            console.log(day)
+            return JSON.parse(state);
+        }
+        // reset state (not the count)
+        else {
+            resetState(JSON.parse(state),day);
+        }
+    
     }
 
     return {
-        guessList: DEFAULT_TODAY_GUEST_LIST,
+        guessList: DEFAULT_TODAY_GUEST_LIST, 
         lastStep: 0,
         openedStep: 0,
-        finished: false
+        fails: 0,
+        finished: false,
+        date: day
     }
+}
+
+function resetState(state, day) {
+
+    let latestState = state;
+
+    console.info("Reset State")
+    let guessList = state.guessList;
+
+    for(let i = 0; i <= MAX_GUESS_INDEX; i++) {
+        guessList[i].isCorrect=false;
+        guessList[i].isSkipped=false;
+        guessList[i].answer = ""
+    }
+   
+    latestState = {
+        ...state,
+        guessList: guessList,
+        lastStep: 0,
+        openedStep: 0,
+        finished: false,
+        date: day
+    }
+
+    saveState(latestState)
+    return latestState;
 }
 
 
@@ -73,6 +114,7 @@ function modalReducer(state, action) {
             let guessList = state.guessList;
             let lastStep = state.lastStep;
             let openedStep = state.openedStep;
+            let fails = state.fails;
 
             guessList[lastStep].isSkipped = true;
 
@@ -80,6 +122,7 @@ function modalReducer(state, action) {
             if (lastStep !== MAX_GUESS_INDEX) {
                 lastStep = lastStep + 1
             } else {
+                fails = fails + 1;
                 finished = true
             }
 
@@ -88,7 +131,8 @@ function modalReducer(state, action) {
                 guessList: guessList,
                 lastStep: lastStep,
                 openedStep: openedStep + 1,
-                finished: finished
+                finished: finished,
+                fails: fails
             }
             break
         }
@@ -96,14 +140,18 @@ function modalReducer(state, action) {
             let guessList = state.guessList;
             let lastStep = state.lastStep;
             let openedStep = state.openedStep;
-
+            let fails = state.fails;
+            
+            
             guessList[lastStep].answer = action.payload.answer;
 
             let finished = state.finished;
             if (lastStep !== MAX_GUESS_INDEX) {
                 lastStep = lastStep + 1
             } else {
+                fails = fails + 1;
                 finished = true
+
             }
 
             latestState = {
@@ -111,7 +159,8 @@ function modalReducer(state, action) {
                 guessList: guessList,
                 lastStep: lastStep,
                 finished: finished,
-                openedStep: openedStep + 1,
+                fails: fails,
+                openedStep: openedStep + 1
             }
             break
         }
@@ -119,10 +168,11 @@ function modalReducer(state, action) {
             let guessList = state.guessList;
             let lastStep = state.lastStep;
             let openedStep = state.openedStep;
-
+            
+            guessList[lastStep].count = guessList[lastStep].count+1;
             guessList[lastStep].isCorrect = true;
             guessList[lastStep].answer = action.payload.answer;
-
+            
             if (lastStep !== MAX_GUESS_INDEX) {
                 lastStep = lastStep + 1
             }
@@ -138,17 +188,23 @@ function modalReducer(state, action) {
         }
         case 'FINISH': {
             let guessList = state.guessList;
+            let fails = state.fails;
+
             guessList[MAX_GUESS_INDEX].isSkipped = true;
+            fails = fails + 1;
+    
 
             latestState = {
                 ...state,
                 guessList: guessList,
                 lastStep: MAX_GUESS_INDEX,
-                finished: true
+                finished: true,
+                fails: fails
             }
             break
         }
         case 'RESET': {
+            
             //load from localstorage
             latestState = {
                 ...state,
@@ -172,7 +228,8 @@ function modalReducer(state, action) {
                 guessList: DEFAULT_TODAY_GUEST_LIST,
                 lastStep: 0,
                 openedStep: 0,
-                finished: false
+                finished: false,
+                fails: fails
             }
             break
         }

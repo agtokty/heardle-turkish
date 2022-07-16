@@ -7,7 +7,7 @@ function NextTimer() {
     useEffect(() => {
         let current = new Date();
         let countDownDate = current.setHours(23, 59, 59, 999);
-        //let countDownDate = current.setHours(18, 18, 59, 999);
+        // let countDownDate = current.setHours(16, 1, 0, 999);
         let lastMinute = 0;
 
         let interval = setInterval(function () {

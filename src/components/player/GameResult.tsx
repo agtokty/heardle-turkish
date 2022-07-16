@@ -114,15 +114,15 @@ function GameResult({ songConfig }: { songConfig: any }) {
     });
   }
 
-  const onTwitterShareClicked = () => {
-    const text = buildShareText(guessList);
-    const url = `https://twitter.com/intent/tweet?original_referer=${HEARDLE_IT_WEB_URL}&text=${encodeURIComponent(text)}`;
+  // const onTwitterShareClicked = () => {
+  //   const text = buildShareText(guessList);
+  //   const url = `https://twitter.com/intent/tweet?original_referer=${HEARDLE_IT_WEB_URL}&text=${encodeURIComponent(text)}`;
 
-    const winProxy = window.open(url, '_blank');
-    if (winProxy) {
-      winProxy.focus();
-    }
-  }
+  //   const winProxy = window.open(url, '_blank');
+  //   if (winProxy) {
+  //     winProxy.focus();
+  //   }
+  // }
 
   return (
     <div className="w-full flex flex-col flex-grow relative">
