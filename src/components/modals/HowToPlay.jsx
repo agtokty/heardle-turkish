@@ -48,7 +48,7 @@ function HowToPlay() {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center mb-6">
+                        {/* <div className="flex items-center mb-6">
                             <div className="mr-4 w-8 text-custom-line">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -62,7 +62,7 @@ function HowToPlay() {
                                     Dopo aver digitato le canzone nella casella di ricerca e aver scelto uno dei risultati, premi il pulsante di invio.
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="flex items-center mb-6">
                             <div className="mr-4 w-8 text-custom-line">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"

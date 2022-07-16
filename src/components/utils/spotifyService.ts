@@ -83,7 +83,9 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
                   // console.info(track.artists[0].name.toLowerCase())
                   if(artists.includes(track.artists[0].name.toLowerCase())) {
 
-                    let id = track.duration_ms.toString() + track.artists[0].name.substring(0,3);
+                    let id = track.artists[0].name + track.name;
+                    id = id.replaceAll(" ","");
+                    // let id = track.duration_ms.toString() + track.artists[0].name.substring(0,3);
                     // let value = track.artists[0].name + " " + track.name;
                   
                     let label = track.artists[0].name + " - " + track.name;
@@ -98,11 +100,10 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
                 });
         }
 
-
-
         /** PARTE IN CUI SI RIORDINA LA LISTA TRACKS
          * E AGGIORNATA ATTRAVERSO L' inputValue
          */
+        // console.log(mapTracks);
         if(tracks.length == 0)
         { 
             mapTracks.forEach((value) =>{
@@ -112,7 +113,6 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
         }
         
         let sortedTracks = [...tracks].sort((a,b) => a.label.localeCompare(b.label));
-
 
         [...sortedTracks].forEach(value => {
           // restituisce un solo valore nella lista

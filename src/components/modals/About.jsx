@@ -27,10 +27,10 @@ function About() {
                      </button>
                   </div>
                </div>
-               <div className="text">
+               <div className="text-center">
                   <p className="mb-3"><a href="https://www.heardleita.netlify.app/" target="_blank" rel="noreferrer" title="Heardle">Heardle Italia</a>, indovina i più grandi successi Italiani.</p>
-                  <p className="mb-3">Le canzoni vengono scelte casualmente ogni giorno.</p>
-                  <p className="mb-3">Amore per gli artisti e tutti i detentori del copyright le cui canzoni vengono riprodotte in questa app.</p>
+                  <p className="mb-3">Ogni giorno Heardle ti presenterà una clip di una canzone popolare italiana.</p>
+                  <p className="mb-3">Indovinate nel minor numero possibile di tentativi e tornate ogni giorno per una nuova canzone.</p>
                   {/* <p class="mb-3">
                      <a href="https://twitter.com/HeardleTR" class="flex items-center no-underline" target="_blank" rel="noreferrer">
                         <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -38,6 +38,8 @@ function About() {
                         </svg> @HeardleTR
                      </a>
                   </p> */}
+               </div>
+               <div className="text">
                   <p className="text-sm mb-1 text-custom-line">Piattaforme utilizzate:</p>
                   <p className="text-sm text-custom-line">
                      <a href="https://firebase.google.com/" target="_blank" rel="https://firebase.google.com/">Firebase, </a>
