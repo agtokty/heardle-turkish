@@ -7,7 +7,7 @@ export const GAME_RESULT_MESSAGES = [
     "Ooooh, sei stato velocissimo! 😁",
     "Ottimo, che orecchio sopraffino 🥳",
     "Super! forse domani avrai più fortuna ?",
-    "Non hai indovinato... Domani andrà sicuramente meglio 😜"
+    "Per un pelo... Domani andrà sicuramente meglio 😜"
 ];
 
 export const GAME_RESULT_FAILED_MESSAGE = "Non hai indovinato la canzone di oggi :(";
