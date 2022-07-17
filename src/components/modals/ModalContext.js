@@ -14,6 +14,9 @@ function modalReducer(state, action) {
         case 'About': {
             return { currentModal: "About" }
         }
+        case 'Hearth': {
+            return { currentModal: "Hearth" }
+        }
         case 'Reset': {
             return { currentModal: "" }
         }

@@ -1,6 +1,7 @@
 import HowToPlay from "./HowToPlay";
 import Stats from "./Stats";
 import About from "./About";
+import Hearth from "./Hearth";
 
 function AllModals() {
 
@@ -9,6 +10,7 @@ function AllModals() {
             <HowToPlay />
             <Stats />
             <About />
+            <Hearth />
         </>
     );
 
