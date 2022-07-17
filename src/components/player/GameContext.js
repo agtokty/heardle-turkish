@@ -64,7 +64,7 @@ function loadState() {
         }
         // reset state (not the count)
         else {
-            resetState(JSON.parse(state),day);
+            state = resetState(JSON.parse(state),day);
         }
     
     }
