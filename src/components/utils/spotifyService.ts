@@ -57,7 +57,7 @@ export const getAccessToken = (): Promise<any> => {
 
 
 
-// MODIFICARE
+// bannare parole tipo LIVE, REMASTERED, CONCERT, CONCERTO, RADIO EDIT, 
 export const getList = (token: string, inputValue: string, callback: (res: any[]) => void) => {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + token);
