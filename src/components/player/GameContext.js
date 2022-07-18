@@ -59,13 +59,15 @@ function loadState() {
         // decrypt, validate
         // Check date for update state
         if(JSON.parse(state).date.localeCompare(day) === 0) {
-            console.log(day)
-            return JSON.parse(state);
+            console.info("Game item found")
+            // return JSON.parse(state);
         }
         // reset state (not the count)
         else {
+            console.info("Game item reset")
             state = resetState(JSON.parse(state),day);
         }
+        return JSON.parse(state);
     
     }
 
@@ -204,11 +206,11 @@ function modalReducer(state, action) {
             break
         }
         case 'RESET': {
-            
+            let guessList = state.guessList;
             //load from localstorage
             latestState = {
                 ...state,
-                guessList: DEFAULT_TODAY_GUEST_LIST,
+                guessList: guessList,
                 lastStep: 0,
                 openedStep: 0,
                 finished: false
