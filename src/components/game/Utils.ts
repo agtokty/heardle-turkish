@@ -18,8 +18,8 @@ function decodeTurkishCharacters(text: string) {
     return text;
 }
 
-function cleanUpText(value: string): string {
-    value = (value || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
+function cleanUpText(value: string, removeAll: boolean = false): string {
+    value = (value || "").toLowerCase().replace(/[0-9]/g, '');
 
     value = value.replaceAll("-", "");
     value = value.replaceAll("_", "");
@@ -29,10 +29,14 @@ function cleanUpText(value: string): string {
     value = value.replaceAll(",", "");
     value = value.replaceAll("#", "");
     value = value.replaceAll("&", "");
-    value = value.replaceAll("(", "");
-    value = value.replaceAll(")", "");
-    value = value.replaceAll("[", "");
-    value = value.replaceAll("]", "");
+
+    if (removeAll) {
+        value = value.replaceAll("(", "");
+        value = value.replaceAll(")", "");
+        value = value.replaceAll("[", "");
+        value = value.replaceAll("]", "");
+        value = value.replace(/\s/g, '')
+    }
 
     return value;
 }

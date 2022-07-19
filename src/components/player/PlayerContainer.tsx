@@ -68,7 +68,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                         })
                         .map((item: AudioscrobblerResult) => {
                             let value = item.artist + " " + item.name;
-                            value = cleanUpText(value);
+                            value = cleanUpText(value, false);
                             return { label: value, value: value }
                         });
                 }
