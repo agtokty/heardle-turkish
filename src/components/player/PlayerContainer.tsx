@@ -8,7 +8,7 @@ import GameResult from "./GameResult";
 import { useGameData } from "./GameContext";
 
 import MusicPlayer from "../music/MusicPlayer";
-import { checkAnswer } from "../game/Utils";
+import { checkAnswer, cleanUpText } from "../game/Utils";
 import { OnChangeValue } from "react-select";
 import { SongConfig } from "../game/Models";
 
@@ -68,16 +68,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                         })
                         .map((item: AudioscrobblerResult) => {
                             let value = item.artist + " " + item.name;
-                            value = value.replaceAll("-", "");
-                            value = value.replaceAll("_", "");
-                            value = value.replaceAll(".", "");
-                            value = value.replaceAll("?", "");
-                            value = value.replaceAll("!", "");
-                            value = value.replaceAll(",", "");
-                            value = value.replaceAll("#", "");
-                            value = value.replaceAll("&", "");
-                            value = value.replaceAll("(", "");
-                            value = value.replaceAll(")", "");
+                            value = cleanUpText(value);
                             return { label: value, value: value }
                         });
                 }

@@ -18,11 +18,30 @@ function decodeTurkishCharacters(text: string) {
     return text;
 }
 
+function cleanUpText(value: string): string {
+    value = (value || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
+
+    value = value.replaceAll("-", "");
+    value = value.replaceAll("_", "");
+    value = value.replaceAll(".", "");
+    value = value.replaceAll("?", "");
+    value = value.replaceAll("!", "");
+    value = value.replaceAll(",", "");
+    value = value.replaceAll("#", "");
+    value = value.replaceAll("&", "");
+    value = value.replaceAll("(", "");
+    value = value.replaceAll(")", "");
+    value = value.replaceAll("[", "");
+    value = value.replaceAll("]", "");
+
+    return value;
+}
+
 const checkStrings = (expected: string, userAnswer: string) => {
     const similarityScore = similarity(expected, userAnswer);
 
-    let expectedTemp = (expected || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
-    let userAnswerTemp = (userAnswer || "").toLowerCase().replace(/[0-9]/g, '').replace(/\s/g, '');
+    let expectedTemp = cleanUpText(expected);
+    let userAnswerTemp = cleanUpText(userAnswer);
 
     expectedTemp = decodeTurkishCharacters(expectedTemp);
     userAnswerTemp = decodeTurkishCharacters(userAnswerTemp);
@@ -31,8 +50,9 @@ const checkStrings = (expected: string, userAnswer: string) => {
         return true;
     }
 
-    let expectedLocaleTemp = (expected || "").toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
-    let userAnswerLocaleTemp = (userAnswer || "").toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
+    let expectedLocaleTemp = cleanUpText(expected).toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
+    let userAnswerLocaleTemp = cleanUpText(userAnswer).toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
+
     expectedLocaleTemp = decodeTurkishCharacters(expectedLocaleTemp);
     userAnswerLocaleTemp = decodeTurkishCharacters(userAnswerLocaleTemp);
 
@@ -56,4 +76,4 @@ const checkAnswer = (songConfig: SongConfig, userAnswer: string) => {
     return isOk;
 }
 
-export { checkAnswer }
+export { checkAnswer, cleanUpText }
