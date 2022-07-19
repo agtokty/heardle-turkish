@@ -76,6 +76,8 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                             value = value.replaceAll(",", "");
                             value = value.replaceAll("#", "");
                             value = value.replaceAll("&", "");
+                            value = value.replaceAll("(", "");
+                            value = value.replaceAll(")", "");
                             return { label: value, value: value }
                         });
                 }
