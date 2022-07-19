@@ -19,7 +19,7 @@ function decodeTurkishCharacters(text: string) {
 }
 
 function cleanUpText(value: string, removeAll: boolean = false): string {
-    value = (value || "").replace(/[0-9]/g, '');
+    value = (value || "");
 
     value = value.replaceAll("-", "");
     value = value.replaceAll("_", "");
