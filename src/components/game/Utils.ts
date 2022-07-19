@@ -19,7 +19,7 @@ function decodeTurkishCharacters(text: string) {
 }
 
 function cleanUpText(value: string, removeAll: boolean = false): string {
-    value = (value || "").toLowerCase().replace(/[0-9]/g, '');
+    value = (value || "").replace(/[0-9]/g, '');
 
     value = value.replaceAll("-", "");
     value = value.replaceAll("_", "");
@@ -28,14 +28,15 @@ function cleanUpText(value: string, removeAll: boolean = false): string {
     value = value.replaceAll("!", "");
     value = value.replaceAll(",", "");
     value = value.replaceAll("#", "");
-    value = value.replaceAll("&", "");
 
     if (removeAll) {
+        value = value.replaceAll("&", "");
         value = value.replaceAll("(", "");
         value = value.replaceAll(")", "");
         value = value.replaceAll("[", "");
         value = value.replaceAll("]", "");
-        value = value.replace(/\s/g, '')
+        value = value.replace(/\s/g, '');
+        value = value.replace(/[0-9]/g, '');
     }
 
     return value;
@@ -44,8 +45,8 @@ function cleanUpText(value: string, removeAll: boolean = false): string {
 const checkStrings = (expected: string, userAnswer: string) => {
     const similarityScore = similarity(expected, userAnswer);
 
-    let expectedTemp = cleanUpText(expected);
-    let userAnswerTemp = cleanUpText(userAnswer);
+    let expectedTemp = cleanUpText(expected, true);
+    let userAnswerTemp = cleanUpText(userAnswer, true);
 
     expectedTemp = decodeTurkishCharacters(expectedTemp);
     userAnswerTemp = decodeTurkishCharacters(userAnswerTemp);
@@ -54,8 +55,8 @@ const checkStrings = (expected: string, userAnswer: string) => {
         return true;
     }
 
-    let expectedLocaleTemp = cleanUpText(expected).toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
-    let userAnswerLocaleTemp = cleanUpText(userAnswer).toLocaleLowerCase(STRING_COMPARE_LOCALE).replace(/[0-9]/g, '').replace(/\s/g, '');
+    let expectedLocaleTemp = cleanUpText(expected, true).toLocaleLowerCase(STRING_COMPARE_LOCALE);
+    let userAnswerLocaleTemp = cleanUpText(userAnswer, true).toLocaleLowerCase(STRING_COMPARE_LOCALE);
 
     expectedLocaleTemp = decodeTurkishCharacters(expectedLocaleTemp);
     userAnswerLocaleTemp = decodeTurkishCharacters(userAnswerLocaleTemp);
