@@ -14,6 +14,7 @@ type SpotifyResult = {
   name: string
 }
 
+const banWords = ["reprise","remaster", "live", "remix", "mix", "version", "edit", "remastered", "concert", "concerto", "live", "studio", "registrazione", "dal vivo", "strumentale"];	// words to filter out
 
 export const getAccessToken = (): Promise<any> => { 
 
@@ -56,8 +57,6 @@ export const getAccessToken = (): Promise<any> => {
 }
 
 
-
-// bannare parole tipo LIVE, REMASTERED, CONCERT, CONCERTO, RADIO EDIT, 
 export const getList = (token: string, inputValue: string, callback: (res: any[]) => void) => {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + token);
@@ -81,8 +80,9 @@ export const getList = (token: string, inputValue: string, callback: (res: any[]
                 })
                 .map((track: SpotifyResult) => {
                   // console.info(track.artists[0].name.toLowerCase())
-                  if(artists.includes(track.artists[0].name.toLowerCase())) {
-
+                  var value = new RegExp(banWords.join('|')).test(track.name.toLowerCase());
+                  if(artists.includes(track.artists[0].name.toLowerCase()) && !value) {
+                    
                     let id = track.artists[0].name + track.name;
                     id = id.replaceAll(" ","");
                     // let id = track.duration_ms.toString() + track.artists[0].name.substring(0,3);
