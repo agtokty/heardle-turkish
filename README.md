@@ -1,6 +1,6 @@
 # Heardle TR
 
-Modest clone of Heardle game for Turkish songs. Deployed at : [heardle-tr.app](heardle-tr.app)
+Modest clone of Heardle game for Turkish songs. Deployed at : [heardle-tr.app](https://heardle-tr.app)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
