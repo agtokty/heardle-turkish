@@ -1766,8 +1766,10 @@ export const artists = [
     "paky",
     "lazza",
     "mahmood",
-    "lùnapop",
+    "lunapop",
     "gabry ponte",
     "883",
-    "francesco gabbani"
+    "francesco gabbani",
+    "calcutta",
+    "ligabue"
 ]
