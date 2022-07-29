@@ -3,7 +3,7 @@ export const artists = [
     "marracash", 
     "blanco", 
     "carl brave",
-    "giorgio gaber",
+    "Calcutta",
     "francesco guccini",
     "freak antoni",
     "claudio fucci",
@@ -464,7 +464,7 @@ export const artists = [
     "vincent rose",
     "luciano ceri",
     "massimo priviero",
-    "gene guglielmi",
+    "CALCUTTA",
     "gian piero alloisio",
     "paco d'alcatraz",
     "sergio agostini",
@@ -1770,6 +1770,6 @@ export const artists = [
     "gabry ponte",
     "883",
     "francesco gabbani",
-    "calcutta",
+    "Calcutta",
     "ligabue"
 ]
