@@ -12,15 +12,12 @@ interface Map {
 const DEFAULT_SONG = {
     songLength: 16,
     breaks: [1, 2, 4, 7, 11, 16],
-    trackName: "Chicchi di riso",
-    others: ["Frah Quintale Chicchi di riso"],
-    album: "Banzai (Lato arancio)",
-    song: "Chicci di riso",
-    artist: "Frah Quintale",
-    soundCloudLink: "https://soundcloud.com/frahquintale/chicchi-di-riso",
+    trackName: "Fedez - MILLE – feat. Orietta Berti",
+    song: "MILLE",
+    artist: "Fedez",
+    soundCloudLink: "https://soundcloud.com/fedez-official/mille",
     showSoundCloud: true,
-    soundSpotifyLink: "https://open.spotify.com/track/05ZaaO3XTZQ5rwBNGetYMV?si=f0b6f9361b384d96",
-    image: "https://i1.sndcdn.com/artworks-2jjAeyOoVrfS-0-t500x500.png"
+    image: "https://i1.sndcdn.com/artworks-DshfXEuGTnGV-0-t500x500.jpg"
 };
 
 const SONG_DATABASE: Map = {}
