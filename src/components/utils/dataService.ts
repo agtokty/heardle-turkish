@@ -10,16 +10,17 @@ interface Map {
 }
 
 const DEFAULT_SONG = {
-    songLength: 16,
-    breaks: [1, 2, 4, 7, 11, 16],
-    trackName: "Pinguini Tattici Nucleari Scooby Doo",
-    album: "Scooby Doo",
-    song: "Scooby Doo",
-    artist: "Pinguini Tattici Nucleari",
-    soundCloudLink: "https://soundcloud.com/pinguini-tattici-nucleari/scooby-doo",
+    songLength: 30,
+    breaks: [4, 8, 11, 16, 24, 30],
+    trackName: "Elisa Litoranea",
+    others: ["Elisa Litoranea (con Matilda De Angelis)"],
+    album: "Ritorno al Futuro",
+    song: "Litoranea",
+    artist: "Elisa",
+    soundCloudLink: "https://soundcloud.com/elisa-official/litoranea-1",
     showSoundCloud: true,
     soundSpotifyLink: "https://open.spotify.com/track/05ZaaO3XTZQ5rwBNGetYMV?si=f0b6f9361b384d96",
-    image: "https://i1.sndcdn.com/artworks-ogYuMKgshuNb-0-t500x500.jpg"
+    image: "https://i1.sndcdn.com/artworks-dr78ZwUE9K3r-0-t500x500.jpg"
 };
 
 const SONG_DATABASE: Map = {}
