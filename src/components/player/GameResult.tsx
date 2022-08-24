@@ -1,5 +1,6 @@
 import { useGameData } from "./GameContext";
 import copy from 'copy-to-clipboard';
+//import { KofiButton } from "react-kofi-button";	
 
 import SoundCloudLogo from '../icons/SoundCloudLogo.svg';
 import NextTimer from "./NextTimer";
@@ -160,8 +161,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
           } */}
-        </div>        
-        
+        </div> 
         {/* <div className="flex-col items-center justify-center">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9120231853178287" crossOrigin="anonymous"></script>
         <ins className="adsbygoogle"
@@ -213,6 +213,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
             </a>
           </div> */}
         </div>
+        {/* <KofiButton username="davidebri" label="Supporta il progetto!" /> */}
         <div>
           <NextTimer />
         </div>
