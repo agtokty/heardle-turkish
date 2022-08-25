@@ -1,0 +1,71 @@
+{
+  "app": "HeardleTr",
+  "title": "Heardle Türkçe",
+  "PUBLIC_URL": "",
+  "loading": "Yükleniyor...",
+  "meta": {
+    "alt": "Heardle Türkçe ile günlük yayınlanan şarkıları tahmin et!",
+    "description": "Heardle Türkçe | Günlük olarak yayınlanan şarkıları tahmin edip sonuçlarını paylasabileceginiz basit bir web oyunudur.",
+    "description2": "Girişini dinleyerek günün şarkıyı mümkün olduğunca az denemede tahmin edin.",
+    "name": "Heardle Türkçe - Wordle oyununun müzik versiyonu"
+  },
+  "how_to_play": {
+    "title": "Nasıl oynanır",
+    "part1": "Şarkı girişini dinleyerek sanatçı ve şarkıyı tahmin edin.",
+    "part2": "Tahminlerinizi arama kutusuna yazip cikan sonuclardan birini sectikten sonra gonder butonuna basin.",
+    "part3": "Yanlış veya atlanan tahminler şarkının bir sonraki kısmını açar.",
+    "part4": "Mümkün olduğunca az denemede doğru tahmin edin ve puanınızı paylaşın.",
+    "start": "başla",
+    "part5": "Bu uygulamayı kullanarak, kullanıcı deneyiminizi artırmak amaçlı",
+    "and": "ve",
+    "part6": "teknolojilerini kullanmayı kabul etmiş olursunuz.",
+    "close": "Kapat"
+  },
+  "about": {
+    "title": "Uygulama Hakkında",
+    "part1": "uygulamasının Türkçe kopyasıdır.",
+    "part2": "Şarkılar her gün rastgele olacak şekilde seçilmektedir.",
+    "part3": "ya da o anki ruh haline gore",
+    "part4": "Bu uygulamada şarkıları çalınan sanatçılara ve tüm telif hakki sahiplerine sevgiler.",
+    "part5": "Kullanılan araç ve servisler",
+    "developer": "Geliştirici",
+    "close": "Kapat"
+  },
+  "music_player": {
+    "placeholder": "Tahmin ettiğiniz şarkıyı/sanatçıyı aratıp seçin.",
+    "skip": "İlerlet",
+    "finish": "Bitir",
+    "send": "Tahmin Gönder",
+    "help": "Arama yapmak icin en az 3 karakter girmelisiniz",
+    "no_results": "Sonuc bulunamadi",
+    "skipped": "İLERLETİLDİ",
+    "loading": "player yukleniyor...",
+    "stop": "Şarkıyı durdur",
+    "start": "Şarkıyı başlat"
+  },
+  "game_results": {
+    "one": "🏆 İşte aradığımız yetenek! 🏆",
+    "two": "Harikasın, bu kadar kısa sürede bildiğin için tebrikler 🥳",
+    "three": "Oooo, hizlisin ya da çok iyi bildiğin yerden çıktı sanırım? 😁",
+    "four": "Harikasın, bu kadar kısa sürede bildiğin için tebrikler 🥳",
+    "five": "Supersin! belki bir sonraki sefere çok daha iyi bildiğin bi şarkı gelir ?",
+    "six": "Kusura bakma daha fazla ipucu veremezdim 😜",
+    "failed": "Sanırım hiç ilgi alanın olmayan bir türe denk geldin... Yarın görüşürüz 😃",
+    "copy": "Sonucu Kopyala",
+    "copied": "Kopyalandi",
+    "share": "Twitter'da Paylaş",
+    "playlist": "Daha önce çıkan tüm şarkılar - Spotify",
+    "twitter": "{{icons}} \n #HeardleTr {{todayStr}} \n \n {{HEARDLE_TR_WEB_URL}}",
+    "soundcloud_title": "SoundCloud uzerinden {{trackName}} dinle",
+    "spotify_title": "Spotify uzerinden \"{{trackName}}\" dinle"
+  },
+  "timer": {
+    "hours": "saat",
+    "minutes": "dakika",
+    "seconds": "saniye",
+    "h": "s",
+    "m": "d",
+    "s": "s",
+    "next": "Sonraki Heardle"
+  }
+}

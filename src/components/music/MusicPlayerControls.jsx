@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 
 function getSecondPreview(seconds) {
     if (seconds < 10) {
@@ -15,6 +16,8 @@ function getSecondPreview(seconds) {
 }
 
 function MusicPlayerControls({ currentPositionInMilis, songLengthInSeconds, isPlaying, onStoped, onPlayed, gameFinished, songFullDurationInMilis }) {
+
+    const { t } = useTranslation();
 
     const onPlayClicked = () => {
         console.debug("onPlayClicked")
@@ -48,7 +51,7 @@ function MusicPlayerControls({ currentPositionInMilis, songLengthInSeconds, isPl
                                         isPlaying === true ?
                                             (
                                                 <div className="flex justify-center items-center text-custom-fg h-14 w-14 border-2 rounded-full relative overflow-hidden">
-                                                    <button className="player-button" type="button" aria-label="Şarkıyı durdur" title="Şarkıyı durdur"
+                                                    <button className="player-button" type="button" aria-label={t('music_player.stop')} title={t('music_player.stop')}
                                                         onClick={onStopClicked} >
                                                         <div className="ml-1 relative z-10 playing" >
                                                             <div className="scale-150 transform relative">
@@ -60,7 +63,7 @@ function MusicPlayerControls({ currentPositionInMilis, songLengthInSeconds, isPl
                                             ) :
                                             (
                                                 <div className="flex justify-center items-center text-custom-fg h-14 w-14 border-2 rounded-full relative overflow-hidden">
-                                                    <button className="player-button" type="button" aria-label="Şarkıyı başlat" title="Şarkıyı başlat"
+                                                    <button className="player-button" type="button" aria-label={t('music_player.start')} title={t('music_player.start')}
                                                         onClick={onPlayClicked} >
                                                         <div className="ml-1 relative z-10" >
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"

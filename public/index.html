@@ -1,62 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="%REACT_APP_APP_LANG%">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
-  <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#121212">
-
-  <meta name="description"
-    content="Heardle Türkçe | Günlük olarak yayınlanan şarkıları tahmin edip sonuçlarını paylasabileceginiz basit bir web oyunudur." />
-  <meta itemprop="name" content="Heardle Türkçe - Wordle oyununun müzik versiyonu">
-  <meta itemprop="image" content="%PUBLIC_URL%/logo192.png">
-
-  <meta property="og:locale" content="tr_TR" />
-  <meta property="og:url" content="%REACT_APP_PUBLIC_URL%">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Heardle Türkçe - Wordle oyununun müzik versiyonu">
-  <meta property="og:description"
-    content="Heardle Türkçe - Günlük olarak yayınlanan şarkıları tahmin edip sonuçlarını paylasabileceginiz basit bir web oyunudur.">
-
-  <meta property="og:image" content="%REACT_APP_PUBLIC_URL%/og-image-1200-600.jpg?%REACT_APP_VERSION%">
-  <meta property="og:image:type" content="image/jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="600" />
-  <meta property="og:image:alt" content="Heardle Türkçe - Günün şarkısını dinleyerek tahmin etmeye çalışan insanlar" />
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Heardle Türkçe - Wordle oyununun müzik versiyonu">
-  <meta name="twitter:description"
-    content="Girişini dinleyerek günün şarkıyı mümkün olduğunca az denemede tahmin edin.">
-  <meta name="twitter:image" content="%REACT_APP_PUBLIC_URL%/og-image-1200-600.jpg?%REACT_APP_VERSION%">
-  <meta name="twitter:image:type" content="image/jpg" />
-  <meta name="twitter:image:width" content="1200" />
-  <meta name="twitter:image:height" content="600" />
-  <meta name="twitter:image:alt" content="Heardle Türkçe ile günlük yayınlanan şarkıları tahmin et!" />
-
-  <meta name="twitter:text:app_country" content="TR" />
-  <meta name="twitter:text:app_name" content="Heardle Türkçe" />
-
-  <link rel="canonical" href="%REACT_APP_PUBLIC_URL%/">
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-  <title>Heardle Türkçe</title>
-
   <script defer src="https://w.soundcloud.com/player/api.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SRJGZZ5XG"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GOOGLE_TM%"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-5SRJGZZ5XG');
+    gtag('config', '%REACT_APP_GOOGLE_TM%');
   </script>
 </head>
 

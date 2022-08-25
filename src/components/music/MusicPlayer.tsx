@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 import PlayerProgress from "./PlayerProgress";
 import MusicPlayerControls from "./MusicPlayerControls";
@@ -36,6 +37,8 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
     const [songFullDurationInMilis, setSongFullDurationInMilis] = useState(0);
 
     const { state: { openedStep, finished } } = useGameData();
+
+    const { t } = useTranslation();
 
     const onStoped = (reset = false) => {
         //console.debug("onStoped")
@@ -153,13 +156,13 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
                     (
                         <div className="border-t border-custom-line p-3">
                             <div className="text-center max-w-screen-sm w-full mx-auto flex-col">
-                                player yukleniyor...
+                                {t('music_player.loading')}
                             </div>
                         </div>
                     )
             }
             <div style={{ display: "none" }}>
-                <iframe id="soundcloud-iframe" allow="autoplay" title="Heardle" src={"https://w.soundcloud.com/player/?url=" + songConfig.soundCloudLink}></iframe>
+                <iframe id="soundcloud-iframe" allow="autoplay" title={t('app')} src={"https://w.soundcloud.com/player/?url=" + songConfig.soundCloudLink}></iframe>
             </div>
         </>
     );

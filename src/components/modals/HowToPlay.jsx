@@ -1,8 +1,10 @@
 import { useModalData } from "./ModalContext";
+import { useTranslation } from 'react-i18next';
 
 function HowToPlay() {
 
     const { dispatch, state: { currentModal } } = useModalData();
+    const { t } = useTranslation();
 
     const onStart = () => {
         dispatch({ type: 'Reset' })
@@ -19,10 +21,10 @@ function HowToPlay() {
                 <div className="bg-custom-bg border border-custom-mg p-6 rounded">
                     <div className="flex items-center justify-center mb-6">
                         <div className="flex-1 pl-7">
-                            <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">nasil oynanir</h2>
+                            <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">{t('how_to_play.title')}</h2>
                         </div>
                         <div className="justify-self-end flex">
-                            <button autoFocus="" className="border-none text-custom-mg" type="button" aria-label="Kapat" title="Kapat"
+                            <button autoFocus="" className="border-none text-custom-mg" type="button" aria-label="Kapat" title={t('how_to_play.close')}
                                 onClick={() => onStart()}>
                                 <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,9 +45,7 @@ function HowToPlay() {
                                 </svg>
                             </div>
                             <div>
-                                <p>
-                                    Şarkı girişini dinleyerek sanatçı ve şarkıyı tahmin edin.
-                                </p>
+                                <p>{t('how_to_play.part1')}</p>
                             </div>
                         </div>
                         <div className="flex items-center mb-6">
@@ -58,9 +58,7 @@ function HowToPlay() {
                                 </svg>
                             </div>
                             <div>
-                                <p>
-                                    Tahminlerinizi arama kutusuna yazip cikan sonuclardan birini sectikten sonra gonder butonuna basin.
-                                </p>
+                                <p>{t('how_to_play.part2')}</p>
                             </div>
                         </div>
                         <div className="flex items-center mb-6">
@@ -72,7 +70,7 @@ function HowToPlay() {
                                 </svg>
                             </div>
                             <div>
-                                <p>Yanlış veya atlanan tahminler şarkının bir sonraki kısmını açar.</p>
+                                <p>{t('how_to_play.part3')}</p>
                             </div>
                         </div>
                         <div className="flex items-center mb-6">
@@ -83,21 +81,21 @@ function HowToPlay() {
                                 </svg>
                             </div>
                             <div>
-                                <p>Mümkün olduğunca az denemede doğru tahmin edin ve puanınızı paylaşın.</p>
+                                <p>{t('how_to_play.part4')}</p>
                             </div>
                         </div>
                         <div className="justify-center flex py-2 mt-2">
                             <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm bg-custom-positive"
-                                type="button" aria-label="başla" title="Başla"
+                                type="button" aria-label="başla" title={t('how_to_play.start')}
                                 onClick={() => onStart()}>
-                                başla
+                                {t('how_to_play.start')}
                             </button>
                         </div>
                     </div>
                     <p className="text-xs mt-3 text-center text-custom-line">
-                        Bu uygulamayı kullanarak, kullanıcı deneyiminizi artırmak amaçlı
-                        <a href="https://policies.google.com/technologies/partner-sites"> Google</a>, <a href="https://developer.spotify.com/documentation/widgets/terms/"> Spotify</a> ve
-                        <a href="https://soundcloud.com/pages/privacy"> Soundcloud</a> teknolojilerini kullanmayı kabul etmiş olursunuz.
+                        {t('how_to_play.part5')}
+                        <a href="https://policies.google.com/technologies/partner-sites"> Google</a>, <a href="https://developer.spotify.com/documentation/widgets/terms/"> Spotify</a> {t('how_to_play.and')}
+                        <a href="https://soundcloud.com/pages/privacy"> Soundcloud</a> {t('how_to_play.part6')}
                     </p>
                 </div>
             </div>

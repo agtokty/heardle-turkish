@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 import AsyncSelect from 'react-select/async';
 
@@ -24,6 +25,8 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
     const [selectedSong, setSelectedSong] = useState("");
 
     const { dispatch, state: { openedStep, finished } } = useGameData();
+
+    const { t } = useTranslation();
 
     const onSkipClicked = () => {
         dispatch(({ type: "SKIP", payload: { step: openedStep } }))
@@ -110,8 +113,8 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                             DropdownIndicator: () => null,
                                             IndicatorSeparator: () => null
                                         }}
-                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? "Arama yapmak icin en az 3 karakter girmelisiniz" : "Sonuc bulunamadi"}
-                                        placeholder={"Tahmin ettiğiniz şarkıyı/sanatçıyı aratıp seçin."}
+                                        noOptionsMessage={({ inputValue }) => !inputValue.trim() ? t('music_player.help') : t('music_player.no_results')}
+                                        placeholder={t('music_player.placeholder')}
                                         loadOptions={loadOptions}
                                         value={selectedSong}
                                         // blurInputOnSelect={true}
@@ -132,7 +135,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                     <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onSkipClicked}>
-                                        İlerlet
+                                        {t('music_player.skip')}
                                     </button>
                                 }
                                 {
@@ -140,7 +143,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                     <button className="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm rounded"
                                         type="submit"
                                         onClick={onFinishClicked}>
-                                        Bitir
+                                        {t('music_player.finish')}
                                     </button>
                                 }
                                 {
@@ -148,7 +151,7 @@ function PlayerContainer({ songConfig }: { songConfig: SongConfig }) {
                                     <button className="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm rounded bg-custom-positive"
                                         type="submit"
                                         onClick={onSendClicked}>
-                                        Tahmin Gönder
+                                        {t('music_player.send')}
                                     </button>
                                 }
                             </div>
