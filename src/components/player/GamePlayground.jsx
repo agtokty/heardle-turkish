@@ -1,4 +1,5 @@
 import { useGameData } from "./GameContext";
+import { useTranslation } from 'react-i18next';
 
 const SKIP_ICON = (
     <svg xmlns="http://www.w3.org/2000/svg" className="text-custom-mg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -19,6 +20,8 @@ function GamePlayground() {
 
     const { state: { guessList } } = useGameData();
 
+    const { t } = useTranslation();
+
     return (
         <div className="w-full flex flex-col flex-grow relative">
             <div className="max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto">
@@ -33,7 +36,7 @@ function GamePlayground() {
                                         {SKIP_ICON}
                                     </div>
                                     <div className="flex flex-1 justify-between items-center">
-                                        <div className="text-custom-mg tracking-widest font-semibold">İLERLETİLDİ</div>
+                                        <div className="text-custom-mg tracking-widest font-semibold">{t('music_player.skipped')}</div>
                                     </div>
                                 </>);
                             } else if (guess.isSkipped === false && guess.isCorrect === false && guess.answer != "") {

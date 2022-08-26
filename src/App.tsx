@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from "./components/Header";
 import PlayerContainer from "./components/player/PlayerContainer";
 import AllModals from "./components/modals/AllModals";
@@ -6,7 +8,6 @@ import { GameContextProvider } from "./components/player/GameContext";
 import { useEffect, useState } from "react";
 import { getDailySong } from "./components/utils/dataService";
 import { SongConfig } from "./components/game/Models";
-
 
 const APP_VERSION = process.env.REACT_APP_VERSION || "0"
 console.debug("v" + APP_VERSION);
@@ -23,11 +24,11 @@ const EMPTY_SONG_CONFIG: SongConfig = {
   others: []
 }
 
-
-function App() {
+function Page() {
 
   const [loading, setLoading] = useState(true);
   const [currentSongConfig, setCurrentSongConfig] = useState<SongConfig>(EMPTY_SONG_CONFIG);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
 
@@ -44,23 +45,36 @@ function App() {
         <Header />
         <AllModals />
       </ModalContextProvider>
+
       <GameContextProvider>
         {
-          loading ?
-            <>
-              <div className="max-w-screen-sm w-full mx-auto flex-col" >
-                <div className="text-center m-3 mt-6">
-                  Yükleniyor...
-                </div>
-              </div>
-              .</>
-            : (
+          loading ? (
+              <Loader message={i18n.t('loading')} />
+            ) : (
               <PlayerContainer songConfig={currentSongConfig} />
             )
         }
       </GameContextProvider>
     </div>
   );
-}
+};
 
-export default App;
+// loading component for suspense fallback
+const Loader = (props: { message: any }) => (
+  <>
+    <div className="max-w-screen-sm w-full mx-auto flex-col" >
+      <div className="text-center m-3 mt-6">
+        {props.message}
+      </div>
+    </div>
+  .</>
+);
+
+// here app catches the suspense from page in case translations are not yet loaded
+export default function App() {
+  return (
+    <Suspense fallback={<Loader message='Loading ...' />}>
+      <Page />
+    </Suspense>
+  );
+};

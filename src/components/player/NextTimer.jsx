@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 function NextTimer() {
     const [countDown, setCountDown] = useState();
     const [countDownTitle, setCountDownTitle] = useState();
+    const { t } = useTranslation();
 
     useEffect(() => {
         let current = new Date();
@@ -20,11 +22,11 @@ function NextTimer() {
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                const result = hours + "s " + minutes + "d " + seconds + "s ";
+                const result = `${hours} ${t('timer.h')} ${minutes} ${t('timer.m')} ${seconds} ${t('timer.s')}`;
                 setCountDown(result);
 
                 if (lastMinute !== minutes) {
-                    const resultDetailed = hours + " saat " + minutes + " dakika ";
+                    const resultDetailed = `${hours} ${t('timer.hours')} ${minutes} ${t('timer.minutes')}`;
                     setCountDownTitle(resultDetailed);
                     lastMinute = minutes;
                 }
@@ -47,7 +49,7 @@ function NextTimer() {
     return (
         <>
             <div className="flex flex-col justify-center items-center mb-6 mx-3">
-                <div className="text-center text-custom-line text-sm">Sonraki Heardle:</div>
+                <div className="text-center text-custom-line text-sm">{t('timer.next')}:</div>
                 <div className="tracking-widest text-lg" title={countDownTitle}>{countDown}</div>
             </div>
         </>

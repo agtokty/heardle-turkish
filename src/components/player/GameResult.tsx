@@ -1,75 +1,12 @@
+import { useTranslation } from 'react-i18next';
 import { useGameData } from "./GameContext";
 import copy from 'copy-to-clipboard';
 
 import SoundCloudLogo from '../icons/SoundCloudLogo.svg';
 import NextTimer from "./NextTimer";
 import { useState } from "react";
-import { GAME_RESULT_FAILED_MESSAGE, GAME_RESULT_MESSAGES, HEARDLE_SPOTIFY_LIST_URL, HEARDLE_TR_WEB_URL } from "../game/Constants";
+import { HEARDLE_SPOTIFY_LIST_URL, HEARDLE_TR_WEB_URL } from "../game/Constants";
 import { getDayFormattedText } from "../utils";
-
-const buildScore = (guessList: any[]): number => {
-  let max = 100;
-
-  const isCorrect = guessList.some((guess) => guess.isCorrect);
-  if (isCorrect === false) {
-    return 0;
-  }
-
-  // kaybedilecek puanlar: 12, 10, 8, 6, 4
-  for (let i = 0; i < guessList.length; i++) {
-    if (guessList[i].isSkipped) {
-      max = max - ((guessList.length - i) * 2);
-    }
-  }
-
-  return max;
-}
-
-const buildBoxIcons = (guessList: any[]) => {
-  let icons = guessList.map((item, i) => {
-    if (item.isSkipped) {
-      return "⬛"
-    }
-    if (item.isCorrect) {
-      return "🟩"
-    }
-    if (item.isSkipped === false && item.isCorrect === false && item.answer) {
-      return "🟥"
-    }
-    return "⬜️"
-  }).join("");
-
-  return icons;
-}
-
-const getSpeakerIcon = (score: number) => {
-  if (score === 100) {
-    return "🔊";
-  } else if (score === 0) {
-    return "🔇";
-  } else if (score < 50) {
-    return "🔈";
-  } else {
-    return "🔉";
-  }
-}
-
-const getResultIcons = (guessList: any[]) => {
-  let score = buildScore(guessList);
-  console.log("score:", score)
-  return getSpeakerIcon(score) + buildBoxIcons(guessList);
-}
-
-const buildShareText = (guessList: any[]) => {
-  let score = buildScore(guessList);
-  console.debug(score)
-
-  let icons = getResultIcons(guessList);
-  let todayStr = getDayFormattedText();
-
-  // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
-  return `${icons} \n #HeardleTr ${todayStr} \n \n ${HEARDLE_TR_WEB_URL}`;
-}
 
 function GameResult({ songConfig }: { songConfig: any }) {
 
@@ -77,6 +14,81 @@ function GameResult({ songConfig }: { songConfig: any }) {
   const guessScore = guessList.findIndex((guess: any) => guess.isCorrect);
 
   const [showCopied, setShowCopied] = useState(false);
+
+  const { t } = useTranslation();
+
+  const GAME_RESULT_MESSAGES = [
+    t('game_results.one'),
+    t('game_results.two'),
+    t('game_results.three'),
+    t('game_results.four'),
+    t('game_results.five'),
+    t('game_results.six')
+  ];
+
+  const buildScore = (guessList: any[]): number => {
+    let max = 100;
+
+    const isCorrect = guessList.some((guess) => guess.isCorrect);
+    if (isCorrect === false) {
+      return 0;
+    }
+
+    // kaybedilecek puanlar: 12, 10, 8, 6, 4
+    for (let i = 0; i < guessList.length; i++) {
+      if (guessList[i].isSkipped) {
+        max = max - ((guessList.length - i) * 2);
+      }
+    }
+
+    return max;
+  };
+
+  const buildBoxIcons = (guessList: any[]) => {
+    let icons = guessList.map((item, i) => {
+      if (item.isSkipped) {
+        return "⬛"
+      }
+      if (item.isCorrect) {
+        return "🟩"
+      }
+      if (item.isSkipped === false && item.isCorrect === false && item.answer) {
+        return "🟥"
+      }
+      return "⬜️"
+    }).join("");
+
+    return icons;
+  };
+
+  const getSpeakerIcon = (score: number) => {
+    if (score === 100) {
+      return "🔊";
+    } else if (score === 0) {
+      return "🔇";
+    } else if (score < 50) {
+      return "🔈";
+    } else {
+      return "🔉";
+    }
+  };
+
+  const getResultIcons = (guessList: any[]) => {
+    let score = buildScore(guessList);
+    console.log("score:", score)
+    return getSpeakerIcon(score) + buildBoxIcons(guessList);
+  };
+
+  const buildShareText = (guessList: any[]) => {
+    let score = buildScore(guessList);
+    console.debug(score)
+
+    let icons = getResultIcons(guessList);
+    let todayStr = getDayFormattedText();
+
+    // return ` ${icons} \n #HeardleTr #Heardle #${score} \n \n ${HEARDLE_TR_WEB_URL}`;
+    return t('game_results.twitter', {icons: icons, todayStr: todayStr, HEARDLE_TR_WEB_URL: HEARDLE_TR_WEB_URL});
+  };
 
   const onCopyClicked = () => {
     const text = buildShareText(guessList);
@@ -107,16 +119,16 @@ function GameResult({ songConfig }: { songConfig: any }) {
         <div className="p-3 pb-0 flex-col items-evenly">
           {
             songConfig.showSoundCloud &&
-            <a href={songConfig.soundCloudLink} title={"SoundCloud uzerinden " + songConfig.trackName + " dinle"} target="_blank" rel="noreferrer"
+            <a href={songConfig.soundCloudLink} title={t('game_results.soundcloud_title', {trackName: songConfig.trackName})} target="_blank" rel="noreferrer"
               className="no-underline song-link">
               <div className="p-2 flex items-center rounded-sm bg-soundcloud">
-                <img src={songConfig.image} className="h-14 w-14 " alt="Fleetwood Mac - Dreams" />
+                <img src={songConfig.image} className="h-14 w-14 " alt={songConfig.trackName} />
                 <div className="flex-1 mx-3 text-white">
                   <p className="">{songConfig.trackName}</p>
                   <p className="text-sm ">{songConfig.album}</p>
                 </div>
                 <div className="text-center flex justify-center">
-                  <img src={SoundCloudLogo} alt={"Soundcloud üzerinden " + songConfig.trackName + " dinle"} />
+                  <img src={SoundCloudLogo} alt={t('game_results.soundcloud_title', {trackName: songConfig.trackName})} />
                 </div>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -131,7 +143,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
             songConfig.soundSpotifyLink &&
             <div className="mt-2">
               <iframe id="spotify" src={songConfig.soundSpotifyLink + "?utm_source=heardle-tr.app"}
-                title={"Spotify uzerinden " + songConfig.trackName + " dinle"}
+                title={t('game_results.spotify_title', {trackName: songConfig.trackName})}
                 className="song-link"
                 width="100%" height="80" frameBorder="0" allowFullScreen={false}
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
@@ -147,7 +159,7 @@ function GameResult({ songConfig }: { songConfig: any }) {
           }
           {
             guessScore < 0 &&
-            <p className="text-lg text-custom-line">{GAME_RESULT_FAILED_MESSAGE}</p>
+            <p className="text-lg text-custom-line">{t('game_results.failed')}</p>
           }
 
           <div className="flex justify-center my-2">
@@ -159,15 +171,15 @@ function GameResult({ songConfig }: { songConfig: any }) {
           <div className="flex flex-col justify-center items-center mt-3 pt-3">
             <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-slate-500 text-black"
               onClick={onCopyClicked}>
-              {showCopied ? "Kopyalandi" : "Sonucu Kopyala"}
+              {showCopied ? t('game_results.copied') : t('game_results.copy')}
             </button>
             <button className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-cyan-400 text-black"
               onClick={onTwitterShareClicked}>
-              Twitter'da Paylaş
+              {t('game_results.share')}
             </button>
             <a className="w-full px-2 py-2 mb-2 uppercase tracking-widest border-none rounded content-center font-semibold text-sm bg-green-500 text-black"
               href={HEARDLE_SPOTIFY_LIST_URL} target="_blank" rel="noreferrer">
-              Daha önce çıkan tüm şarkılar - Spotify
+              {t('game_results.playlist')}
             </a>
           </div>
         </div>
