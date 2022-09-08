@@ -32,15 +32,14 @@ function App() {
   const [accessToken, setAccessToken] = useState("");
   
   useEffect(() => {
+
     getAccessToken().then((value: any) => {
       setAccessToken(value);
-    });
-
-    getDailySong().then(songConfig => {
-      setCurrentSongConfig(songConfig);
-      setLoading(false)
-    })
-    
+      getDailySong(value).then(songConfig => {
+        setCurrentSongConfig(songConfig);
+        setLoading(false)
+      })
+    });    
 
   }, [])
 
