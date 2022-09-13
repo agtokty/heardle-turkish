@@ -44,7 +44,7 @@ function HowToPlay() {
                             </div>
                             <div>
                                 <p>
-                                    Indovina l'artista e la canzone ascoltando la canzone.
+                                    Indovina la canzone ascoltando solo una piccola parte.
                                 </p>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ function HowToPlay() {
                                 </svg>
                             </div>
                             <div>
-                                <p>Le previsioni sbagliate o saltate sbloccano la parte successiva del brano.</p>
+                                <p>I tentativi sbagliati o saltati sbloccano la parte successiva del brano.</p>
                             </div>
                         </div>
                         <div className="flex items-center mb-6">
@@ -81,7 +81,7 @@ function HowToPlay() {
                                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-7">
                                     <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
                                 </svg>
-                            </div>
+                            </div> 
                             <div>
                                 <p>Indovina correttamente nel minor numero di tentativi possibili e condividi il tuo punteggio.</p>
                             </div>
