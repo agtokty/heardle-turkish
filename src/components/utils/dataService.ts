@@ -35,7 +35,7 @@ const setSong = (day: string, selectedSong: any) => {
     let hardCodedSong = {
         day: day,
         songLength: 30,
-        breaks: [4, 8, 11, 16, 24, 30],
+        breaks: [1, 2, 4, 8, 16, 30],
         trackName: selectedSong.artists[0].name + " " + selectedSong.name,
         others: [selectedSong.artists[0].name + " " + song],
         song: selectedSong.name.indexOf("-") !== -1 ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) : selectedSong.name,
