@@ -195,6 +195,9 @@ function GameResult({ songConfig }: { songConfig: any }) {
         <div>
           <NextTimer />
         </div>
+        <div className="items-center flex flex-col justify-center" style={{width:"100%"}}>
+            <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=29&p=48&l=ur1&category=amu&banner=1T83NYZ3M4NF2Y420N02&f=ifr&linkID=e01adc0b453b36078dcedb5c037a0c11&t=heardleita001-21&tracking_id=heardleita001-21" scrolling="no" style={{border:"none", width:"100%", height:"90px"}} sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+        </div>
       </div>
     </div>
   );
