@@ -1,6 +1,7 @@
-import { getDayStr } from ".";
+import { getDayStr, getDayStrAsPath } from ".";
 import { SongConfig } from "../game/Models";
 import { artists } from "../utils/constants";
+import { getDatabase, ref, onValue, set } from "firebase/database";
 import "./firebase";
 
 
@@ -25,6 +26,9 @@ const SONG_DATABASE: Map = {}
 
 const setSong = (day: string, selectedSong: any) => {
 
+    const database = getDatabase();
+
+
     let song = selectedSong.name.includes("-") ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) :
         selectedSong.name.includes("(") ? selectedSong.name.substring(0, selectedSong.name.indexOf("(")) : selectedSong.name;
 
@@ -37,12 +41,31 @@ const setSong = (day: string, selectedSong: any) => {
         song: selectedSong.name.indexOf("-") !== -1 ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) : selectedSong.name,
         artist: selectedSong.artists[0].name,
         soundCloudLink: selectedSong.preview_url,
-        showSoundCloud: true,
+        showSoundCloud: false,
+        showSpotify: true,
+        soundSpotifyLink: "https://open.spotify.com/embed/track/" + selectedSong.id,
         image: selectedSong.album.images[0].url
     };
-
-    localStorage.setItem("Song", JSON.stringify(hardCodedSong));
+    set(ref(database, "songs/"+ day), hardCodedSong) 
+            
 }
+
+async function fetchSong(accessToken:string, artist: string): Promise<any> {
+
+    var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer " + accessToken);
+        myHeaders.append("Content-Type", "application/json");
+
+    return await fetch("https://api.spotify.com/v1/search?type=track&market=IT&q=" + artist, {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .then(response => response.tracks.items[Math.floor(Math.random() * response.tracks.items.length)])
+
+}
+
 
 
 export const getDailySong = (accessToken: string): Promise<any> => {
@@ -53,40 +76,41 @@ export const getDailySong = (accessToken: string): Promise<any> => {
 
     let hardCodedSong = DEFAULT_SONG
 
+    if (SONG_DATABASE[day]) {
+        hardCodedSong = SONG_DATABASE[day];
+    }
+
     return new Promise<SongConfig>(async (resolve, reject) => {
 
-        var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer " + accessToken);
-        myHeaders.append("Content-Type", "application/json");
+        let day = getDayStrAsPath();
 
-        let selectedSong = await fetch("https://api.spotify.com/v1/search?type=track&market=IT&q=" + artist, {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        })
-            .then(response => response.json())
-            .then(response => response.tracks.items[Math.floor(Math.random() * response.tracks.items.length)])
+        const database = getDatabase();
 
-        console.log(artist, selectedSong)
-        if (localStorage.getItem("Song")) {
+        let selectedSong: any;
 
-            if (JSON.parse(localStorage.getItem("Song") || '{}').day.localeCompare(day) === 0) {
-                hardCodedSong = JSON.parse(localStorage.getItem("Song") || '{}')
-                resolve(hardCodedSong)
-            }
-            else {
+        do {
+         selectedSong = await fetchSong(accessToken, artist);
+
+        }while(selectedSong.preview_url === null)
+
+
+        const songRef = ref(database, 'songs/' + day);
+        
+        onValue(songRef, (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                resolve(data);
+            } else {
                 setSong(day, selectedSong)
-                hardCodedSong = JSON.parse(localStorage.getItem("Song") || '{}')
                 resolve(hardCodedSong)
             }
-        }
-        else {
-
-            setSong(day, selectedSong)
-            hardCodedSong = JSON.parse(localStorage.getItem("Song") || '{}')
+        }, (err) => {
+            console.error(err);
             resolve(hardCodedSong)
-        }
+        }, {
+            onlyOnce: true
+        });
 
     });
-
+ 
 }

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import PlayerProgress from "./PlayerProgress";
 import MusicPlayerControls from "./MusicPlayerControls";
 import { useGameData } from "../player/GameContext";
-
+import ReactPlayer from 'react-player';
 
 const DEFAULT_START_MILIS = 15;
 
@@ -28,7 +28,7 @@ type MusicPlayerProps = {
 
 function MusicPlayer({ songConfig }: MusicPlayerProps) {
 
-
+    const ref = React.useRef<ReactPlayer>(null)
     const [playerSlicePercentages, setplayerSlicePercentages] = useState<any[]>([]);
     const [musicReady, setMusicReady] = useState(false);
     const [currentPositionInMilis, setCurrentPositionInMilis] = useState(DEFAULT_START_MILIS);// not second, second*10
@@ -44,12 +44,14 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
         if (reset) {
             //console.debug("resetted")
             SC_WIDGET.seekTo(0)
+            ref.current!.seekTo(0,'seconds');
         }
     }
 
     const onPlayed = () => {
         setPlaying(true);
         SC_WIDGET.play();
+        
     }
 
     useEffect(() => {
@@ -60,6 +62,7 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
 
     useEffect(() => {
         let iframeElement = document.getElementById('soundcloud-iframe');
+
 
         SC_WIDGET = window.SC.Widget(iframeElement);
 
@@ -72,18 +75,30 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
         });
 
         if (finished) {
+            
             console.debug("1 useEffect openedStep=", openedStep)
             SC_WIDGET.bind(window.SC.Widget.Events.READY, () => {
+                SC_WIDGET.setVolume(0);
 
-                SC_WIDGET.getDuration((songDurationInMilis: number) => {
-                    console.debug("songDurationInMilis=", songDurationInMilis)
-                    setSongFullDurationInMilis(songDurationInMilis);
-                });
-
+                setSongFullDurationInMilis(ref.current!.getDuration()*1000)
+ 
                 SC_WIDGET.bind(window.SC.Widget.Events.PLAY_PROGRESS, function () {
+                    SC_WIDGET.setVolume(0);
                     SC_WIDGET.getPosition(function (currentPosition: number) {
-                        setCurrentPositionInMilis(Math.floor(currentPosition));
+                        let _currentPositionInMilis = Math.floor((ref.current!.getCurrentTime()*1000));
+                        setCurrentPositionInMilis(_currentPositionInMilis);
+
+                        if (_currentPositionInMilis >= 28999) {
+                            SC_WIDGET.pause();
+                            SC_WIDGET.seekTo(0)
+                            ref.current!.seekTo(0,'seconds');
+                            
+                            setPlaying(false);
+                            console.debug("STOPPED !!!")
+
+                        }
                     });
+                    
 
                 });
                 setMusicReady(true);
@@ -93,24 +108,27 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
 
             SC_WIDGET.bind(window.SC.Widget.Events.READY, () => {
 
-                SC_WIDGET.getDuration((songDurationInMilis: number) => {
-                    console.debug("songDurationInMilis=", songDurationInMilis)
-                    setSongFullDurationInMilis(songDurationInMilis);
-                });
+                SC_WIDGET.setVolume(0);
+
+                setSongFullDurationInMilis(ref.current!.getDuration()*1000)
 
                 var stopTimeInMs = songConfig.breaks[openedStep] * 1000;
 
+
                 SC_WIDGET.bind(window.SC.Widget.Events.PLAY_PROGRESS, function () {
                     SC_WIDGET.getPosition(function (currentPosition: number) {
-                        let _currentPositionInMilis = Math.floor(currentPosition);
-
+                        SC_WIDGET.setVolume(0);
+                        let _currentPositionInMilis = Math.floor((ref.current!.getCurrentTime()*1000));
                         setCurrentPositionInMilis(_currentPositionInMilis);
+                        
                         // if(isPlaying === true && finished === true){
                         //     return;
                         // }
                         if (_currentPositionInMilis >= stopTimeInMs) {
                             SC_WIDGET.pause();
                             SC_WIDGET.seekTo(0)
+                            ref.current!.seekTo(0,'seconds');
+
                             setPlaying(false);
                             console.debug("STOPPED !!!")
                         }
@@ -119,9 +137,6 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
 
                 setMusicReady(true);
 
-                // setTimeout(function () {
-                //     window.scrollTo(0, 1);
-                // }, 0);
             });
         }
     }, [openedStep, finished])
@@ -159,7 +174,19 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
                     )
             }
             <div style={{ display: "none" }}>
-                <iframe id="soundcloud-iframe" allow="autoplay" title="Heardle" src={"https://w.soundcloud.com/player/?url=" + songConfig.soundCloudLink}></iframe>
+                <iframe id="soundcloud-iframe" allow="autoplay" title="Heardle" src={"https://w.soundcloud.com/player/?url=" + "https://soundcloud.com/avageaspandungique/pumpkins-scream-in-the-dead-of-night-wshinigami-prod93feetofsmoke" }></iframe>
+            </div>
+            <div style={{ display: "none" }}>
+            <div className="video-player">
+                <ReactPlayer 
+                    ref={ref}
+                    playing={isPlaying}
+                    controls={true}
+                    volume={0.5}
+                    onDuration={(duration:any)=> {setSongFullDurationInMilis(parseFloat(duration)*1000)}}
+                    url={songConfig.soundCloudLink}
+                    />
+            </div>
             </div>
         </>
     );

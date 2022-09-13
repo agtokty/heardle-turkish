@@ -104,7 +104,7 @@ function Stats() {
         <div className="modal-background p-3 pointer-events-none">
             <div className="pointer-events-auto modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm" role="dialog" aria-modal="true">
                 <div className="bg-custom-bg border border-custom-mg p-6 rounded">
-                    <div className="flex items-center justify-center mb-6">
+                    <div className="flex items-center justify-center mb-2">
                         <div className="flex-1 pl-7">
                             <h2 className="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">Statistiche</h2>
                         </div>
@@ -120,6 +120,36 @@ function Stats() {
                         </div>
                     </div>
                     <div className="flex justify-between py-3">
+                        <div className="flex flex-col items-stretch ">
+                            <div className="h-0 relative w-9 flex justify-center items-end"></div>
+                            <div className="text-center border-right text-xs pt-1"><span>{ (scores != null) ? scores.guessList[0].count : "0"}</span></div>
+                        </div>
+                        <div className="flex flex-col items-stretch ">
+                            <div className="h-0 relative w-9 flex justify-center items-end"></div>
+                            <div className="text-center border-right text-xs pt-1"><span>{ (scores != null) ? scores.guessList[1].count : "0"}</span></div>
+                        </div>
+                        <div className="flex flex-col items-stretch ">
+                            <div className="h-0 relative w-9 flex justify-center items-end"></div>
+                            <div className="text-center border-right text-xs pt-1"><span>{ (scores != null) ? scores.guessList[2].count : "0"}</span></div>
+                        </div>
+                        <div className="flex flex-col items-stretch ">
+                            <div className="h-0 relative w-9 flex justify-center items-end"></div>
+                            <div className="text-center border-right text-xs pt-1"><span>{ (scores != null) ? scores.guessList[3].count : "0"}</span></div>
+                        </div>
+                        <div className="flex flex-col items-stretch ">
+                            <div className="h-0 relative w-9 flex justify-center items-end"></div>
+                            <div className="text-center border-right text-xs pt-1"><span>{ (scores != null) ? scores.guessList[4].count : "0"}</span></div>
+                        </div>
+                        <div className="flex flex-col items-stretch ">
+                            <div className="h-0 relative w-9 flex justify-center items-end"></div>
+                            <div className="text-center border-right text-xs pt-1"><span>{ (scores != null) ? scores.guessList[5].count : "0"}</span></div>
+                        </div>
+                        <div className="flex flex-col items-stretch ">
+                            <div className="h-0 relative w-9 flex justify-center items-end"></div>
+                            <div className="text-center border-right text-xs pt-1"><span>{ (scores != null) ? scores.fails : "0"}</span></div>
+                        </div>
+                    </div>
+                    <div className="flex justify-between">
                         <div className="flex flex-col items-stretch ">
                             <div className="h-32 relative w-9 flex justify-center items-end">
                                 {getDivScore(scores, 0)}  
