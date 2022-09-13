@@ -12,7 +12,7 @@ interface Map {
 const DEFAULT_SONG = {
     day: "",
     songLength: 30,
-    breaks: [4, 8, 11, 16, 24, 30],
+    breaks: [1, 2, 4, 8, 16, 30],
     trackName: "Elisa Litoranea",
     others: ["Elisa Litoranea (con Matilda De Angelis)"],
     song: "Litoranea",

@@ -13,3 +13,5 @@ export const GAME_RESULT_MESSAGES = [
 export const GAME_RESULT_FAILED_MESSAGE = "Non hai indovinato la canzone di oggi :(";
 
 export const STRING_COMPARE_LOCALE = "it";
+
+export const SILENT_SONG = "https://w.soundcloud.com/player/?url=" + "https://soundcloud.com/bdsls01/silence-of-the-innocent";

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { SILENT_SONG } from '../game/Constants';
+
 import PlayerProgress from "./PlayerProgress";
 import MusicPlayerControls from "./MusicPlayerControls";
 import { useGameData } from "../player/GameContext";
@@ -174,19 +176,21 @@ function MusicPlayer({ songConfig }: MusicPlayerProps) {
                     )
             }
             <div style={{ display: "none" }}>
-                <iframe id="soundcloud-iframe" allow="autoplay" title="Heardle" src={"https://w.soundcloud.com/player/?url=" + "https://soundcloud.com/avageaspandungique/pumpkins-scream-in-the-dead-of-night-wshinigami-prod93feetofsmoke" }></iframe>
+                <iframe id="soundcloud-iframe" allow="autoplay" title="Heardle" src={SILENT_SONG}></iframe>
             </div>
             <div style={{ display: "none" }}>
-            <div className="video-player">
-                <ReactPlayer 
-                    ref={ref}
-                    playing={isPlaying}
-                    controls={true}
-                    volume={0.5}
-                    onDuration={(duration:any)=> {setSongFullDurationInMilis(parseFloat(duration)*1000)}}
-                    url={songConfig.soundCloudLink}
-                    />
-            </div>
+                <div style={{ display: "none" }} className="video-player">
+                    <ReactPlayer 
+                        ref={ref}
+                        playing={isPlaying}
+                        controls={false}
+                        pip={false}
+                        volume={0.5}
+                        onDuration={(duration:any)=> {setSongFullDurationInMilis(parseFloat(duration)*1000)}}
+                        url={songConfig.soundCloudLink}
+                        playsinline={true}
+                        />
+                </div>
             </div>
         </>
     );
