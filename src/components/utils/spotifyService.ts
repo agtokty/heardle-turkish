@@ -14,7 +14,7 @@ type SpotifyResult = {
   name: string
 }
 
-const banWords = ["unplugged", "reprise","remaster", "live", "remix", "mix", "version", "edit", "remastered", "concert", "concerto", "live", "studio", "registrazione", "dal vivo", "strumentale"];	// words to filter out
+const banWords = ["rmx","unplugged", "reprise","remaster", "live", "remix", "mix", "version", "edit", "remastered", "concert", "concerto", "live", "studio", "registrazione", "dal vivo", "strumentale"];	// words to filter out
 
 export const getAccessToken = (): Promise<any> => { 
 
