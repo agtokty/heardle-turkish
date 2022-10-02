@@ -51,7 +51,7 @@ function About() {
                   <p className="pt-3 mb-3 text-xs text-custom-line">
                      Sviluppatori: 
                      <p>
-                        <li><a href="https://github.com/Davidebrie" target="_blank" rel="noreferrer" title="DavideBri">DavideBri</a></li>
+                        <li><a href="https://github.com/Davidebri" target="_blank" rel="noreferrer" title="DavideBri">DavideBri</a></li>
                         <li><a href="https://github.com/s-dimaria" target="_blank" rel="noreferrer" title="s-dimaria">s-dimaria</a></li>
                      </p>
                   </p>

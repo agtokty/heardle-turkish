@@ -55,7 +55,7 @@ function Hearth() {
                   <p className="pt-3 mb-3 text-xs text-custom-line">
                      Sviluppatori: 
                      <p>
-                        <a href="https://github.com/Davidebrie" target="_blank" rel="noreferrer" title="DavideBri">DavideBri e </a>
+                        <a href="https://github.com/Davidebri" target="_blank" rel="noreferrer" title="DavideBri">DavideBri e </a>
                         <a href="https://github.com/s-dimaria" target="_blank" rel="noreferrer" title="s-dimaria">s-dimaria</a>
                      </p>
                   </p>
