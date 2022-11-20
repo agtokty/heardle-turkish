@@ -189,4 +189,5 @@ export const artists = [
     "irama",
     "ultimo",
     "ariete",
+    "fabio rovazzi"
 ]
