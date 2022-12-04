@@ -2,7 +2,7 @@ export const HEARDLE_IT_WEB_URL = "https://heardle.it";
 export const HEARDLE_SPOTIFY_LIST_URL = "https://open.spotify.com/playlist/2JpsZD5kqsVleaNDEGSmND?si=906b4ac927714be6";
 
 export const GAME_RESULT_MESSAGES = [
-    "🏆 Qualcuno ha detto orecchio assuoluto? 🏆",
+    "🏆 Qualcuno ha detto orecchio assoluto? 🏆",
     "WOW! Congratulazioni per averla riconosciuta così presto 🥳",
     "Ooooh, sei stato velocissimo! 😁",
     "Ottimo, sei un vero asso delle HIT! 🥳",
