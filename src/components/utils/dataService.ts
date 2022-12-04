@@ -3,6 +3,7 @@ import { SongConfig } from "../game/Models";
 import { artists } from "../utils/constants";
 import { getDatabase, ref, onValue, set } from "firebase/database";
 import "./firebase";
+import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 
 interface Map {
@@ -28,24 +29,8 @@ const setSong = (day: string, selectedSong: any) => {
 
     const database = getDatabase();
 
+    let hardCodedSong = selectedSong;
 
-    let song = selectedSong.name.includes("-") ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) :
-        selectedSong.name.includes("(") ? selectedSong.name.substring(0, selectedSong.name.indexOf("(")) : selectedSong.name;
-
-    let hardCodedSong = {
-        day: day,
-        songLength: 30,
-        breaks: [1, 2, 4, 8, 16, 30],
-        trackName: selectedSong.artists[0].name + " " + selectedSong.name,
-        others: [selectedSong.artists[0].name + " " + song],
-        song: selectedSong.name.indexOf("-") !== -1 ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) : selectedSong.name,
-        artist: selectedSong.artists[0].name,
-        soundCloudLink: selectedSong.preview_url,
-        showSoundCloud: false,
-        showSpotify: true,
-        soundSpotifyLink: "https://open.spotify.com/embed/track/" + selectedSong.id,
-        image: selectedSong.album.images[0].url
-    };
     set(ref(database, "songs/"+ day), hardCodedSong) 
             
 }
@@ -73,8 +58,7 @@ export const getDailySong = (accessToken: string): Promise<any> => {
     let day = getDayStr()
 
     let artist = artists[Math.floor(Math.random() * artists.length)];
-
-    let hardCodedSong = DEFAULT_SONG
+    let hardCodedSong: any;
 
     if (SONG_DATABASE[day]) {
         hardCodedSong = SONG_DATABASE[day];
@@ -87,13 +71,32 @@ export const getDailySong = (accessToken: string): Promise<any> => {
         const database = getDatabase();
 
         let selectedSong: any;
-
+        console.log(artist)
         do {
          selectedSong = await fetchSong(accessToken, artist);
+         console.log(selectedSong)
+         console.log(selectedSong.artists[0].name.toLowerCase() === artist)
+        }while( selectedSong.preview_url === null || selectedSong.artists[0].name.toLowerCase() != artist)
 
-        }while(selectedSong.preview_url === null)
+        let song = selectedSong.name.includes("-") ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) :
+        selectedSong.name.includes("(") ? selectedSong.name.substring(0, selectedSong.name.indexOf("(")) : selectedSong.name;
 
+        hardCodedSong = {
+            day: day,
+            songLength: 30,
+            breaks: [1, 2, 4, 8, 16, 30],
+            trackName: selectedSong.artists[0].name + " " + selectedSong.name,
+            others: [selectedSong.artists[0].name + " " + song],
+            song: selectedSong.name.indexOf("-") !== -1 ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) : selectedSong.name,
+            artist: selectedSong.artists[0].name,
+            soundCloudLink: selectedSong.preview_url,
+            showSoundCloud: false,
+            showSpotify: true,
+            soundSpotifyLink: "https://open.spotify.com/embed/track/" + selectedSong.id,
+            image: selectedSong.album.images[0].url
+        };
 
+        
         const songRef = ref(database, 'songs/' + day);
         
         onValue(songRef, (snapshot) => {
@@ -101,7 +104,7 @@ export const getDailySong = (accessToken: string): Promise<any> => {
             if (data) {
                 resolve(data);
             } else {
-                setSong(day, selectedSong)
+                setSong(day, hardCodedSong)
                 resolve(hardCodedSong)
             }
         }, (err) => {
@@ -110,6 +113,7 @@ export const getDailySong = (accessToken: string): Promise<any> => {
         }, {
             onlyOnce: true
         });
+        
 
     });
  

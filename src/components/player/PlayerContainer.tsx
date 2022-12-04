@@ -132,7 +132,7 @@ function PlayerContainer({ songConfig, accessToken }: {songConfig: SongConfig, a
                                         Conferma
                                     </button>
                                 }
-                            </div>
+                            </div>                        
                         </div>
                     </div>
                 </div>
