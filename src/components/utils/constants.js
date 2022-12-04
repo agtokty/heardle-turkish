@@ -197,5 +197,4 @@ export const artists = [
     "francesca michielin",
     "colapesce",
     "baby k"
-
 ]
