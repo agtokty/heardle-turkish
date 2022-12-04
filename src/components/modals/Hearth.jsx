@@ -38,28 +38,18 @@ function Hearth() {
                         </svg> @HeardleIta
                      </a>
                   </p>
+                  <p class="mb-3">
+                     <a href="https://ko-fi.com/X8X4ELG6W" class="flex items-center no-underline" target="_blank" rel="noreferrer">
+                        <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 24 22" fill="currentColor">
+                        <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z" fill="white"></path>
+                        </svg> Ko-fi
+                     </a>
+                  </p>
                
                </div>
                <div className="text">
                     <p className="pt-3 mb-3 text-xs text-custom-line">Un ringrazimento speciale a <a href="https://github.com/agtokty">agtokty</a></p>
                </div>
-               {/* <div className="text">
-                  <p className="text-sm mb-1 text-custom-line">Piattaforme utilizzate:</p>
-                  <p className="text-sm text-custom-line">
-                     <a href="https://firebase.google.com/" target="_blank" rel="https://firebase.google.com/">Firebase, </a>
-                     <a href="https://developers.soundcloud.com/docs/api/html5-widget" target="_blank" rel="https://soundcloud.com/">Soundcloud, </a>
-                     <a href="https://developer.spotify.com/" target="_blank" rel="https://developer.spotify.com/">Spotify, </a>
-                     <a href="https://reactjs.org/" target="_blank" rel="https://it.reactjs.org/">React e </a>
-                     <a href="https://tailwindcss.com" target="_blank" rel="noreferrer">Tailwind</a>
-                  </p>
-                  <p className="pt-3 mb-3 text-xs text-custom-line">
-                     Sviluppatori: 
-                     <p>
-                        <a href="https://github.com/Davidebri" target="_blank" rel="noreferrer" title="DavideBri">DavideBri e </a>
-                        <a href="https://github.com/s-dimaria" target="_blank" rel="noreferrer" title="s-dimaria">s-dimaria</a>
-                     </p>
-                  </p>
-               </div> */}
             </div>
          </div>
       </div>
