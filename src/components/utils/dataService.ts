@@ -71,12 +71,16 @@ export const getDailySong = (accessToken: string): Promise<any> => {
         const database = getDatabase();
 
         let selectedSong: any;
-        console.log(artist)
+
         do {
          selectedSong = await fetchSong(accessToken, artist);
-         console.log(selectedSong)
-         console.log(selectedSong.artists[0].name.toLowerCase() === artist)
-        }while( selectedSong.preview_url === null || selectedSong.artists[0].name.toLowerCase() != artist)
+        
+        }while(selectedSong.preview_url != null && selectedSong.artists[0].name.toLowerCase() != artist)
+        
+        /*console.log(selectedSong)
+        console.log(selectedSong.artists[0].name.toLowerCase() + " " + artist)
+        console.log(selectedSong.artists[0].name.toLowerCase() === artist)
+        */
 
         let song = selectedSong.name.includes("-") ? selectedSong.name.substring(0, selectedSong.name.indexOf("-")) :
         selectedSong.name.includes("(") ? selectedSong.name.substring(0, selectedSong.name.indexOf("(")) : selectedSong.name;
@@ -96,7 +100,7 @@ export const getDailySong = (accessToken: string): Promise<any> => {
             image: selectedSong.album.images[0].url
         };
 
-        
+ 
         const songRef = ref(database, 'songs/' + day);
         
         onValue(songRef, (snapshot) => {
